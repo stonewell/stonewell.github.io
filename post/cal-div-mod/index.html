@@ -10,24 +10,26 @@
     
 
     
-    <title>Stone&#39;s Blog (Jingnan Si)</title>
+    <title>Calculate div and mod result between 2 uint64_t values without directly using / and % operator</title>
 
     
     
 
 
 
+  
+  
+  <meta name="author" content="[Jingnan Si]" />
+  <meta name="description" content="calculate div and mod result between 2 uint64_t values without directly using / and % operator">
 
   
-  <meta name="author" content="Jingnan Si" />
-  <meta name="description" content="Programming, Graphics Rendering and Life" />
-
   
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@gohugoio" />
-  <meta name="twitter:title" content="Stone&#39;s Blog (Jingnan Si)" />
-  <meta name="twitter:description" content="Programming, Graphics Rendering and Life" />
-  <meta name="twitter:image" content="https://blog.angsto-tech.com/img/avatar.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@gohugoio" />
+    <meta name="twitter:title" content="Calculate div and mod result between 2 uint64_t values without directly using / and % operator" />
+    <meta name="twitter:description" content="calculate div and mod result between 2 uint64_t values without directly using / and % operator" />
+    <meta name="twitter:image" content="https://blog.angsto-tech.com/img/avatar.jpg" />
+  
 
 
 
@@ -35,7 +37,7 @@
 <meta name="generator" content="Hugo 0.72.0" />
 
 
-<link rel="canonical" href="https://blog.angsto-tech.com/tags/">
+<link rel="canonical" href="https://blog.angsto-tech.com/post/cal-div-mod/">
 <link rel="alternative" href="/index.xml" title="Stone Site - Jingnan Si" type="application/atom+xml">
 
 
@@ -170,7 +172,7 @@
       
         <li class="menu-item "><a href="/tags/life/">Life</a></li>
       
-        <li class="menu-item  is-active"><a href="/tags/">Tags</a></li>
+        <li class="menu-item "><a href="/tags/">Tags</a></li>
       
     </ul>
   </nav>
@@ -244,7 +246,7 @@
     
       <li class="sidebar-item "><a class="sidebar-link" href="/tags/life/">Life</a></li>
     
-      <li class="sidebar-item  is-active"><a class="sidebar-link" href="/tags/">Tags</a></li>
+      <li class="sidebar-item "><a class="sidebar-link" href="/tags/">Tags</a></li>
     
   </ul>
 </amp-sidebar>
@@ -252,66 +254,27 @@
     
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Tags</h1>
-      <p class="entry-meta"><span class="entry-time">Jul 18, 2020</span> 0 min read</p>
+      <h1 class="post-title">Calculate div and mod result between 2 uint64_t values without directly using / and % operator</h1>
+      <p class="entry-meta"><span class="entry-time">Mar 12, 2017</span> 1 min read</p>
     </header>
     
 
-    <article class="post-content">
-      <ul id="all-tags">
+    <article class="post-content"><p>On 32bit platform, if do unsigned 64bit div/mod, compiler will automatically link to 2 functions in libc, aullrem, aulldiv to do the real caculation, because the div result may &gt; max 32bit int. these two functions divll and divll64 demos how to calculate when 64bit int div 32bit int and 64bit div 64bit int. the divll version just another way to calculate, it is always fine to use divll64
+<a href="https://github.com/stonewell/code-snippets/tree/master/uint64%5Fdiv%5Fmod">Reference implementation for uint64_t div and mod</a></p>
+</article>
+    <footer class="post-footer">
+      
+      <ul class="post-tags">
         
-        <li><a href="/tags/bash">Bash</a></li>
-        
-        <li><a href="/tags/computer">Computer</a></li>
-        
-        <li><a href="/tags/docker">Docker</a></li>
-        
-        <li><a href="/tags/extension">Extension</a></li>
-        
-        <li><a href="/tags/firefox">Firefox</a></li>
-        
-        <li><a href="/tags/ios">Ios</a></li>
-        
-        <li><a href="/tags/kernel-panic">Kernel-Panic</a></li>
-        
-        <li><a href="/tags/kvm">Kvm</a></li>
-        
-        <li><a href="/tags/life">Life</a></li>
-        
-        <li><a href="/tags/linux">Linux</a></li>
-        
-        <li><a href="/tags/mdadm">Mdadm</a></li>
-        
-        <li><a href="/tags/opengl">Opengl</a></li>
-        
-        <li><a href="/tags/osx">Osx</a></li>
-        
-        <li><a href="/tags/programming">Programming</a></li>
-        
-        <li><a href="/tags/python">Python</a></li>
-        
-        <li><a href="/tags/qemu">Qemu</a></li>
-        
-        <li><a href="/tags/raid">Raid</a></li>
-        
-        <li><a href="/tags/raspberry-pi">Raspberry-Pi</a></li>
-        
-        <li><a href="/tags/render-farm">Render-Farm</a></li>
-        
-        <li><a href="/tags/security">Security</a></li>
-        
-        <li><a href="/tags/thunderbird">Thunderbird</a></li>
-        
-        <li><a href="/tags/vm">Vm</a></li>
+          <li class="post-tag"><a href="/tags/programming"><span class="tag">Programming</span></a></li>
         
       </ul>
-    </article>
-    <footer class="post-footer">
+      
       <div class="sharing">
-        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2ftags%2f" title="Share on Facebook">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fcal-div-mod%2f" title="Share on Facebook">
           <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
         </a>
-        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Tags&amp;url=https%3a%2f%2fblog.angsto-tech.com%2ftags%2f" title="Share on Twitter">
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Calculate%20div%20and%20mod%20result%20between%202%20uint64_t%20values%20without%20directly%20using%20%2f%20and%20%25%20operator&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fcal-div-mod%2f" title="Share on Twitter">
           <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
         </a>
       </div>

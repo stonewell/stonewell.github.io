@@ -38,5 +38,14 @@
       <description>mdadm soft raid fails after kernel upgrade</description>
     </item>
     
+    <item>
+      <title>Useful resources when create thunderbird/firefox extension</title>
+      <link>https://blog.angsto-tech.com/post/useful-resources-when-create-thunderbird-firefox-extension/</link>
+      <pubDate>Thu, 01 Jan 2015 17:47:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/useful-resources-when-create-thunderbird-firefox-extension/</guid>
+      <description> jar.mn document http://dxr.mozilla.org/mozilla-central/source/build/docs/jar-manifests.rst https://developer.mozilla.org/en-US/docs/HowMozilla&#39;sbuildsystemworks https://developer.mozilla.org/en-US/docs/UsingDependentLibrariesInExtension%5FComponents https://developer.mozilla.org/en-US/docs/Bundlingmultiplebinary%5Fcomponents https://code.google.com/p/gears/source/browse/trunk/gears/base/firefox/static%5Ffiles/components/stub.js https://developer.mozilla.org/en-US/Add-ons/CreatingCustomFirefoxExtensionswiththeMozillaBuildSystem https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Guide/Cross-threadcallsusing%5Frunnables  </description>
+    </item>
+    
   </channel>
 </rss>
