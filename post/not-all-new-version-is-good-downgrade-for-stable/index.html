@@ -10,28 +10,26 @@
     
 
     
-    <title>
-  Tag → docker
-  
-   | Stone&#39;s Blog (Jingnan Si)
-</title>
+    <title>最新版本未必好，记两个需要降级的问题</title>
 
     
     
 
 
 
+  
+  
+  <meta name="author" content="[Jingnan Si]" />
+  <meta name="description" content="最新的kernel和软件版本不一定适合">
 
   
-  <meta name="author" content="Jingnan Si" />
-  <meta name="description" content="Programming, Graphics Rendering and Life" />
-
   
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@gohugoio" />
-  <meta name="twitter:title" content="Stone&#39;s Blog (Jingnan Si)" />
-  <meta name="twitter:description" content="Programming, Graphics Rendering and Life" />
-  <meta name="twitter:image" content="https://blog.angsto-tech.com/img/avatar.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@gohugoio" />
+    <meta name="twitter:title" content="最新版本未必好，记两个需要降级的问题" />
+    <meta name="twitter:description" content="最新的kernel和软件版本不一定适合" />
+    <meta name="twitter:image" content="https://blog.angsto-tech.com/img/avatar.jpg" />
+  
 
 
 
@@ -39,7 +37,7 @@
 <meta name="generator" content="Hugo 0.72.0" />
 
 
-<link rel="canonical" href="https://blog.angsto-tech.com/tags/docker/">
+<link rel="canonical" href="https://blog.angsto-tech.com/post/not-all-new-version-is-good-downgrade-for-stable/">
 <link rel="alternative" href="/index.xml" title="Stone Site - Jingnan Si" type="application/atom+xml">
 
 
@@ -254,47 +252,59 @@
 </amp-sidebar>
 
     
-  <section class="main entry-list">
-    <header class="list-header">
-      
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">最新版本未必好，记两个需要降级的问题</h1>
+      <p class="entry-meta"><span class="entry-time">Jul 18, 2020</span> 1 min read</p>
     </header>
     
-    
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers-rancher-labs/" title="Introducing RancherVM: Package and Run Virtual Machines as Docker Containers | Rancher Labs" class="entry-link">Introducing RancherVM: Package and Run Virtual Machines as Docker Containers | Rancher Labs</a></h3>
-  </header>
 
-  <p class="entry-summary">http://rancher.com/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers/</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Aug 20, 2015</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fintroducing-ranchervm-package-and-run-virtual-machines-as-docker-containers-rancher-labs%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Introducing%20RancherVM%3a%20Package%20and%20Run%20Virtual%20Machines%20as%20Docker%20Containers%20%7c%20Rancher%20Labs&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fintroducing-ranchervm-package-and-run-virtual-machines-as-docker-containers-rancher-labs%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
+    <article class="post-content"><p>一般来说使用的Linux Distro都是Debian，但是因为Stable发行的软件包未必是最新的，一向是使用testing的，所有的软件包都更新到最新：）</p>
+<p>曾经一度会使用experimental发行，但是一次受到系统崩溃的打击后，老老实实的用testing了，一直没有碰到太大的问题。<!-- raw HTML omitted -->
+在家工作4个月了，一直通过qemu/kvm在单一电脑上实现工作全平台开发（linux，mac，windows)以及日常使用（linux， windows，Mac）<!-- raw HTML omitted -->
+一直每半个月更新一下主机的系统，保持着以往的习惯。<!-- raw HTML omitted -->
+直到有一天VM启动不久，系统突然卡死，键盘鼠标，都无法使用，远程也无法登录（这点当时没有在意，其实本不用费那么大力气找原因）。<!-- raw HTML omitted -->
+因为主力系统的数据硬盘是4块以前剩下来的老1T硬盘，一直怀疑是硬盘有问题，可是弄来弄去也没有发现硬盘问题，也排除了内存和显卡的毛病<!-- raw HTML omitted -->
+这块GT710的亮机卡受到了我不少怀疑，差点下单买了新显卡和硬盘。。。<!-- raw HTML omitted -->
+在克制了自己的花钱欲望后，开始怀疑可能是kernel panic了，如果有coredump就好了，一番研究后，<!-- raw HTML omitted -->
+发现了专门用于kernel core dump的方法<a href="https://access.redhat.com/documentation/en-us/red%5Fhat%5Fenterprise%5Flinux/7/html/kernel%5Fadministration%5Fguide/kernel%5Fcrash%5Fdump%5Fguide">Redhat Kernel Crash Guide</a>, 在这里要赞一下Redhat的文档，很多admin方面的问题都能找到。<!-- raw HTML omitted -->
+折腾了半天结果发现是network stack panic了，libvirt的网络引发的。解决方案很简单，降级Kernel就好，估计libvirt的network部分还没有和最新的kernel 5.7做适配。<!-- raw HTML omitted -->
+kernel降级到Debian stable的4.19, 问题终于解决了。<!-- raw HTML omitted -->
+另外一个问题又出现了，突然发现Mac VM无法引导了，或者说引导到一定程度就没反应了。也是折腾了半天才怀疑是qemu版本的问题，比较Mac的vm是比较特殊的。<!-- raw HTML omitted -->
+检查了一下是最新的qemu 5.0，那应该不是版本的bug问题，难道是太新了？花了一点时间编译了qemu4.2.1版本，竟然引导成功了。<!-- raw HTML omitted -->
+花了一点是间把Mac的引导系统更新为OpenCore，一切终于都正常了。<!-- raw HTML omitted -->
+这次的教训是<!-- raw HTML omitted --></p>
+<ul>
+<li>服务器的系统不追求最新，应该保持稳定</li>
+<li>没有问题不要更新软件包</li>
+<li>工作娱乐系统想要保持最新还是用个单独的VM吧</li>
+</ul>
 </article>
-
+    <footer class="post-footer">
       
-    
-    
+      <ul class="post-tags">
+        
+          <li class="post-tag"><a href="/tags/computer"><span class="tag">Computer</span></a></li>
+        
+          <li class="post-tag"><a href="/tags/linux"><span class="tag">Linux</span></a></li>
+        
+          <li class="post-tag"><a href="/tags/qemu"><span class="tag">Qemu</span></a></li>
+        
+          <li class="post-tag"><a href="/tags/kvm"><span class="tag">Kvm</span></a></li>
+        
+          <li class="post-tag"><a href="/tags/kernel-panic"><span class="tag">Kernel-Panic</span></a></li>
+        
+      </ul>
+      
+      <div class="sharing">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fnot-all-new-version-is-good-downgrade-for-stable%2f" title="Share on Facebook">
+          <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+        </a>
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e6%9c%80%e6%96%b0%e7%89%88%e6%9c%ac%e6%9c%aa%e5%bf%85%e5%a5%bd%ef%bc%8c%e8%ae%b0%e4%b8%a4%e4%b8%aa%e9%9c%80%e8%a6%81%e9%99%8d%e7%ba%a7%e7%9a%84%e9%97%ae%e9%a2%98&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fnot-all-new-version-is-good-downgrade-for-stable%2f" title="Share on Twitter">
+          <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+        </a>
+      </div>
+    </footer>
   </section>
 
     <footer class="footer">
