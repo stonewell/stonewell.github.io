@@ -20,7 +20,10 @@
   
   
   <meta name="author" content="[Jingnan Si]" />
-  <meta name="description" content="在unix，maxosx或者linux下工作的时候，经常需要长时间运行一个程序，通常会把程序放到后台，然后通过日志来监控。如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。可是如果一开始没有用screen运行，直接放置到后台怎么办呢。reptyr就派上用场了，以下是reptyr的说明
+  <meta name="description" content="在unix，maxosx或者linux下工作的时候，经常需要长时间运行一个程序，通常会把程序放到后台，然后通过日志来监控。
+如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。
+如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。
+可是如果一开始没有用screen运行，直接放置到后台怎么办呢。reptyr就派上用场了，以下是reptyr的说明
 reparent a orphan background process, means background a process in a terminal and bring it back to foreground to another terminal reptyr - A tool for &amp;quot;re-ptying&amp;quot; programs. ----------------------------------------- reptyr is a utility for taking an existing running program and attaching it to a new terminal. Started a long-running process over ssh, but have to leave and don&#39;t want to interrupt it? Just start a screen, use reptyr to grab it, and then kill the ssh session and head on home.">
 
   
@@ -28,7 +31,10 @@ reparent a orphan background process, means background a process in a terminal a
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@gohugoio" />
     <meta name="twitter:title" content="screen 和 reptyr 远程工作的利器" />
-    <meta name="twitter:description" content="在unix，maxosx或者linux下工作的时候，经常需要长时间运行一个程序，通常会把程序放到后台，然后通过日志来监控。如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。可是如果一开始没有用screen运行，直接放置到后台怎么办呢。reptyr就派上用场了，以下是reptyr的说明
+    <meta name="twitter:description" content="在unix，maxosx或者linux下工作的时候，经常需要长时间运行一个程序，通常会把程序放到后台，然后通过日志来监控。
+如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。
+如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。
+可是如果一开始没有用screen运行，直接放置到后台怎么办呢。reptyr就派上用场了，以下是reptyr的说明
 reparent a orphan background process, means background a process in a terminal and bring it back to foreground to another terminal reptyr - A tool for &amp;quot;re-ptying&amp;quot; programs. ----------------------------------------- reptyr is a utility for taking an existing running program and attaching it to a new terminal. Started a long-running process over ssh, but have to leave and don&#39;t want to interrupt it? Just start a screen, use reptyr to grab it, and then kill the ssh session and head on home." />
     <meta name="twitter:image" content="https://blog.angsto-tech.com/img/avatar.jpg" />
   
@@ -261,9 +267,9 @@ reparent a orphan background process, means background a process in a terminal a
     </header>
     
 
-    <article class="post-content"><p>在unix，maxosx或者linux下工作的时候，经常需要长时间运行一个程序，通常会把程序放到后台，然后通过日志来监控。<!-- raw HTML omitted -->
-如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。<!-- raw HTML omitted -->
-如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。<!-- raw HTML omitted -->
+    <article class="post-content"><p>在unix，maxosx或者linux下工作的时候，经常需要长时间运行一个程序，通常会把程序放到后台，然后通过日志来监控。<br />
+如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。<br />
+如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。<br />
 可是如果一开始没有用screen运行，直接放置到后台怎么办呢。reptyr就派上用场了，以下是reptyr的说明</p>
 <pre><code class="language-nil" data-lang="nil">reparent a orphan background process, means background a process in a terminal and bring it back to foreground to another terminal
 reptyr - A tool for &quot;re-ptying&quot; programs.

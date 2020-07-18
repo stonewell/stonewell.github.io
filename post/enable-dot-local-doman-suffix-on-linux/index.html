@@ -259,13 +259,13 @@
     </header>
     
 
-    <article class="post-content"><p>add .local domain suffix to the linux box and let them acessable from LAN by using hostname.local domain name.<!-- raw HTML omitted -->
-the Avahi service, which uses the .local domain as a multicast DNS zone. <!-- raw HTML omitted -->
-For example, if you have a Ubuntu system named “ubuntu” on your network, it can be accessed at the address “ubuntu.local”. <!-- raw HTML omitted -->
-To do this, Avahi automatically takes over all DNS requests ending with &ldquo;.local&rdquo; and prevents them from resolving normally. <!-- raw HTML omitted -->
-If you are on a network with existing DNS addresses that end with .local, such as a Windows Small Business Server network, <!-- raw HTML omitted -->
-you’ll have to change Avahi’s domain from .local to a different domain before .local addresses will resolve normally.<!-- raw HTML omitted -->
-The steps are:<!-- raw HTML omitted --></p>
+    <article class="post-content"><p>add .local domain suffix to the linux box and let them acessable from LAN by using hostname.local domain name.<br />
+the Avahi service, which uses the .local domain as a multicast DNS zone. <br />
+For example, if you have a Ubuntu system named “ubuntu” on your network, it can be accessed at the address “ubuntu.local”. <br />
+To do this, Avahi automatically takes over all DNS requests ending with &ldquo;.local&rdquo; and prevents them from resolving normally. <br />
+If you are on a network with existing DNS addresses that end with .local, such as a Windows Small Business Server network, <br />
+you’ll have to change Avahi’s domain from .local to a different domain before .local addresses will resolve normally.<br />
+The steps are:<br /></p>
 <ol>
 <li>sudo nano /etc/avahi/avahi-daemon.conf</li>
 <li>Scroll down using your arrow keys and locate the “#domain-name=.local” line under “[server].”</li>
@@ -273,7 +273,7 @@ The steps are:<!-- raw HTML omitted --></p>
 <li>ress “Ctrl-O” and then press “Enter” to save Avahi’s configuration file in Nano.</li>
 <li>Press “Ctrl-X” to exit Nano. Addresses ending with .local will now resolve correctly.</li>
 </ol>
-<p><a href="https://smallbusiness.chron.com/resolving-local-ubuntu-38861.html">https://smallbusiness.chron.com/resolving-local-ubuntu-38861.html</a><!-- raw HTML omitted -->
+<p><a href="https://smallbusiness.chron.com/resolving-local-ubuntu-38861.html">https://smallbusiness.chron.com/resolving-local-ubuntu-38861.html</a><br />
 <a href="http://forum.tinycorelinux.net/index.php?topic=9941.0">http://forum.tinycorelinux.net/index.php?topic=9941.0</a></p>
 </article>
     <footer class="post-footer">

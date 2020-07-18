@@ -17,7 +17,10 @@
       <pubDate>Thu, 04 Feb 2016 22:04:00 -0800</pubDate>
       
       <guid>https://blog.angsto-tech.com/post/build-your-own-render-farm/</guid>
-      <description>To Build your own render farmRender Manager: http://cgru.info/homeA blog page talking about how to built your own Render Farm: http://arstechnica.com/information-technology/2014/05/how-to-network-lots-of-dumb-computing-muscle-in-a-fast-efficient-render-farm/1/a maya script for v-ray http://www.creativecrash.com/maya/script/v-ray-tuner-for-maya</description>
+      <description>To Build your own render farm
+Render Manager: http://cgru.info/home
+A blog page talking about how to built your own Render Farm: http://arstechnica.com/information-technology/2014/05/how-to-network-lots-of-dumb-computing-muscle-in-a-fast-efficient-render-farm/1/
+a maya script for v-ray http://www.creativecrash.com/maya/script/v-ray-tuner-for-maya</description>
     </item>
     
   </channel>

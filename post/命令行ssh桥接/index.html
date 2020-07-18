@@ -20,14 +20,22 @@
   
   
   <meta name="author" content="[Jingnan Si]" />
-  <meta name="description" content="通过一些ssh的客户端，可以很方便的做ssh forward，也就是通过一台主机上ssh连接到另一台主机，那么命令行可不可以呢？只要在~/.ssh/config中加入如下指令即可host serverB.example.com serverB ProxyCommand ssh -W %h:%p gateway serverB是最终的目的主机，gateway是中间转发的主机，gateway上需要配置无密码登录。或者暴力一点ssh -t usergateway@gateway ssh user1@serverb ">
+  <meta name="description" content="通过一些ssh的客户端，可以很方便的做ssh forward，也就是通过一台主机上ssh连接到另一台主机，那么命令行可不可以呢？
+只要在~/.ssh/config中加入如下指令即可
+host serverB.example.com serverB ProxyCommand ssh -W %h:%p gateway serverB是最终的目的主机，gateway是中间转发的主机，gateway上需要配置无密码登录。
+或者暴力一点
+ssh -t usergateway@gateway ssh user1@serverb ">
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@gohugoio" />
     <meta name="twitter:title" content="命令行ssh桥接" />
-    <meta name="twitter:description" content="通过一些ssh的客户端，可以很方便的做ssh forward，也就是通过一台主机上ssh连接到另一台主机，那么命令行可不可以呢？只要在~/.ssh/config中加入如下指令即可host serverB.example.com serverB ProxyCommand ssh -W %h:%p gateway serverB是最终的目的主机，gateway是中间转发的主机，gateway上需要配置无密码登录。或者暴力一点ssh -t usergateway@gateway ssh user1@serverb " />
+    <meta name="twitter:description" content="通过一些ssh的客户端，可以很方便的做ssh forward，也就是通过一台主机上ssh连接到另一台主机，那么命令行可不可以呢？
+只要在~/.ssh/config中加入如下指令即可
+host serverB.example.com serverB ProxyCommand ssh -W %h:%p gateway serverB是最终的目的主机，gateway是中间转发的主机，gateway上需要配置无密码登录。
+或者暴力一点
+ssh -t usergateway@gateway ssh user1@serverb " />
     <meta name="twitter:image" content="https://blog.angsto-tech.com/img/avatar.jpg" />
   
 
@@ -259,12 +267,12 @@
     </header>
     
 
-    <article class="post-content"><p>通过一些ssh的客户端，可以很方便的做ssh forward，也就是通过一台主机上ssh连接到另一台主机，那么命令行可不可以呢？<!-- raw HTML omitted -->
-只要在~/.ssh/config中加入如下指令即可<!-- raw HTML omitted --></p>
+    <article class="post-content"><p>通过一些ssh的客户端，可以很方便的做ssh forward，也就是通过一台主机上ssh连接到另一台主机，那么命令行可不可以呢？<br />
+只要在~/.ssh/config中加入如下指令即可<br /></p>
 <pre><code class="language-nil" data-lang="nil">host serverB.example.com serverB
   ProxyCommand ssh -W %h:%p gateway
-</code></pre><p>serverB是最终的目的主机，gateway是中间转发的主机，gateway上需要配置无密码登录。<!-- raw HTML omitted -->
-或者暴力一点<!-- raw HTML omitted --></p>
+</code></pre><p>serverB是最终的目的主机，gateway是中间转发的主机，gateway上需要配置无密码登录。<br />
+或者暴力一点<br /></p>
 <pre><code class="language-nil" data-lang="nil">ssh -t usergateway@gateway ssh user1@serverb
 </code></pre></article>
     <footer class="post-footer">

@@ -259,20 +259,20 @@
     </header>
     
 
-    <article class="post-content"><p>Doing linux upgrade sometimes is quite dangous, especially from very old kernel to latest, <!-- raw HTML omitted -->
-for example, from 3.x to 5.x, or even from 4.x to 5.x.<!-- raw HTML omitted -->
+    <article class="post-content"><p>Doing linux upgrade sometimes is quite dangous, especially from very old kernel to latest, <br />
+for example, from 3.x to 5.x, or even from 4.x to 5.x.<br />
 the mdadm soft raid arary may not work correctly after upgrade, it may shows:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&#34;Invalid Argument&#34; / &#34;does not have a valid v1.2 superblock&#34;
-</code></pre></div><p>first we should make sure the array is still correct, by running:<!-- raw HTML omitted --></p>
+</code></pre></div><p>first we should make sure the array is still correct, by running:<br /></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdadm --examine /dev/sd<span style="color:#f92672">[</span>abcd<span style="color:#f92672">]</span><span style="color:#ae81ff">1</span>
-</code></pre></div><p>make sure the disks in array are all valid.<!-- raw HTML omitted --></p>
-<p>sencod we could try if the array create in old kernel are using different layout, by running:<!-- raw HTML omitted --></p>
+</code></pre></div><p>make sure the disks in array are all valid.<br /></p>
+<p>sencod we could try if the array create in old kernel are using different layout, by running:<br /></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdadm --stop /dev/md0
 mdadm --assemble -U layout-alternate /dev/md0 /dev/sda1 /dev/sda2
 </code></pre></div><p><a href="https://wiki.ubuntu.com/Kernel/Raid0LayoutMigration">https://wiki.ubuntu.com/Kernel/Raid0LayoutMigration</a></p>
-<p>if sencond step is not working, last step we could try will be using &ldquo;&ndash;assume-clean&rdquo; to recreate the array:<!-- raw HTML omitted --></p>
+<p>if sencond step is not working, last step we could try will be using &ldquo;&ndash;assume-clean&rdquo; to recreate the array:<br /></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdadm -v --create /dev/md0 --readonly --bitmap<span style="color:#f92672">=</span>none --chunk<span style="color:#f92672">=</span>4M --level<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span> --raid-device<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span> --assume-clean --data-offset <span style="color:#ae81ff">99328</span> /dev/sdd2 /dev/sde2 /dev/sdg2 /dev/sdc2 /dev/sdb2 /dev/sdf2
-</code></pre></div><p>be sure to using correct raid level/chunk size/data-offset from the output of the first step.<!-- raw HTML omitted -->
+</code></pre></div><p>be sure to using correct raid level/chunk size/data-offset from the output of the first step.<br />
 <a href="https://www.spinics.net/lists/raid/msg50760.html">https://www.spinics.net/lists/raid/msg50760.html</a></p>
 </article>
     <footer class="post-footer">

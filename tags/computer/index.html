@@ -385,7 +385,10 @@
     <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/build-your-own-render-farm/" title="Build your own render farm" class="entry-link">Build your own render farm</a></h3>
   </header>
 
-  <p class="entry-summary">To Build your own render farmRender Manager: http://cgru.info/homeA blog page talking about how to built your own Render Farm: http://arstechnica.com/information-technology/2014/05/how-to-network-lots-of-dumb-computing-muscle-in-a-fast-efficient-render-farm/1/a maya script for v-ray http://www.creativecrash.com/maya/script/v-ray-tuner-for-maya</p>
+  <p class="entry-summary">To Build your own render farm
+Render Manager: http://cgru.info/home
+A blog page talking about how to built your own Render Farm: http://arstechnica.com/information-technology/2014/05/how-to-network-lots-of-dumb-computing-muscle-in-a-fast-efficient-render-farm/1/
+a maya script for v-ray http://www.creativecrash.com/maya/script/v-ray-tuner-for-maya</p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">Feb 4, 2016</span> 1 min read</p>
     <div class="sharing">
@@ -427,7 +430,10 @@
     <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/how-the-wifi-adapter-or-automatically-wifi-configuration-for-device-works/" title="How the wifi adapter or automatically wifi configuration for device works?" class="entry-link">How the wifi adapter or automatically wifi configuration for device works?</a></h3>
   </header>
 
-  <p class="entry-summary">It is very interesting technology. Basically the device to be configured put the wifi device in “monitoring” mode,and the app will send udp wifi packet with different length, which different length indicate different “character”.http://depletionregion.blogspot.ch/2013/10/cc3000-smart-config-transmitting-ssid.htmlhttp://electronics.stackexchange.com/questions/61704/how-does-ti-cc3000-wifi-smart-config-work</p>
+  <p class="entry-summary">It is very interesting technology. Basically the device to be configured put the wifi device in “monitoring” mode,
+and the app will send udp wifi packet with different length, which different length indicate different “character”.
+http://depletionregion.blogspot.ch/2013/10/cc3000-smart-config-transmitting-ssid.html
+http://electronics.stackexchange.com/questions/61704/how-does-ti-cc3000-wifi-smart-config-work</p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">Nov 4, 2015</span> 1 min read</p>
     <div class="sharing">
@@ -532,7 +538,10 @@
     <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/%E9%87%8D%E6%B8%A9%E4%B8%80%E4%B8%8Bconst-char-%E5%92%8Cchar-const/" title="重温一下const char *和char * const" class="entry-link">重温一下const char *和char * const</a></h3>
   </header>
 
-  <p class="entry-summary">今天写代码的时候突然不能肯定const char * d; d&#43;&#43;; 是不是对的了，就重温了一下经典的c&#43;&#43;定义结论：         char * const p 定义一个指向字符的指针常数，即const指针   const char * p 定义一个指向字符常数的指针   char const*p 等同于const char* p    普通的指针d，进行d&#43;&#43;肯定没问题了http://blog.163.com/pei%5Fhua100/blog/static/805697592009550281616/</p>
+  <p class="entry-summary">今天写代码的时候突然不能肯定const char * d; d&#43;&#43;; 是不是对的了，就重温了一下经典的c&#43;&#43;定义
+结论：
+         char * const p 定义一个指向字符的指针常数，即const指针   const char * p 定义一个指向字符常数的指针   char const*p 等同于const char* p    普通的指针d，进行d&#43;&#43;肯定没问题了
+http://blog.163.com/pei%5Fhua100/blog/static/805697592009550281616/</p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">Sep 2, 2014</span> 1 min read</p>
     <div class="sharing">
@@ -553,9 +562,11 @@
     <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/how-to-convert-openssh-key-to-gnupg/" title="How to convert OpenSSH key to GnuPG" class="entry-link">How to convert OpenSSH key to GnuPG</a></h3>
   </header>
 
-  <p class="entry-summary">First we need to create a certificate (self-signed) for our ssh key:openssl req -new -x509 -key ~/.ssh/id_rsa -out ssh-cert.pem We can now import it in GnuPG
+  <p class="entry-summary">First we need to create a certificate (self-signed) for our ssh key:
+openssl req -new -x509 -key ~/.ssh/id_rsa -out ssh-cert.pem We can now import it in GnuPG
 openssl pkcs12 -export -in ssh-certs.pem -inkey ~/.ssh/id_rsa -out ssh-key.p12 gpgsm --import ssh-key.p12 Notice you cannot import/export DSA ssh keys to/from GnuPG
-The more key conversions, please refer tohttp://www.sysmic.org/dotclear/index.php?post/2010/03/24/Convert-keys-betweens-GnuPG,-OpenSsh-and-OpenSSL</p>
+The more key conversions, please refer to
+http://www.sysmic.org/dotclear/index.php?post/2010/03/24/Convert-keys-betweens-GnuPG,-OpenSsh-and-OpenSSL</p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">Dec 9, 2013</span> 1 min read</p>
     <div class="sharing">
@@ -576,7 +587,11 @@ The more key conversions, please refer tohttp://www.sysmic.org/dotclear/index.ph
     <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/%E5%91%BD%E4%BB%A4%E8%A1%8Cssh%E6%A1%A5%E6%8E%A5/" title="命令行ssh桥接" class="entry-link">命令行ssh桥接</a></h3>
   </header>
 
-  <p class="entry-summary">通过一些ssh的客户端，可以很方便的做ssh forward，也就是通过一台主机上ssh连接到另一台主机，那么命令行可不可以呢？只要在~/.ssh/config中加入如下指令即可host serverB.example.com serverB ProxyCommand ssh -W %h:%p gateway serverB是最终的目的主机，gateway是中间转发的主机，gateway上需要配置无密码登录。或者暴力一点ssh -t usergateway@gateway ssh user1@serverb </p>
+  <p class="entry-summary">通过一些ssh的客户端，可以很方便的做ssh forward，也就是通过一台主机上ssh连接到另一台主机，那么命令行可不可以呢？
+只要在~/.ssh/config中加入如下指令即可
+host serverB.example.com serverB ProxyCommand ssh -W %h:%p gateway serverB是最终的目的主机，gateway是中间转发的主机，gateway上需要配置无密码登录。
+或者暴力一点
+ssh -t usergateway@gateway ssh user1@serverb </p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">May 10, 2013</span> 1 min read</p>
     <div class="sharing">
@@ -597,7 +612,10 @@ The more key conversions, please refer tohttp://www.sysmic.org/dotclear/index.ph
     <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/screen-%E5%92%8C-reptyr-%E8%BF%9C%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%88%A9%E5%99%A8/" title="screen 和 reptyr 远程工作的利器" class="entry-link">screen 和 reptyr 远程工作的利器</a></h3>
   </header>
 
-  <p class="entry-summary">在unix，maxosx或者linux下工作的时候，经常需要长时间运行一个程序，通常会把程序放到后台，然后通过日志来监控。如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。可是如果一开始没有用screen运行，直接放置到后台怎么办呢。reptyr就派上用场了，以下是reptyr的说明
+  <p class="entry-summary">在unix，maxosx或者linux下工作的时候，经常需要长时间运行一个程序，通常会把程序放到后台，然后通过日志来监控。
+如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。
+如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。
+可是如果一开始没有用screen运行，直接放置到后台怎么办呢。reptyr就派上用场了，以下是reptyr的说明
 reparent a orphan background process, means background a process in a terminal and bring it back to foreground to another terminal reptyr - A tool for &#34;re-ptying&#34; programs. ----------------------------------------- reptyr is a utility for taking an existing running program and attaching it to a new terminal. Started a long-running process over ssh, but have to leave and don&#39;t want to interrupt it? Just start a screen, use reptyr to grab it, and then kill the ssh session and head on home.</p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">May 10, 2013</span> 1 min read</p>
