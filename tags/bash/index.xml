@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bash on Stone Site - Jingnan Si</title>
+    <link>https://blog.angsto-tech.com/tags/bash/</link>
+    <description>Recent content in bash on Stone Site - Jingnan Si</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Nov 2019 19:54:00 -0800</lastBuildDate>
+    
+	<atom:link href="https://blog.angsto-tech.com/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to compare version string in a better way from shell command line</title>
+      <link>https://blog.angsto-tech.com/post/how-to-compare-version-string-in-a-better-way-from-command-line/</link>
+      <pubDate>Tue, 05 Nov 2019 19:54:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/how-to-compare-version-string-in-a-better-way-from-command-line/</guid>
+      <description>In shell command, compare version string in a better way</description>
+    </item>
+    
+  </channel>
+</rss>

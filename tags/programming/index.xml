@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on Stone Site - Jingnan Si</title>
+    <link>https://blog.angsto-tech.com/tags/programming/</link>
+    <description>Recent content in programming on Stone Site - Jingnan Si</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Apr 2017 17:34:00 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.angsto-tech.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Draw anti-alias circle at give point with specified radius using OpenGL Core profile</title>
+      <link>https://blog.angsto-tech.com/post/draw-anti-alias-circle-at-give-point-with-specified-radius-using-opengl-core-profile/</link>
+      <pubDate>Tue, 18 Apr 2017 17:34:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/draw-anti-alias-circle-at-give-point-with-specified-radius-using-opengl-core-profile/</guid>
+      <description>In modern opengl (core profile), there are a lot of tutorials on how to draw a circle using fragment shader,
+but most of lack of source code and only show how to draw at (0,0).
+This code piece draw circle at given center point with specified radius.
+pyopengl implementation is at github: Draw anti-alias circle</description>
+    </item>
+    
+    <item>
+      <title>Draw thick lines in opengl core profile</title>
+      <link>https://blog.angsto-tech.com/post/draw-thick-lines-in-opengl-core-profile/</link>
+      <pubDate>Tue, 18 Apr 2017 17:34:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/draw-thick-lines-in-opengl-core-profile/</guid>
+      <description>Modern opengl (core profile), the line width is limited by system.
+In order to draw a free width line smooth, we draw multiple triangles to construct a thick line.
+pyopengl implmentation is at github: Draw thick lines in opengl core profile</description>
+    </item>
+    
+    <item>
+      <title>Calculate div and mod result between 2 uint64_t values without directly using / and % operator</title>
+      <link>https://blog.angsto-tech.com/post/cal-div-mod/</link>
+      <pubDate>Sun, 12 Mar 2017 17:35:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/cal-div-mod/</guid>
+      <description>calculate div and mod result between 2 uint64_t values without directly using / and % operator</description>
+    </item>
+    
+    <item>
+      <title>Simplified Wrapper and Interface Generator</title>
+      <link>https://blog.angsto-tech.com/post/simplified-wrapper-and-interface-generator/</link>
+      <pubDate>Fri, 04 Nov 2016 22:06:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/simplified-wrapper-and-interface-generator/</guid>
+      <description>SWIG is a software development tool that connects programs written in C and C++ with a variety of high-level programming languages. SWIG is used with different types of target languages including common scripting languages such as Javascript, Perl, PHP, Python, Tcl and Ruby. The list of supported languages also includes non-scripting languages such as C#, Common Lisp (CLISP, Allegro CL, CFFI, UFFI), D, Go language, Java including Android, Lua, Modula-3, OCAML, Octave, Scilab and R.</description>
+    </item>
+    
+    <item>
+      <title>Text Redering with OpenGL</title>
+      <link>https://blog.angsto-tech.com/post/text-redering-with-opengl/</link>
+      <pubDate>Fri, 04 Nov 2016 22:06:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/text-redering-with-opengl/</guid>
+      <description>Rendering 2d text with opengl, either using bitmap font or freetype library</description>
+    </item>
+    
+    <item>
+      <title>Declare a global variable as link once only</title>
+      <link>https://blog.angsto-tech.com/post/declare-a-global-variable-as-link-once-only/</link>
+      <pubDate>Fri, 21 Aug 2015 17:39:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/declare-a-global-variable-as-link-once-only/</guid>
+      <description>summary</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; Code Snippet - Print Stack Backtrace Programmatically with Demangled Function Names</title>
+      <link>https://blog.angsto-tech.com/post/c-plus-plus-code-snippet-print-stack-backtrace-programmatically-with-demangled-function-names/</link>
+      <pubDate>Tue, 11 Aug 2015 17:45:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/c-plus-plus-code-snippet-print-stack-backtrace-programmatically-with-demangled-function-names/</guid>
+      <description>Original Post URL:https://panthema.net/2008/0901-stacktrace-demangled/
+// stacktrace.h (c) 2008, Timo Bingmann from http://idlebox.net/ // published under the WTFPL v2.0  #ifndef _STACKTRACE_H_ #define _STACKTRACE_H_  #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;execinfo.h&amp;gt;#include &amp;lt;cxxabi.h&amp;gt; /** Print a demangled stack backtrace of the caller function to FILE* out. */ static inline void print_stacktrace(FILE *out = stderr, unsigned int max_frames = 63) { fprintf(out, &amp;#34;stack trace:\n&amp;#34;); // storage array for stack trace address data  void* addrlist[max_frames+1]; // retrieve current stack addresses  int addrlen = backtrace(addrlist, sizeof(addrlist) / sizeof(void*)); if (addrlen == 0) { fprintf(out, &amp;#34; &amp;lt;empty, possibly corrupt&amp;gt;\n&amp;#34;); return; } // resolve addresses into strings containing &amp;#34;filename(function+address)&amp;#34;,  // this array must be free()-ed  char** symbollist = backtrace_symbols(addrlist, addrlen); // allocate string which will be filled with the demangled function name  size_t funcnamesize = 256; char* funcname = (char*)malloc(funcnamesize); // iterate over the returned symbol lines.</description>
+    </item>
+    
+    <item>
+      <title>How dynamic linking working on iOS8 or newer platform</title>
+      <link>https://blog.angsto-tech.com/post/how-dynamic-linking-working-on-ios8-or-newer-platform/</link>
+      <pubDate>Tue, 04 Aug 2015 22:05:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/how-dynamic-linking-working-on-ios8-or-newer-platform/</guid>
+      <description>The iOS8 or newer platform now supports dynamic library, here is a link details about the dynamic linking.
+http://ddeville.me/2014/04/dynamic-linking/</description>
+    </item>
+    
+    <item>
+      <title>Software Engineering checklist</title>
+      <link>https://blog.angsto-tech.com/post/software-engineering-checklist/</link>
+      <pubDate>Thu, 29 Jan 2015 17:45:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/software-engineering-checklist/</guid>
+      <description>Orginal Post URL:http://bruzer.net/2014/12/13/software-engineering-checklist/
+Science and Engineering are fundamentally different activities. Science produces knowledge and Engineering produces products. Computer Science is a body of knowledge about computers and their use. The Computer Science field is the scientific approach to computation and its applications. A Computer Scientist specializes in the theory of computation and design of computational systems. Software Engineering is the multi-person development of multi-version software programs. Software Engineering is about the application of engineering to the design, development and maintenance of software.</description>
+    </item>
+    
+    <item>
+      <title>How to produce portable executable/dynamic library</title>
+      <link>https://blog.angsto-tech.com/post/how-to-produce-portable-executable-dynamic-library/</link>
+      <pubDate>Sat, 03 Jan 2015 17:46:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/how-to-produce-portable-executable-dynamic-library/</guid>
+      <description>When create executable or dynamic library, sometimes they need to depends on third-party shared library, so how system find the third-party shared library and how can you make sure the system find the right version of library instead of some library in same name?
+Solution could be pack the correct third-party library with your executable or library, but how to let system find the packed library? most platform has search directory list to find dependent libraries, even you put the third-party library in the same directory, the system still could find wrong one.</description>
+    </item>
+    
+    <item>
+      <title>Useful resources when create thunderbird/firefox extension</title>
+      <link>https://blog.angsto-tech.com/post/useful-resources-when-create-thunderbird-firefox-extension/</link>
+      <pubDate>Thu, 01 Jan 2015 17:47:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/useful-resources-when-create-thunderbird-firefox-extension/</guid>
+      <description> jar.mn document http://dxr.mozilla.org/mozilla-central/source/build/docs/jar-manifests.rst https://developer.mozilla.org/en-US/docs/HowMozilla&#39;sbuildsystemworks https://developer.mozilla.org/en-US/docs/UsingDependentLibrariesInExtension%5FComponents https://developer.mozilla.org/en-US/docs/Bundlingmultiplebinary%5Fcomponents https://code.google.com/p/gears/source/browse/trunk/gears/base/firefox/static%5Ffiles/components/stub.js https://developer.mozilla.org/en-US/Add-ons/CreatingCustomFirefoxExtensionswiththeMozillaBuildSystem https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Guide/Cross-threadcallsusing%5Frunnables  </description>
+    </item>
+    
+    <item>
+      <title>Dynamic_cast RTTI and class size</title>
+      <link>https://blog.angsto-tech.com/post/dynamic-cast-rtti-and-class-size/</link>
+      <pubDate>Thu, 25 Dec 2014 17:47:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/dynamic-cast-rtti-and-class-size/</guid>
+      <description>dynamic_cast requires RTTI flag when do compiling, the RTTI will increase object size. and RTTI only generate for polymorphic classes.
+class A { public: std::string m_Data; } although A class is not polymorphic, but the m_Data is a instance of polymorphic class, the sizeof(A) will change when compile with/without RTTI. programmer should be very carefully when link with third-party library, it is more difficult to find out the crash compare to pack problem.</description>
+    </item>
+    
+    <item>
+      <title>What&#39;s the strategy when setup live-update of a product?</title>
+      <link>https://blog.angsto-tech.com/post/what-s-the-strategy-when-setup-live-update-of-a-product/</link>
+      <pubDate>Thu, 11 Dec 2014 17:48:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/what-s-the-strategy-when-setup-live-update-of-a-product/</guid>
+      <description>summary</description>
+    </item>
+    
+    <item>
+      <title>How to create auto increment build numbers using Ant</title>
+      <link>https://blog.angsto-tech.com/post/how-to-create-auto-increment-build-numbers-using-ant/</link>
+      <pubDate>Sat, 01 Nov 2014 18:00:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/how-to-create-auto-increment-build-numbers-using-ant/</guid>
+      <description>To create auto increment build number without third-party component, script or other code, just pure ant tasks. please refer to http://stackoverflow.com/questions/1431315/build-numbers-major-minor-revision</description>
+    </item>
+    
+    <item>
+      <title>Log4j Using EnhancedPatternLayout for database appender</title>
+      <link>https://blog.angsto-tech.com/post/log4j-using-enhancedpatternlayout-for-database-appender/</link>
+      <pubDate>Thu, 30 Oct 2014 18:01:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/log4j-using-enhancedpatternlayout-for-database-appender/</guid>
+      <description>summary</description>
+    </item>
+    
+    <item>
+      <title>In java when using SSL may have error: Invalid session</title>
+      <link>https://blog.angsto-tech.com/post/in-java-when-using-ssl-may-have-error-invalid-session/</link>
+      <pubDate>Wed, 29 Oct 2014 18:02:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/in-java-when-using-ssl-may-have-error-invalid-session/</guid>
+      <description>The error message looks like
+Error occurred during the SSL handshake: invalid SSL session
+It may caused by JVM needs the JCE, download JCE from Oracle and follow instructions in README http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html</description>
+    </item>
+    
+    <item>
+      <title>Use -noverify to avoid PowerMock fail</title>
+      <link>https://blog.angsto-tech.com/post/use-noverify-to-avoid-powermock-fail/</link>
+      <pubDate>Wed, 29 Oct 2014 18:02:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/use-noverify-to-avoid-powermock-fail/</guid>
+      <description>When using PowerMock https://code.google.com/p/powermock/ to do unit test, some times jvm may report bytecode version mismatch and refuse to run, it caused by PowerMock will dynamic change the bytecode.
+Add -noverify option to fix the problem</description>
+    </item>
+    
+    <item>
+      <title>Fast Hex String decode/encode by table look up</title>
+      <link>https://blog.angsto-tech.com/post/fast-hex-string-decode-encode-by-table-look-up/</link>
+      <pubDate>Mon, 09 Dec 2013 18:03:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/fast-hex-string-decode-encode-by-table-look-up/</guid>
+      <description>Decode a hex string by using look up table
+char m_table[&amp;#39;f&amp;#39; + 1][&amp;#39;f&amp;#39; + 1] = {0}; void initDecodeTable() { const char * hexValue = &amp;#34;0123456789abcdefABCDEF&amp;#34;; int len = strlen(hexValue); for(int i=0;i &amp;lt; len;i++) { for(int j=0;j int v; char tmp[2] = { tolower(hexValue[i]), tolower(hexValue[j]) }; sscanf(tmp, &amp;#34;%x&amp;#34;, &amp;amp;v); m_table[hexValue[i]][hexValue[j]] = (v &amp;amp; 0xFF); } } } void decodeHex(const char * pIn, int inLen, char * pOut, int &amp;amp; outLen) { outLen = inLen / 2; for(int i=0; i &amp;lt; outLen;i++) { pOut[i] = m_table[pIn[i * 2]][pIn[i * 2 + 1]]; } if (inLen % 2 !</description>
+    </item>
+    
+  </channel>
+</rss>

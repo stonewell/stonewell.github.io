@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>computer on Stone Site - Jingnan Si</title>
+    <link>https://blog.angsto-tech.com/tags/computer/</link>
+    <description>Recent content in computer on Stone Site - Jingnan Si</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 18 Jul 2020 13:11:00 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.angsto-tech.com/tags/computer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>最新版本未必好，记两个需要降级的问题</title>
+      <link>https://blog.angsto-tech.com/post/not_all_new_version_is_good_downgrade_for_stable/</link>
+      <pubDate>Sat, 18 Jul 2020 13:11:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/not_all_new_version_is_good_downgrade_for_stable/</guid>
+      <description>最新的kernel和软件版本不一定适合</description>
+    </item>
+    
+    <item>
+      <title>Enable .local doman suffix on Linux</title>
+      <link>https://blog.angsto-tech.com/post/enable-dot-local-doman-suffix-on-linux/</link>
+      <pubDate>Fri, 03 Jan 2020 19:05:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/enable-dot-local-doman-suffix-on-linux/</guid>
+      <description>add .local doman suffix</description>
+    </item>
+    
+    <item>
+      <title>Fix mdadm unable to activate array after upgrade kernel</title>
+      <link>https://blog.angsto-tech.com/post/fix-mdadm-unable-to-activate-array-after-upgrade-kernel/</link>
+      <pubDate>Fri, 03 Jan 2020 18:46:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/fix-mdadm-unable-to-activate-array-after-upgrade-kernel/</guid>
+      <description>mdadm soft raid fails after kernel upgrade</description>
+    </item>
+    
+    <item>
+      <title>How to compare version string in a better way from shell command line</title>
+      <link>https://blog.angsto-tech.com/post/how-to-compare-version-string-in-a-better-way-from-command-line/</link>
+      <pubDate>Tue, 05 Nov 2019 19:54:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/how-to-compare-version-string-in-a-better-way-from-command-line/</guid>
+      <description>In shell command, compare version string in a better way</description>
+    </item>
+    
+    <item>
+      <title>Some interesting blog about security needs to be checkout</title>
+      <link>https://blog.angsto-tech.com/post/some-interesting-blog-about-security-needs-to-be-checkout/</link>
+      <pubDate>Fri, 04 Mar 2016 22:05:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/some-interesting-blog-about-security-needs-to-be-checkout/</guid>
+      <description> http://www.darkreading.com/ http://securityweekly.com/ http://www.technewsworld.com/perl/section/tech-security/ http://ddosattackprotection.org/blog/cyber-security-blogs/ https://heimdalsecurity.com/blog/best-internet-security-blogs/ http://www.rasmussen.edu/degrees/technology/blog/top-cyber-security-blogs/ http://www.veracode.com/blog/2012/02/top-20-security-blogs http://www.marblesecurity.com/2014/01/22/top-10-security-blogs/  </description>
+    </item>
+    
+    <item>
+      <title>Build your own render farm</title>
+      <link>https://blog.angsto-tech.com/post/build-your-own-render-farm/</link>
+      <pubDate>Thu, 04 Feb 2016 22:04:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/build-your-own-render-farm/</guid>
+      <description>To Build your own render farmRender Manager: http://cgru.info/homeA blog page talking about how to built your own Render Farm: http://arstechnica.com/information-technology/2014/05/how-to-network-lots-of-dumb-computing-muscle-in-a-fast-efficient-render-farm/1/a maya script for v-ray http://www.creativecrash.com/maya/script/v-ray-tuner-for-maya</description>
+    </item>
+    
+    <item>
+      <title>How (and Why) to Assign the .local Domain to Your Raspberry Pi</title>
+      <link>https://blog.angsto-tech.com/post/how-and-why-assign-local-domain-to-pi/</link>
+      <pubDate>Fri, 11 Dec 2015 17:36:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/how-and-why-assign-local-domain-to-pi/</guid>
+      <description>Original URL:How (and Why) to Assign the .local Domain to Your Raspberry Pi</description>
+    </item>
+    
+    <item>
+      <title>How the wifi adapter or automatically wifi configuration for device works?</title>
+      <link>https://blog.angsto-tech.com/post/how-the-wifi-adapter-or-automatically-wifi-configuration-for-device-works/</link>
+      <pubDate>Wed, 04 Nov 2015 22:05:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/how-the-wifi-adapter-or-automatically-wifi-configuration-for-device-works/</guid>
+      <description>It is very interesting technology. Basically the device to be configured put the wifi device in &amp;ldquo;monitoring&amp;rdquo; mode,and the app will send udp wifi packet with different length, which different length indicate different &amp;ldquo;character&amp;rdquo;.http://depletionregion.blogspot.ch/2013/10/cc3000-smart-config-transmitting-ssid.htmlhttp://electronics.stackexchange.com/questions/61704/how-does-ti-cc3000-wifi-smart-config-work</description>
+    </item>
+    
+    <item>
+      <title>How to protect your cloud storage files with EncFS</title>
+      <link>https://blog.angsto-tech.com/post/how-to-protect-your-cloud-storage-files-with-encfs/</link>
+      <pubDate>Tue, 13 Oct 2015 17:36:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/how-to-protect-your-cloud-storage-files-with-encfs/</guid>
+      <description>Original Post URL:https://www.bestvpn.com/blog/11385/protect-cloud-storage-files-encfs/</description>
+    </item>
+    
+    <item>
+      <title>Virus Bulletin : Dylib hijacking on OS X</title>
+      <link>https://blog.angsto-tech.com/post/osx-injection-hello-world/</link>
+      <pubDate>Tue, 22 Sep 2015 17:38:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/osx-injection-hello-world/</guid>
+      <description>Original Post URL:https://www.virusbtn.com/virusbulletin/archive/2015/03/vb201503-dylib-hijacking</description>
+    </item>
+    
+    <item>
+      <title>Introducing RancherVM: Package and Run Virtual Machines as Docker Containers | Rancher Labs</title>
+      <link>https://blog.angsto-tech.com/post/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers-rancher-labs/</link>
+      <pubDate>Thu, 20 Aug 2015 17:44:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers-rancher-labs/</guid>
+      <description>http://rancher.com/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers/</description>
+    </item>
+    
+    <item>
+      <title>Client Certificate Authentication With Apache</title>
+      <link>https://blog.angsto-tech.com/post/client-certificate-authentication-with-apache/</link>
+      <pubDate>Wed, 28 Jan 2015 17:46:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/client-certificate-authentication-with-apache/</guid>
+      <description>Original Post URL:http://www.impetus.us/~rjmooney/projects/misc/clientcertauth.html</description>
+    </item>
+    
+    <item>
+      <title>重温一下const char *和char * const</title>
+      <link>https://blog.angsto-tech.com/post/%E9%87%8D%E6%B8%A9%E4%B8%80%E4%B8%8Bconst-char-%E5%92%8Cchar-const/</link>
+      <pubDate>Tue, 02 Sep 2014 14:53:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/%E9%87%8D%E6%B8%A9%E4%B8%80%E4%B8%8Bconst-char-%E5%92%8Cchar-const/</guid>
+      <description>今天写代码的时候突然不能肯定const char * d; d++; 是不是对的了，就重温了一下经典的c++定义结论：         char * const p 定义一个指向字符的指针常数，即const指针   const char * p 定义一个指向字符常数的指针   char const*p 等同于const char* p    普通的指针d，进行d++肯定没问题了http://blog.163.com/pei%5Fhua100/blog/static/805697592009550281616/</description>
+    </item>
+    
+    <item>
+      <title>How to convert OpenSSH key to GnuPG</title>
+      <link>https://blog.angsto-tech.com/post/how-to-convert-openssh-key-to-gnupg/</link>
+      <pubDate>Mon, 09 Dec 2013 18:04:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/how-to-convert-openssh-key-to-gnupg/</guid>
+      <description>First we need to create a certificate (self-signed) for our ssh key:openssl req -new -x509 -key ~/.ssh/id_rsa -out ssh-cert.pem We can now import it in GnuPG
+openssl pkcs12 -export -in ssh-certs.pem -inkey ~/.ssh/id_rsa -out ssh-key.p12 gpgsm --import ssh-key.p12 Notice you cannot import/export DSA ssh keys to/from GnuPG
+The more key conversions, please refer tohttp://www.sysmic.org/dotclear/index.php?post/2010/03/24/Convert-keys-betweens-GnuPG,-OpenSsh-and-OpenSSL</description>
+    </item>
+    
+    <item>
+      <title>screen 和 reptyr 远程工作的利器</title>
+      <link>https://blog.angsto-tech.com/post/screen-%E5%92%8C-reptyr-%E8%BF%9C%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%88%A9%E5%99%A8/</link>
+      <pubDate>Fri, 10 May 2013 18:04:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/screen-%E5%92%8C-reptyr-%E8%BF%9C%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%88%A9%E5%99%A8/</guid>
+      <description>在unix，maxosx或者linux下工作的时候，经常需要长时间运行一个程序，通常会把程序放到后台，然后通过日志来监控。如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。可是如果一开始没有用screen运行，直接放置到后台怎么办呢。reptyr就派上用场了，以下是reptyr的说明
+reparent a orphan background process, means background a process in a terminal and bring it back to foreground to another terminal reptyr - A tool for &amp;quot;re-ptying&amp;quot; programs. ----------------------------------------- reptyr is a utility for taking an existing running program and attaching it to a new terminal. Started a long-running process over ssh, but have to leave and don&#39;t want to interrupt it? Just start a screen, use reptyr to grab it, and then kill the ssh session and head on home.</description>
+    </item>
+    
+    <item>
+      <title>命令行ssh桥接</title>
+      <link>https://blog.angsto-tech.com/post/%E5%91%BD%E4%BB%A4%E8%A1%8Cssh%E6%A1%A5%E6%8E%A5/</link>
+      <pubDate>Fri, 10 May 2013 18:04:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/%E5%91%BD%E4%BB%A4%E8%A1%8Cssh%E6%A1%A5%E6%8E%A5/</guid>
+      <description>通过一些ssh的客户端，可以很方便的做ssh forward，也就是通过一台主机上ssh连接到另一台主机，那么命令行可不可以呢？只要在~/.ssh/config中加入如下指令即可host serverB.example.com serverB ProxyCommand ssh -W %h:%p gateway serverB是最终的目的主机，gateway是中间转发的主机，gateway上需要配置无密码登录。或者暴力一点ssh -t usergateway@gateway ssh user1@serverb </description>
+    </item>
+    
+  </channel>
+</rss>

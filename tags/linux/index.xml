@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Stone Site - Jingnan Si</title>
+    <link>https://blog.angsto-tech.com/tags/linux/</link>
+    <description>Recent content in linux on Stone Site - Jingnan Si</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 18 Jul 2020 13:11:00 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.angsto-tech.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>最新版本未必好，记两个需要降级的问题</title>
+      <link>https://blog.angsto-tech.com/post/not_all_new_version_is_good_downgrade_for_stable/</link>
+      <pubDate>Sat, 18 Jul 2020 13:11:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/not_all_new_version_is_good_downgrade_for_stable/</guid>
+      <description>最新的kernel和软件版本不一定适合</description>
+    </item>
+    
+    <item>
+      <title>Enable .local doman suffix on Linux</title>
+      <link>https://blog.angsto-tech.com/post/enable-dot-local-doman-suffix-on-linux/</link>
+      <pubDate>Fri, 03 Jan 2020 19:05:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/enable-dot-local-doman-suffix-on-linux/</guid>
+      <description>add .local doman suffix</description>
+    </item>
+    
+    <item>
+      <title>Fix mdadm unable to activate array after upgrade kernel</title>
+      <link>https://blog.angsto-tech.com/post/fix-mdadm-unable-to-activate-array-after-upgrade-kernel/</link>
+      <pubDate>Fri, 03 Jan 2020 18:46:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/fix-mdadm-unable-to-activate-array-after-upgrade-kernel/</guid>
+      <description>mdadm soft raid fails after kernel upgrade</description>
+    </item>
+    
+    <item>
+      <title>Useful resources when create thunderbird/firefox extension</title>
+      <link>https://blog.angsto-tech.com/post/useful-resources-when-create-thunderbird-firefox-extension/</link>
+      <pubDate>Thu, 01 Jan 2015 17:47:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/useful-resources-when-create-thunderbird-firefox-extension/</guid>
+      <description> jar.mn document http://dxr.mozilla.org/mozilla-central/source/build/docs/jar-manifests.rst https://developer.mozilla.org/en-US/docs/HowMozilla&#39;sbuildsystemworks https://developer.mozilla.org/en-US/docs/UsingDependentLibrariesInExtension%5FComponents https://developer.mozilla.org/en-US/docs/Bundlingmultiplebinary%5Fcomponents https://code.google.com/p/gears/source/browse/trunk/gears/base/firefox/static%5Ffiles/components/stub.js https://developer.mozilla.org/en-US/Add-ons/CreatingCustomFirefoxExtensionswiththeMozillaBuildSystem https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Guide/Cross-threadcallsusing%5Frunnables  </description>
+    </item>
+    
+  </channel>
+</rss>

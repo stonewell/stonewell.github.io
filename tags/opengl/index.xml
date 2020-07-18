@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>opengl on Stone Site - Jingnan Si</title>
+    <link>https://blog.angsto-tech.com/tags/opengl/</link>
+    <description>Recent content in opengl on Stone Site - Jingnan Si</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Apr 2017 17:34:00 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.angsto-tech.com/tags/opengl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Draw anti-alias circle at give point with specified radius using OpenGL Core profile</title>
+      <link>https://blog.angsto-tech.com/post/draw-anti-alias-circle-at-give-point-with-specified-radius-using-opengl-core-profile/</link>
+      <pubDate>Tue, 18 Apr 2017 17:34:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/draw-anti-alias-circle-at-give-point-with-specified-radius-using-opengl-core-profile/</guid>
+      <description>In modern opengl (core profile), there are a lot of tutorials on how to draw a circle using fragment shader,
+but most of lack of source code and only show how to draw at (0,0).
+This code piece draw circle at given center point with specified radius.
+pyopengl implementation is at github: Draw anti-alias circle</description>
+    </item>
+    
+    <item>
+      <title>Draw thick lines in opengl core profile</title>
+      <link>https://blog.angsto-tech.com/post/draw-thick-lines-in-opengl-core-profile/</link>
+      <pubDate>Tue, 18 Apr 2017 17:34:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/draw-thick-lines-in-opengl-core-profile/</guid>
+      <description>Modern opengl (core profile), the line width is limited by system.
+In order to draw a free width line smooth, we draw multiple triangles to construct a thick line.
+pyopengl implmentation is at github: Draw thick lines in opengl core profile</description>
+    </item>
+    
+    <item>
+      <title>Text Redering with OpenGL</title>
+      <link>https://blog.angsto-tech.com/post/text-redering-with-opengl/</link>
+      <pubDate>Fri, 04 Nov 2016 22:06:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/text-redering-with-opengl/</guid>
+      <description>Rendering 2d text with opengl, either using bitmap font or freetype library</description>
+    </item>
+    
+  </channel>
+</rss>

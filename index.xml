@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stone Site - Jingnan Si</title>
+    <link>https://blog.angsto-tech.com/</link>
+    <description>Recent content on Stone Site - Jingnan Si</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 18 Jul 2020 13:11:00 -0700</lastBuildDate>
+    
+	<atom:link href="https://blog.angsto-tech.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>最新版本未必好，记两个需要降级的问题</title>
+      <link>https://blog.angsto-tech.com/post/not_all_new_version_is_good_downgrade_for_stable/</link>
+      <pubDate>Sat, 18 Jul 2020 13:11:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/not_all_new_version_is_good_downgrade_for_stable/</guid>
+      <description>最新的kernel和软件版本不一定适合</description>
+    </item>
+    
+    <item>
+      <title>Enable .local doman suffix on Linux</title>
+      <link>https://blog.angsto-tech.com/post/enable-dot-local-doman-suffix-on-linux/</link>
+      <pubDate>Fri, 03 Jan 2020 19:05:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/enable-dot-local-doman-suffix-on-linux/</guid>
+      <description>add .local doman suffix</description>
+    </item>
+    
+    <item>
+      <title>Fix mdadm unable to activate array after upgrade kernel</title>
+      <link>https://blog.angsto-tech.com/post/fix-mdadm-unable-to-activate-array-after-upgrade-kernel/</link>
+      <pubDate>Fri, 03 Jan 2020 18:46:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/fix-mdadm-unable-to-activate-array-after-upgrade-kernel/</guid>
+      <description>mdadm soft raid fails after kernel upgrade</description>
+    </item>
+    
+    <item>
+      <title>How to compare version string in a better way from shell command line</title>
+      <link>https://blog.angsto-tech.com/post/how-to-compare-version-string-in-a-better-way-from-command-line/</link>
+      <pubDate>Tue, 05 Nov 2019 19:54:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/how-to-compare-version-string-in-a-better-way-from-command-line/</guid>
+      <description>In shell command, compare version string in a better way</description>
+    </item>
+    
+    <item>
+      <title>[ZT][历史随笔]唐诗七绝十大排名</title>
+      <link>https://blog.angsto-tech.com/post/zt-lssb-tsqjsdpm/</link>
+      <pubDate>Mon, 04 Sep 2017 22:07:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/zt-lssb-tsqjsdpm/</guid>
+      <description>summary</description>
+    </item>
+    
+    <item>
+      <title>Draw anti-alias circle at give point with specified radius using OpenGL Core profile</title>
+      <link>https://blog.angsto-tech.com/post/draw-anti-alias-circle-at-give-point-with-specified-radius-using-opengl-core-profile/</link>
+      <pubDate>Tue, 18 Apr 2017 17:34:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/draw-anti-alias-circle-at-give-point-with-specified-radius-using-opengl-core-profile/</guid>
+      <description>In modern opengl (core profile), there are a lot of tutorials on how to draw a circle using fragment shader,
+but most of lack of source code and only show how to draw at (0,0).
+This code piece draw circle at given center point with specified radius.
+pyopengl implementation is at github: Draw anti-alias circle</description>
+    </item>
+    
+    <item>
+      <title>Draw thick lines in opengl core profile</title>
+      <link>https://blog.angsto-tech.com/post/draw-thick-lines-in-opengl-core-profile/</link>
+      <pubDate>Tue, 18 Apr 2017 17:34:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/draw-thick-lines-in-opengl-core-profile/</guid>
+      <description>Modern opengl (core profile), the line width is limited by system.
+In order to draw a free width line smooth, we draw multiple triangles to construct a thick line.
+pyopengl implmentation is at github: Draw thick lines in opengl core profile</description>
+    </item>
+    
+    <item>
+      <title>Calculate div and mod result between 2 uint64_t values without directly using / and % operator</title>
+      <link>https://blog.angsto-tech.com/post/cal-div-mod/</link>
+      <pubDate>Sun, 12 Mar 2017 17:35:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/cal-div-mod/</guid>
+      <description>calculate div and mod result between 2 uint64_t values without directly using / and % operator</description>
+    </item>
+    
+    <item>
+      <title>Simplified Wrapper and Interface Generator</title>
+      <link>https://blog.angsto-tech.com/post/simplified-wrapper-and-interface-generator/</link>
+      <pubDate>Fri, 04 Nov 2016 22:06:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/simplified-wrapper-and-interface-generator/</guid>
+      <description>SWIG is a software development tool that connects programs written in C and C++ with a variety of high-level programming languages. SWIG is used with different types of target languages including common scripting languages such as Javascript, Perl, PHP, Python, Tcl and Ruby. The list of supported languages also includes non-scripting languages such as C#, Common Lisp (CLISP, Allegro CL, CFFI, UFFI), D, Go language, Java including Android, Lua, Modula-3, OCAML, Octave, Scilab and R.</description>
+    </item>
+    
+    <item>
+      <title>Text Redering with OpenGL</title>
+      <link>https://blog.angsto-tech.com/post/text-redering-with-opengl/</link>
+      <pubDate>Fri, 04 Nov 2016 22:06:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/text-redering-with-opengl/</guid>
+      <description>Rendering 2d text with opengl, either using bitmap font or freetype library</description>
+    </item>
+    
+    <item>
+      <title>Some interesting blog about security needs to be checkout</title>
+      <link>https://blog.angsto-tech.com/post/some-interesting-blog-about-security-needs-to-be-checkout/</link>
+      <pubDate>Fri, 04 Mar 2016 22:05:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/some-interesting-blog-about-security-needs-to-be-checkout/</guid>
+      <description> http://www.darkreading.com/ http://securityweekly.com/ http://www.technewsworld.com/perl/section/tech-security/ http://ddosattackprotection.org/blog/cyber-security-blogs/ https://heimdalsecurity.com/blog/best-internet-security-blogs/ http://www.rasmussen.edu/degrees/technology/blog/top-cyber-security-blogs/ http://www.veracode.com/blog/2012/02/top-20-security-blogs http://www.marblesecurity.com/2014/01/22/top-10-security-blogs/  </description>
+    </item>
+    
+    <item>
+      <title>Build your own render farm</title>
+      <link>https://blog.angsto-tech.com/post/build-your-own-render-farm/</link>
+      <pubDate>Thu, 04 Feb 2016 22:04:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/build-your-own-render-farm/</guid>
+      <description>To Build your own render farmRender Manager: http://cgru.info/homeA blog page talking about how to built your own Render Farm: http://arstechnica.com/information-technology/2014/05/how-to-network-lots-of-dumb-computing-muscle-in-a-fast-efficient-render-farm/1/a maya script for v-ray http://www.creativecrash.com/maya/script/v-ray-tuner-for-maya</description>
+    </item>
+    
+    <item>
+      <title>[ZT] 拜服吧，关于唐诗的那些猛人猛事</title>
+      <link>https://blog.angsto-tech.com/post/zt-bfb-gytsdnxmrms/</link>
+      <pubDate>Mon, 04 Jan 2016 22:06:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/zt-bfb-gytsdnxmrms/</guid>
+      <description>关于唐诗的那些猛人猛事</description>
+    </item>
+    
+    <item>
+      <title>How (and Why) to Assign the .local Domain to Your Raspberry Pi</title>
+      <link>https://blog.angsto-tech.com/post/how-and-why-assign-local-domain-to-pi/</link>
+      <pubDate>Fri, 11 Dec 2015 17:36:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/how-and-why-assign-local-domain-to-pi/</guid>
+      <description>Original URL:How (and Why) to Assign the .local Domain to Your Raspberry Pi</description>
+    </item>
+    
+    <item>
+      <title>How the wifi adapter or automatically wifi configuration for device works?</title>
+      <link>https://blog.angsto-tech.com/post/how-the-wifi-adapter-or-automatically-wifi-configuration-for-device-works/</link>
+      <pubDate>Wed, 04 Nov 2015 22:05:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/how-the-wifi-adapter-or-automatically-wifi-configuration-for-device-works/</guid>
+      <description>It is very interesting technology. Basically the device to be configured put the wifi device in &amp;ldquo;monitoring&amp;rdquo; mode,and the app will send udp wifi packet with different length, which different length indicate different &amp;ldquo;character&amp;rdquo;.http://depletionregion.blogspot.ch/2013/10/cc3000-smart-config-transmitting-ssid.htmlhttp://electronics.stackexchange.com/questions/61704/how-does-ti-cc3000-wifi-smart-config-work</description>
+    </item>
+    
+    <item>
+      <title>How to protect your cloud storage files with EncFS</title>
+      <link>https://blog.angsto-tech.com/post/how-to-protect-your-cloud-storage-files-with-encfs/</link>
+      <pubDate>Tue, 13 Oct 2015 17:36:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/how-to-protect-your-cloud-storage-files-with-encfs/</guid>
+      <description>Original Post URL:https://www.bestvpn.com/blog/11385/protect-cloud-storage-files-encfs/</description>
+    </item>
+    
+    <item>
+      <title>Virus Bulletin : Dylib hijacking on OS X</title>
+      <link>https://blog.angsto-tech.com/post/osx-injection-hello-world/</link>
+      <pubDate>Tue, 22 Sep 2015 17:38:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/osx-injection-hello-world/</guid>
+      <description>Original Post URL:https://www.virusbtn.com/virusbulletin/archive/2015/03/vb201503-dylib-hijacking</description>
+    </item>
+    
+    <item>
+      <title>Declare a global variable as link once only</title>
+      <link>https://blog.angsto-tech.com/post/declare-a-global-variable-as-link-once-only/</link>
+      <pubDate>Fri, 21 Aug 2015 17:39:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/declare-a-global-variable-as-link-once-only/</guid>
+      <description>summary</description>
+    </item>
+    
+    <item>
+      <title>Introducing RancherVM: Package and Run Virtual Machines as Docker Containers | Rancher Labs</title>
+      <link>https://blog.angsto-tech.com/post/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers-rancher-labs/</link>
+      <pubDate>Thu, 20 Aug 2015 17:44:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers-rancher-labs/</guid>
+      <description>http://rancher.com/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers/</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; Code Snippet - Print Stack Backtrace Programmatically with Demangled Function Names</title>
+      <link>https://blog.angsto-tech.com/post/c-plus-plus-code-snippet-print-stack-backtrace-programmatically-with-demangled-function-names/</link>
+      <pubDate>Tue, 11 Aug 2015 17:45:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/c-plus-plus-code-snippet-print-stack-backtrace-programmatically-with-demangled-function-names/</guid>
+      <description>Original Post URL:https://panthema.net/2008/0901-stacktrace-demangled/
+// stacktrace.h (c) 2008, Timo Bingmann from http://idlebox.net/ // published under the WTFPL v2.0  #ifndef _STACKTRACE_H_ #define _STACKTRACE_H_  #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;#include &amp;lt;execinfo.h&amp;gt;#include &amp;lt;cxxabi.h&amp;gt; /** Print a demangled stack backtrace of the caller function to FILE* out. */ static inline void print_stacktrace(FILE *out = stderr, unsigned int max_frames = 63) { fprintf(out, &amp;#34;stack trace:\n&amp;#34;); // storage array for stack trace address data  void* addrlist[max_frames+1]; // retrieve current stack addresses  int addrlen = backtrace(addrlist, sizeof(addrlist) / sizeof(void*)); if (addrlen == 0) { fprintf(out, &amp;#34; &amp;lt;empty, possibly corrupt&amp;gt;\n&amp;#34;); return; } // resolve addresses into strings containing &amp;#34;filename(function+address)&amp;#34;,  // this array must be free()-ed  char** symbollist = backtrace_symbols(addrlist, addrlen); // allocate string which will be filled with the demangled function name  size_t funcnamesize = 256; char* funcname = (char*)malloc(funcnamesize); // iterate over the returned symbol lines.</description>
+    </item>
+    
+    <item>
+      <title>How dynamic linking working on iOS8 or newer platform</title>
+      <link>https://blog.angsto-tech.com/post/how-dynamic-linking-working-on-ios8-or-newer-platform/</link>
+      <pubDate>Tue, 04 Aug 2015 22:05:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/how-dynamic-linking-working-on-ios8-or-newer-platform/</guid>
+      <description>The iOS8 or newer platform now supports dynamic library, here is a link details about the dynamic linking.
+http://ddeville.me/2014/04/dynamic-linking/</description>
+    </item>
+    
+    <item>
+      <title>Software Engineering checklist</title>
+      <link>https://blog.angsto-tech.com/post/software-engineering-checklist/</link>
+      <pubDate>Thu, 29 Jan 2015 17:45:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/software-engineering-checklist/</guid>
+      <description>Orginal Post URL:http://bruzer.net/2014/12/13/software-engineering-checklist/
+Science and Engineering are fundamentally different activities. Science produces knowledge and Engineering produces products. Computer Science is a body of knowledge about computers and their use. The Computer Science field is the scientific approach to computation and its applications. A Computer Scientist specializes in the theory of computation and design of computational systems. Software Engineering is the multi-person development of multi-version software programs. Software Engineering is about the application of engineering to the design, development and maintenance of software.</description>
+    </item>
+    
+    <item>
+      <title>Client Certificate Authentication With Apache</title>
+      <link>https://blog.angsto-tech.com/post/client-certificate-authentication-with-apache/</link>
+      <pubDate>Wed, 28 Jan 2015 17:46:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/client-certificate-authentication-with-apache/</guid>
+      <description>Original Post URL:http://www.impetus.us/~rjmooney/projects/misc/clientcertauth.html</description>
+    </item>
+    
+    <item>
+      <title>How to produce portable executable/dynamic library</title>
+      <link>https://blog.angsto-tech.com/post/how-to-produce-portable-executable-dynamic-library/</link>
+      <pubDate>Sat, 03 Jan 2015 17:46:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/how-to-produce-portable-executable-dynamic-library/</guid>
+      <description>When create executable or dynamic library, sometimes they need to depends on third-party shared library, so how system find the third-party shared library and how can you make sure the system find the right version of library instead of some library in same name?
+Solution could be pack the correct third-party library with your executable or library, but how to let system find the packed library? most platform has search directory list to find dependent libraries, even you put the third-party library in the same directory, the system still could find wrong one.</description>
+    </item>
+    
+    <item>
+      <title>Useful resources when create thunderbird/firefox extension</title>
+      <link>https://blog.angsto-tech.com/post/useful-resources-when-create-thunderbird-firefox-extension/</link>
+      <pubDate>Thu, 01 Jan 2015 17:47:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/useful-resources-when-create-thunderbird-firefox-extension/</guid>
+      <description> jar.mn document http://dxr.mozilla.org/mozilla-central/source/build/docs/jar-manifests.rst https://developer.mozilla.org/en-US/docs/HowMozilla&#39;sbuildsystemworks https://developer.mozilla.org/en-US/docs/UsingDependentLibrariesInExtension%5FComponents https://developer.mozilla.org/en-US/docs/Bundlingmultiplebinary%5Fcomponents https://code.google.com/p/gears/source/browse/trunk/gears/base/firefox/static%5Ffiles/components/stub.js https://developer.mozilla.org/en-US/Add-ons/CreatingCustomFirefoxExtensionswiththeMozillaBuildSystem https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Guide/Cross-threadcallsusing%5Frunnables  </description>
+    </item>
+    
+    <item>
+      <title>Dynamic_cast RTTI and class size</title>
+      <link>https://blog.angsto-tech.com/post/dynamic-cast-rtti-and-class-size/</link>
+      <pubDate>Thu, 25 Dec 2014 17:47:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/dynamic-cast-rtti-and-class-size/</guid>
+      <description>dynamic_cast requires RTTI flag when do compiling, the RTTI will increase object size. and RTTI only generate for polymorphic classes.
+class A { public: std::string m_Data; } although A class is not polymorphic, but the m_Data is a instance of polymorphic class, the sizeof(A) will change when compile with/without RTTI. programmer should be very carefully when link with third-party library, it is more difficult to find out the crash compare to pack problem.</description>
+    </item>
+    
+    <item>
+      <title>What&#39;s the strategy when setup live-update of a product?</title>
+      <link>https://blog.angsto-tech.com/post/what-s-the-strategy-when-setup-live-update-of-a-product/</link>
+      <pubDate>Thu, 11 Dec 2014 17:48:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/what-s-the-strategy-when-setup-live-update-of-a-product/</guid>
+      <description>summary</description>
+    </item>
+    
+    <item>
+      <title>How to create auto increment build numbers using Ant</title>
+      <link>https://blog.angsto-tech.com/post/how-to-create-auto-increment-build-numbers-using-ant/</link>
+      <pubDate>Sat, 01 Nov 2014 18:00:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/how-to-create-auto-increment-build-numbers-using-ant/</guid>
+      <description>To create auto increment build number without third-party component, script or other code, just pure ant tasks. please refer to http://stackoverflow.com/questions/1431315/build-numbers-major-minor-revision</description>
+    </item>
+    
+    <item>
+      <title>Log4j Using EnhancedPatternLayout for database appender</title>
+      <link>https://blog.angsto-tech.com/post/log4j-using-enhancedpatternlayout-for-database-appender/</link>
+      <pubDate>Thu, 30 Oct 2014 18:01:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/log4j-using-enhancedpatternlayout-for-database-appender/</guid>
+      <description>summary</description>
+    </item>
+    
+    <item>
+      <title>In java when using SSL may have error: Invalid session</title>
+      <link>https://blog.angsto-tech.com/post/in-java-when-using-ssl-may-have-error-invalid-session/</link>
+      <pubDate>Wed, 29 Oct 2014 18:02:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/in-java-when-using-ssl-may-have-error-invalid-session/</guid>
+      <description>The error message looks like
+Error occurred during the SSL handshake: invalid SSL session
+It may caused by JVM needs the JCE, download JCE from Oracle and follow instructions in README http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html</description>
+    </item>
+    
+    <item>
+      <title>Use -noverify to avoid PowerMock fail</title>
+      <link>https://blog.angsto-tech.com/post/use-noverify-to-avoid-powermock-fail/</link>
+      <pubDate>Wed, 29 Oct 2014 18:02:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/use-noverify-to-avoid-powermock-fail/</guid>
+      <description>When using PowerMock https://code.google.com/p/powermock/ to do unit test, some times jvm may report bytecode version mismatch and refuse to run, it caused by PowerMock will dynamic change the bytecode.
+Add -noverify option to fix the problem</description>
+    </item>
+    
+    <item>
+      <title>重温一下const char *和char * const</title>
+      <link>https://blog.angsto-tech.com/post/%E9%87%8D%E6%B8%A9%E4%B8%80%E4%B8%8Bconst-char-%E5%92%8Cchar-const/</link>
+      <pubDate>Tue, 02 Sep 2014 14:53:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/%E9%87%8D%E6%B8%A9%E4%B8%80%E4%B8%8Bconst-char-%E5%92%8Cchar-const/</guid>
+      <description>今天写代码的时候突然不能肯定const char * d; d++; 是不是对的了，就重温了一下经典的c++定义结论：         char * const p 定义一个指向字符的指针常数，即const指针   const char * p 定义一个指向字符常数的指针   char const*p 等同于const char* p    普通的指针d，进行d++肯定没问题了http://blog.163.com/pei%5Fhua100/blog/static/805697592009550281616/</description>
+    </item>
+    
+    <item>
+      <title>How to convert OpenSSH key to GnuPG</title>
+      <link>https://blog.angsto-tech.com/post/how-to-convert-openssh-key-to-gnupg/</link>
+      <pubDate>Mon, 09 Dec 2013 18:04:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/how-to-convert-openssh-key-to-gnupg/</guid>
+      <description>First we need to create a certificate (self-signed) for our ssh key:openssl req -new -x509 -key ~/.ssh/id_rsa -out ssh-cert.pem We can now import it in GnuPG
+openssl pkcs12 -export -in ssh-certs.pem -inkey ~/.ssh/id_rsa -out ssh-key.p12 gpgsm --import ssh-key.p12 Notice you cannot import/export DSA ssh keys to/from GnuPG
+The more key conversions, please refer tohttp://www.sysmic.org/dotclear/index.php?post/2010/03/24/Convert-keys-betweens-GnuPG,-OpenSsh-and-OpenSSL</description>
+    </item>
+    
+    <item>
+      <title>Fast Hex String decode/encode by table look up</title>
+      <link>https://blog.angsto-tech.com/post/fast-hex-string-decode-encode-by-table-look-up/</link>
+      <pubDate>Mon, 09 Dec 2013 18:03:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/fast-hex-string-decode-encode-by-table-look-up/</guid>
+      <description>Decode a hex string by using look up table
+char m_table[&amp;#39;f&amp;#39; + 1][&amp;#39;f&amp;#39; + 1] = {0}; void initDecodeTable() { const char * hexValue = &amp;#34;0123456789abcdefABCDEF&amp;#34;; int len = strlen(hexValue); for(int i=0;i &amp;lt; len;i++) { for(int j=0;j int v; char tmp[2] = { tolower(hexValue[i]), tolower(hexValue[j]) }; sscanf(tmp, &amp;#34;%x&amp;#34;, &amp;amp;v); m_table[hexValue[i]][hexValue[j]] = (v &amp;amp; 0xFF); } } } void decodeHex(const char * pIn, int inLen, char * pOut, int &amp;amp; outLen) { outLen = inLen / 2; for(int i=0; i &amp;lt; outLen;i++) { pOut[i] = m_table[pIn[i * 2]][pIn[i * 2 + 1]]; } if (inLen % 2 !</description>
+    </item>
+    
+    <item>
+      <title>screen 和 reptyr 远程工作的利器</title>
+      <link>https://blog.angsto-tech.com/post/screen-%E5%92%8C-reptyr-%E8%BF%9C%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%88%A9%E5%99%A8/</link>
+      <pubDate>Fri, 10 May 2013 18:04:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/screen-%E5%92%8C-reptyr-%E8%BF%9C%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%88%A9%E5%99%A8/</guid>
+      <description>在unix，maxosx或者linux下工作的时候，经常需要长时间运行一个程序，通常会把程序放到后台，然后通过日志来监控。如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。可是如果一开始没有用screen运行，直接放置到后台怎么办呢。reptyr就派上用场了，以下是reptyr的说明
+reparent a orphan background process, means background a process in a terminal and bring it back to foreground to another terminal reptyr - A tool for &amp;quot;re-ptying&amp;quot; programs. ----------------------------------------- reptyr is a utility for taking an existing running program and attaching it to a new terminal. Started a long-running process over ssh, but have to leave and don&#39;t want to interrupt it? Just start a screen, use reptyr to grab it, and then kill the ssh session and head on home.</description>
+    </item>
+    
+    <item>
+      <title>命令行ssh桥接</title>
+      <link>https://blog.angsto-tech.com/post/%E5%91%BD%E4%BB%A4%E8%A1%8Cssh%E6%A1%A5%E6%8E%A5/</link>
+      <pubDate>Fri, 10 May 2013 18:04:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/%E5%91%BD%E4%BB%A4%E8%A1%8Cssh%E6%A1%A5%E6%8E%A5/</guid>
+      <description>通过一些ssh的客户端，可以很方便的做ssh forward，也就是通过一台主机上ssh连接到另一台主机，那么命令行可不可以呢？只要在~/.ssh/config中加入如下指令即可host serverB.example.com serverB ProxyCommand ssh -W %h:%p gateway serverB是最终的目的主机，gateway是中间转发的主机，gateway上需要配置无密码登录。或者暴力一点ssh -t usergateway@gateway ssh user1@serverb </description>
+    </item>
+    
+  </channel>
+</rss>
