@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.72.0" />
+<meta name="generator" content="Hugo 0.73.0" />
 
 
 <link rel="canonical" href="https://blog.angsto-tech.com/">
@@ -253,6 +253,28 @@
   <section class="main entry-list">
     
     
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/c-plus-plus-code-snippet-print-stack-backtrace-programmatically-with-demangled-function-names/" title="C&#43;&#43; Code Snippet - Print Stack Backtrace Programmatically with Demangled Function Names" class="entry-link">C&#43;&#43; Code Snippet - Print Stack Backtrace Programmatically with Demangled Function Names</a></h3>
+  </header>
+
+  <p class="entry-summary">Original Post URL:https://panthema.net/2008/0901-stacktrace-demangled/
+// stacktrace.h (c) 2008, Timo Bingmann from http://idlebox.net/ // published under the WTFPL v2.0  #ifndef _STACKTRACE_H_ #define _STACKTRACE_H_  #include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;execinfo.h&gt;#include &lt;cxxabi.h&gt; /** Print a demangled stack backtrace of the caller function to FILE* out. */ static inline void print_stacktrace(FILE *out = stderr, unsigned int max_frames = 63) { fprintf(out, &#34;stack trace:\n&#34;); // storage array for stack trace address data  void* addrlist[max_frames&#43;1]; // retrieve current stack addresses  int addrlen = backtrace(addrlist, sizeof(addrlist) / sizeof(void*)); if (addrlen == 0) { fprintf(out, &#34; &lt;empty, possibly corrupt&gt;\n&#34;); return; } // resolve addresses into strings containing &#34;filename(function&#43;address)&#34;,  // this array must be free()-ed  char** symbollist = backtrace_symbols(addrlist, addrlen); // allocate string which will be filled with the demangled function name  size_t funcnamesize = 256; char* funcname = (char*)malloc(funcnamesize); // iterate over the returned symbol lines.</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Aug 11, 2015</span> 2 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fc-plus-plus-code-snippet-print-stack-backtrace-programmatically-with-demangled-function-names%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=C%2b%2b%20Code%20Snippet%20-%20Print%20Stack%20Backtrace%20Programmatically%20with%20Demangled%20Function%20Names&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fc-plus-plus-code-snippet-print-stack-backtrace-programmatically-with-demangled-function-names%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
       
         <article class="entry-single">
   
@@ -495,7 +517,7 @@ It may caused by JVM needs the JCE, download JCE from Oracle and follow instruct
         <article class="entry-single">
   
   <header class="entry-header">
-    <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/%E9%87%8D%E6%B8%A9%E4%B8%80%E4%B8%8Bconst-char-%E5%92%8Cchar-const/" title="重温一下const char *和char * const" class="entry-link">重温一下const char *和char * const</a></h3>
+    <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/revisit-const-char-and-char-const/" title="重温一下const char *和char * const" class="entry-link">重温一下const char *和char * const</a></h3>
   </header>
 
   <p class="entry-summary">今天写代码的时候突然不能肯定const char * d; d&#43;&#43;; 是不是对的了，就重温了一下经典的c&#43;&#43;定义
@@ -505,10 +527,10 @@ http://blog.163.com/pei%5Fhua100/blog/static/805697592009550281616/</p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">Sep 2, 2014</span> 1 min read</p>
     <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2f%25E9%2587%258D%25E6%25B8%25A9%25E4%25B8%2580%25E4%25B8%258Bconst-char-%25E5%2592%258Cchar-const%2f" title="Share on Facebook">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2frevisit-const-char-and-char-const%2f" title="Share on Facebook">
         <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
       </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e9%87%8d%e6%b8%a9%e4%b8%80%e4%b8%8bconst%20char%20%2a%e5%92%8cchar%20%2a%20const&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2f%25E9%2587%258D%25E6%25B8%25A9%25E4%25B8%2580%25E4%25B8%258Bconst-char-%25E5%2592%258Cchar-const%2f" title="Share on Twitter">
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e9%87%8d%e6%b8%a9%e4%b8%80%e4%b8%8bconst%20char%20%2a%e5%92%8cchar%20%2a%20const&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2frevisit-const-char-and-char-const%2f" title="Share on Twitter">
         <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
       </a>
     </div>
@@ -566,7 +588,7 @@ char m_table[&#39;f&#39; &#43; 1][&#39;f&#39; &#43; 1] = {0}; void initDecodeTab
         <article class="entry-single">
   
   <header class="entry-header">
-    <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/%E5%91%BD%E4%BB%A4%E8%A1%8Cssh%E6%A1%A5%E6%8E%A5/" title="命令行ssh桥接" class="entry-link">命令行ssh桥接</a></h3>
+    <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/ssh-bridge-from-cmdline/" title="命令行ssh桥接" class="entry-link">命令行ssh桥接</a></h3>
   </header>
 
   <p class="entry-summary">通过一些ssh的客户端，可以很方便的做ssh forward，也就是通过一台主机上ssh连接到另一台主机，那么命令行可不可以呢？
@@ -577,10 +599,10 @@ ssh -t usergateway@gateway ssh user1@serverb </p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">May 10, 2013</span> 1 min read</p>
     <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2f%25E5%2591%25BD%25E4%25BB%25A4%25E8%25A1%258Cssh%25E6%25A1%25A5%25E6%258E%25A5%2f" title="Share on Facebook">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fssh-bridge-from-cmdline%2f" title="Share on Facebook">
         <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
       </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e5%91%bd%e4%bb%a4%e8%a1%8cssh%e6%a1%a5%e6%8e%a5&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2f%25E5%2591%25BD%25E4%25BB%25A4%25E8%25A1%258Cssh%25E6%25A1%25A5%25E6%258E%25A5%2f" title="Share on Twitter">
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e5%91%bd%e4%bb%a4%e8%a1%8cssh%e6%a1%a5%e6%8e%a5&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fssh-bridge-from-cmdline%2f" title="Share on Twitter">
         <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
       </a>
     </div>
@@ -591,7 +613,7 @@ ssh -t usergateway@gateway ssh user1@serverb </p>
         <article class="entry-single">
   
   <header class="entry-header">
-    <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/screen-%E5%92%8C-reptyr-%E8%BF%9C%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%88%A9%E5%99%A8/" title="screen 和 reptyr 远程工作的利器" class="entry-link">screen 和 reptyr 远程工作的利器</a></h3>
+    <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/screen-reptyr-remote-work-helper/" title="screen 和 reptyr 远程工作的利器" class="entry-link">screen 和 reptyr 远程工作的利器</a></h3>
   </header>
 
   <p class="entry-summary">在unix，maxosx或者linux下工作的时候，经常需要长时间运行一个程序，通常会把程序放到后台，然后通过日志来监控。
@@ -602,10 +624,10 @@ reparent a orphan background process, means background a process in a terminal a
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">May 10, 2013</span> 1 min read</p>
     <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fscreen-%25E5%2592%258C-reptyr-%25E8%25BF%259C%25E7%25A8%258B%25E5%25B7%25A5%25E4%25BD%259C%25E7%259A%2584%25E5%2588%25A9%25E5%2599%25A8%2f" title="Share on Facebook">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fscreen-reptyr-remote-work-helper%2f" title="Share on Facebook">
         <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
       </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=screen%20%e5%92%8c%20reptyr%20%e8%bf%9c%e7%a8%8b%e5%b7%a5%e4%bd%9c%e7%9a%84%e5%88%a9%e5%99%a8&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fscreen-%25E5%2592%258C-reptyr-%25E8%25BF%259C%25E7%25A8%258B%25E5%25B7%25A5%25E4%25BD%259C%25E7%259A%2584%25E5%2588%25A9%25E5%2599%25A8%2f" title="Share on Twitter">
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=screen%20%e5%92%8c%20reptyr%20%e8%bf%9c%e7%a8%8b%e5%b7%a5%e4%bd%9c%e7%9a%84%e5%88%a9%e5%99%a8&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fscreen-reptyr-remote-work-helper%2f" title="Share on Twitter">
         <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
       </a>
     </div>

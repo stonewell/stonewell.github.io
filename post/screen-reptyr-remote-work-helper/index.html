@@ -10,7 +10,7 @@
     
 
     
-    <title>重温一下const char *和char * const</title>
+    <title>screen 和 reptyr 远程工作的利器</title>
 
     
     
@@ -20,30 +20,32 @@
   
   
   <meta name="author" content="[Jingnan Si]" />
-  <meta name="description" content="今天写代码的时候突然不能肯定const char * d; d&#43;&#43;; 是不是对的了，就重温了一下经典的c&#43;&#43;定义
-结论：
-         char * const p 定义一个指向字符的指针常数，即const指针   const char * p 定义一个指向字符常数的指针   char const*p 等同于const char* p    普通的指针d，进行d&#43;&#43;肯定没问题了
-http://blog.163.com/pei%5Fhua100/blog/static/805697592009550281616/">
+  <meta name="description" content="在unix，maxosx或者linux下工作的时候，经常需要长时间运行一个程序，通常会把程序放到后台，然后通过日志来监控。
+如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。
+如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。
+可是如果一开始没有用screen运行，直接放置到后台怎么办呢。reptyr就派上用场了，以下是reptyr的说明
+reparent a orphan background process, means background a process in a terminal and bring it back to foreground to another terminal reptyr - A tool for &amp;quot;re-ptying&amp;quot; programs. ----------------------------------------- reptyr is a utility for taking an existing running program and attaching it to a new terminal. Started a long-running process over ssh, but have to leave and don&#39;t want to interrupt it? Just start a screen, use reptyr to grab it, and then kill the ssh session and head on home.">
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@gohugoio" />
-    <meta name="twitter:title" content="重温一下const char *和char * const" />
-    <meta name="twitter:description" content="今天写代码的时候突然不能肯定const char * d; d&#43;&#43;; 是不是对的了，就重温了一下经典的c&#43;&#43;定义
-结论：
-         char * const p 定义一个指向字符的指针常数，即const指针   const char * p 定义一个指向字符常数的指针   char const*p 等同于const char* p    普通的指针d，进行d&#43;&#43;肯定没问题了
-http://blog.163.com/pei%5Fhua100/blog/static/805697592009550281616/" />
+    <meta name="twitter:title" content="screen 和 reptyr 远程工作的利器" />
+    <meta name="twitter:description" content="在unix，maxosx或者linux下工作的时候，经常需要长时间运行一个程序，通常会把程序放到后台，然后通过日志来监控。
+如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。
+如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。
+可是如果一开始没有用screen运行，直接放置到后台怎么办呢。reptyr就派上用场了，以下是reptyr的说明
+reparent a orphan background process, means background a process in a terminal and bring it back to foreground to another terminal reptyr - A tool for &amp;quot;re-ptying&amp;quot; programs. ----------------------------------------- reptyr is a utility for taking an existing running program and attaching it to a new terminal. Started a long-running process over ssh, but have to leave and don&#39;t want to interrupt it? Just start a screen, use reptyr to grab it, and then kill the ssh session and head on home." />
     <meta name="twitter:image" content="https://blog.angsto-tech.com/img/avatar.jpg" />
   
 
 
 
 
-<meta name="generator" content="Hugo 0.72.0" />
+<meta name="generator" content="Hugo 0.73.0" />
 
 
-<link rel="canonical" href="https://blog.angsto-tech.com/post/%E9%87%8D%E6%B8%A9%E4%B8%80%E4%B8%8Bconst-char-%E5%92%8Cchar-const/">
+<link rel="canonical" href="https://blog.angsto-tech.com/post/screen-reptyr-remote-work-helper/">
 <link rel="alternative" href="/index.xml" title="Stone Site - Jingnan Si" type="application/atom+xml">
 
 
@@ -260,38 +262,44 @@ http://blog.163.com/pei%5Fhua100/blog/static/805697592009550281616/" />
     
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">重温一下const char *和char * const</h1>
-      <p class="entry-meta"><span class="entry-time">Sep 2, 2014</span> 1 min read</p>
+      <h1 class="post-title">screen 和 reptyr 远程工作的利器</h1>
+      <p class="entry-meta"><span class="entry-time">May 10, 2013</span> 1 min read</p>
     </header>
     
 
-    <article class="post-content"><p>今天写代码的时候突然不能肯定const char * d; d++; 是不是对的了，就重温了一下经典的c++定义<br />
-结论：<br /></p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>char * const p</td>
-<td>定义一个指向字符的指针常数，即const指针</td>
-</tr>
-<tr>
-<td>const char * p</td>
-<td>定义一个指向字符常数的指针</td>
-</tr>
-<tr>
-<td>char const*p</td>
-<td>等同于const char* p</td>
-</tr>
-</tbody>
-</table>
-<p>普通的指针d，进行d++肯定没问题了<br />
-<a href="http://blog.163.com/pei%5Fhua100/blog/static/805697592009550281616/">http://blog.163.com/pei%5Fhua100/blog/static/805697592009550281616/</a></p>
-</article>
+    <article class="post-content"><p>在unix，maxosx或者linux下工作的时候，经常需要长时间运行一个程序，通常会把程序放到后台，然后通过日志来监控。<br />
+如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。<br />
+如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。<br />
+可是如果一开始没有用screen运行，直接放置到后台怎么办呢。reptyr就派上用场了，以下是reptyr的说明</p>
+<pre><code class="language-nil" data-lang="nil">reparent a orphan background process, means background a process in a terminal and bring it back to foreground to another terminal
+reptyr - A tool for &quot;re-ptying&quot; programs.
+-----------------------------------------
+
+reptyr is a utility for taking an existing running program and
+attaching it to a new terminal. Started a long-running process over
+ssh, but have to leave and don't want to interrupt it? Just start a
+screen, use reptyr to grab it, and then kill the ssh session and head
+on home.
+
+USAGE
+-----
+
+  reptyr PID
+
+&quot;reptyr PID&quot; will grab the process with id PID and attach it to your
+current terminal.
+
+After attaching, the process will take input from and write output to
+the new terminal, including ^C and ^Z. (Unfortunately, if you
+background it, you will still have to run &quot;bg&quot; or &quot;fg&quot; in the old
+terminal. This is likely impossible to fix in a reasonable way without
+patching your shell.)
+
+A few blog posts by its author:
+
+    reptyr: Attach a running process to a new terminal
+    reptyr: Changing a process’s controlling terminal
+</code></pre></article>
     <footer class="post-footer">
       
       <ul class="post-tags">
@@ -301,10 +309,10 @@ http://blog.163.com/pei%5Fhua100/blog/static/805697592009550281616/" />
       </ul>
       
       <div class="sharing">
-        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2f%25E9%2587%258D%25E6%25B8%25A9%25E4%25B8%2580%25E4%25B8%258Bconst-char-%25E5%2592%258Cchar-const%2f" title="Share on Facebook">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fscreen-reptyr-remote-work-helper%2f" title="Share on Facebook">
           <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
         </a>
-        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e9%87%8d%e6%b8%a9%e4%b8%80%e4%b8%8bconst%20char%20%2a%e5%92%8cchar%20%2a%20const&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2f%25E9%2587%258D%25E6%25B8%25A9%25E4%25B8%2580%25E4%25B8%258Bconst-char-%25E5%2592%258Cchar-const%2f" title="Share on Twitter">
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=screen%20%e5%92%8c%20reptyr%20%e8%bf%9c%e7%a8%8b%e5%b7%a5%e4%bd%9c%e7%9a%84%e5%88%a9%e5%99%a8&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fscreen-reptyr-remote-work-helper%2f" title="Share on Twitter">
           <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
         </a>
       </div>

@@ -50,7 +50,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.72.0" />
+<meta name="generator" content="Hugo 0.73.0" />
 
 
 <link rel="canonical" href="https://blog.angsto-tech.com/post/">
@@ -285,6 +285,27 @@
     </header>
     
     
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/function-static-variable-cause-crash/" title="Function static变量引发的血案" class="entry-link">Function static变量引发的血案</a></h3>
+  </header>
+
+  <p class="entry-summary">函数静态变量引发的奇怪crash</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Jul 25, 2020</span> 1 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2ffunction-static-variable-cause-crash%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Function%20static%e5%8f%98%e9%87%8f%e5%bc%95%e5%8f%91%e7%9a%84%e8%a1%80%e6%a1%88&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2ffunction-static-variable-cause-crash%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
       
         <article class="entry-single">
   
@@ -690,28 +711,6 @@ http://electronics.stackexchange.com/questions/61704/how-does-ti-cc3000-wifi-sma
         <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
       </a>
       <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Introducing%20RancherVM%3a%20Package%20and%20Run%20Virtual%20Machines%20as%20Docker%20Containers%20%7c%20Rancher%20Labs&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fintroducing-ranchervm-package-and-run-virtual-machines-as-docker-containers-rancher-labs%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/c-plus-plus-code-snippet-print-stack-backtrace-programmatically-with-demangled-function-names/" title="C&#43;&#43; Code Snippet - Print Stack Backtrace Programmatically with Demangled Function Names" class="entry-link">C&#43;&#43; Code Snippet - Print Stack Backtrace Programmatically with Demangled Function Names</a></h3>
-  </header>
-
-  <p class="entry-summary">Original Post URL:https://panthema.net/2008/0901-stacktrace-demangled/
-// stacktrace.h (c) 2008, Timo Bingmann from http://idlebox.net/ // published under the WTFPL v2.0  #ifndef _STACKTRACE_H_ #define _STACKTRACE_H_  #include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;execinfo.h&gt;#include &lt;cxxabi.h&gt; /** Print a demangled stack backtrace of the caller function to FILE* out. */ static inline void print_stacktrace(FILE *out = stderr, unsigned int max_frames = 63) { fprintf(out, &#34;stack trace:\n&#34;); // storage array for stack trace address data  void* addrlist[max_frames&#43;1]; // retrieve current stack addresses  int addrlen = backtrace(addrlist, sizeof(addrlist) / sizeof(void*)); if (addrlen == 0) { fprintf(out, &#34; &lt;empty, possibly corrupt&gt;\n&#34;); return; } // resolve addresses into strings containing &#34;filename(function&#43;address)&#34;,  // this array must be free()-ed  char** symbollist = backtrace_symbols(addrlist, addrlen); // allocate string which will be filled with the demangled function name  size_t funcnamesize = 256; char* funcname = (char*)malloc(funcnamesize); // iterate over the returned symbol lines.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Aug 11, 2015</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fc-plus-plus-code-snippet-print-stack-backtrace-programmatically-with-demangled-function-names%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=C%2b%2b%20Code%20Snippet%20-%20Print%20Stack%20Backtrace%20Programmatically%20with%20Demangled%20Function%20Names&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fc-plus-plus-code-snippet-print-stack-backtrace-programmatically-with-demangled-function-names%2f" title="Share on Twitter">
         <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
       </a>
     </div>

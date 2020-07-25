@@ -127,10 +127,10 @@ http://electronics.stackexchange.com/questions/61704/how-does-ti-cc3000-wifi-sma
     
     <item>
       <title>重温一下const char *和char * const</title>
-      <link>https://blog.angsto-tech.com/post/%E9%87%8D%E6%B8%A9%E4%B8%80%E4%B8%8Bconst-char-%E5%92%8Cchar-const/</link>
+      <link>https://blog.angsto-tech.com/post/revisit-const-char-and-char-const/</link>
       <pubDate>Tue, 02 Sep 2014 14:53:00 -0700</pubDate>
       
-      <guid>https://blog.angsto-tech.com/post/%E9%87%8D%E6%B8%A9%E4%B8%80%E4%B8%8Bconst-char-%E5%92%8Cchar-const/</guid>
+      <guid>https://blog.angsto-tech.com/post/revisit-const-char-and-char-const/</guid>
       <description>今天写代码的时候突然不能肯定const char * d; d++; 是不是对的了，就重温了一下经典的c++定义
 结论：
          char * const p 定义一个指向字符的指针常数，即const指针   const char * p 定义一个指向字符常数的指针   char const*p 等同于const char* p    普通的指针d，进行d++肯定没问题了
@@ -152,10 +152,10 @@ http://www.sysmic.org/dotclear/index.php?post/2010/03/24/Convert-keys-betweens-G
     
     <item>
       <title>screen 和 reptyr 远程工作的利器</title>
-      <link>https://blog.angsto-tech.com/post/screen-%E5%92%8C-reptyr-%E8%BF%9C%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%88%A9%E5%99%A8/</link>
+      <link>https://blog.angsto-tech.com/post/screen-reptyr-remote-work-helper/</link>
       <pubDate>Fri, 10 May 2013 18:04:00 -0700</pubDate>
       
-      <guid>https://blog.angsto-tech.com/post/screen-%E5%92%8C-reptyr-%E8%BF%9C%E7%A8%8B%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%88%A9%E5%99%A8/</guid>
+      <guid>https://blog.angsto-tech.com/post/screen-reptyr-remote-work-helper/</guid>
       <description>在unix，maxosx或者linux下工作的时候，经常需要长时间运行一个程序，通常会把程序放到后台，然后通过日志来监控。
 如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。
 如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。
@@ -165,10 +165,10 @@ reparent a orphan background process, means background a process in a terminal a
     
     <item>
       <title>命令行ssh桥接</title>
-      <link>https://blog.angsto-tech.com/post/%E5%91%BD%E4%BB%A4%E8%A1%8Cssh%E6%A1%A5%E6%8E%A5/</link>
+      <link>https://blog.angsto-tech.com/post/ssh-bridge-from-cmdline/</link>
       <pubDate>Fri, 10 May 2013 18:04:00 -0700</pubDate>
       
-      <guid>https://blog.angsto-tech.com/post/%E5%91%BD%E4%BB%A4%E8%A1%8Cssh%E6%A1%A5%E6%8E%A5/</guid>
+      <guid>https://blog.angsto-tech.com/post/ssh-bridge-from-cmdline/</guid>
       <description>通过一些ssh的客户端，可以很方便的做ssh forward，也就是通过一台主机上ssh连接到另一台主机，那么命令行可不可以呢？
 只要在~/.ssh/config中加入如下指令即可
 host serverB.example.com serverB ProxyCommand ssh -W %h:%p gateway serverB是最终的目的主机，gateway是中间转发的主机，gateway上需要配置无密码登录。

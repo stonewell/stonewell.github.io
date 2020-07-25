@@ -10,28 +10,32 @@
     
 
     
-    <title>
-  Tag → kvm
-  
-   | Stone&#39;s Blog (Jingnan Si)
-</title>
+    <title>重温一下const char *和char * const</title>
 
     
     
 
 
 
+  
+  
+  <meta name="author" content="[Jingnan Si]" />
+  <meta name="description" content="今天写代码的时候突然不能肯定const char * d; d&#43;&#43;; 是不是对的了，就重温了一下经典的c&#43;&#43;定义
+结论：
+         char * const p 定义一个指向字符的指针常数，即const指针   const char * p 定义一个指向字符常数的指针   char const*p 等同于const char* p    普通的指针d，进行d&#43;&#43;肯定没问题了
+http://blog.163.com/pei%5Fhua100/blog/static/805697592009550281616/">
 
   
-  <meta name="author" content="Jingnan Si" />
-  <meta name="description" content="Programming, Graphics Rendering and Life" />
-
   
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@gohugoio" />
-  <meta name="twitter:title" content="Stone&#39;s Blog (Jingnan Si)" />
-  <meta name="twitter:description" content="Programming, Graphics Rendering and Life" />
-  <meta name="twitter:image" content="https://blog.angsto-tech.com/img/avatar.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@gohugoio" />
+    <meta name="twitter:title" content="重温一下const char *和char * const" />
+    <meta name="twitter:description" content="今天写代码的时候突然不能肯定const char * d; d&#43;&#43;; 是不是对的了，就重温了一下经典的c&#43;&#43;定义
+结论：
+         char * const p 定义一个指向字符的指针常数，即const指针   const char * p 定义一个指向字符常数的指针   char const*p 等同于const char* p    普通的指针d，进行d&#43;&#43;肯定没问题了
+http://blog.163.com/pei%5Fhua100/blog/static/805697592009550281616/" />
+    <meta name="twitter:image" content="https://blog.angsto-tech.com/img/avatar.jpg" />
+  
 
 
 
@@ -39,7 +43,7 @@
 <meta name="generator" content="Hugo 0.73.0" />
 
 
-<link rel="canonical" href="https://blog.angsto-tech.com/tags/kvm/">
+<link rel="canonical" href="https://blog.angsto-tech.com/post/revisit-const-char-and-char-const/">
 <link rel="alternative" href="/index.xml" title="Stone Site - Jingnan Si" type="application/atom+xml">
 
 
@@ -254,47 +258,57 @@
 </amp-sidebar>
 
     
-  <section class="main entry-list">
-    <header class="list-header">
-      
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">重温一下const char *和char * const</h1>
+      <p class="entry-meta"><span class="entry-time">Sep 2, 2014</span> 1 min read</p>
     </header>
     
-    
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/not-all-new-version-is-good-downgrade-for-stable/" title="最新版本未必好，记两个需要降级的问题" class="entry-link">最新版本未必好，记两个需要降级的问题</a></h3>
-  </header>
 
-  <p class="entry-summary">最新的kernel和软件版本不一定适合</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Jul 18, 2020</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fnot-all-new-version-is-good-downgrade-for-stable%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e6%9c%80%e6%96%b0%e7%89%88%e6%9c%ac%e6%9c%aa%e5%bf%85%e5%a5%bd%ef%bc%8c%e8%ae%b0%e4%b8%a4%e4%b8%aa%e9%9c%80%e8%a6%81%e9%99%8d%e7%ba%a7%e7%9a%84%e9%97%ae%e9%a2%98&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fnot-all-new-version-is-good-downgrade-for-stable%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
+    <article class="post-content"><p>今天写代码的时候突然不能肯定const char * d; d++; 是不是对的了，就重温了一下经典的c++定义<br />
+结论：<br /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>char * const p</td>
+<td>定义一个指向字符的指针常数，即const指针</td>
+</tr>
+<tr>
+<td>const char * p</td>
+<td>定义一个指向字符常数的指针</td>
+</tr>
+<tr>
+<td>char const*p</td>
+<td>等同于const char* p</td>
+</tr>
+</tbody>
+</table>
+<p>普通的指针d，进行d++肯定没问题了<br />
+<a href="http://blog.163.com/pei%5Fhua100/blog/static/805697592009550281616/">http://blog.163.com/pei%5Fhua100/blog/static/805697592009550281616/</a></p>
 </article>
-
+    <footer class="post-footer">
       
-    
-    
+      <ul class="post-tags">
+        
+          <li class="post-tag"><a href="/tags/computer"><span class="tag">Computer</span></a></li>
+        
+      </ul>
+      
+      <div class="sharing">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2frevisit-const-char-and-char-const%2f" title="Share on Facebook">
+          <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+        </a>
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e9%87%8d%e6%b8%a9%e4%b8%80%e4%b8%8bconst%20char%20%2a%e5%92%8cchar%20%2a%20const&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2frevisit-const-char-and-char-const%2f" title="Share on Twitter">
+          <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+        </a>
+      </div>
+    </footer>
   </section>
 
     <footer class="footer">
