@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Stone Site - Jingnan Si</title>
+    <title>Tags on Jingnan Si&#39;s Blog</title>
     <link>https://blog.angsto-tech.com/tags/</link>
-    <description>Recent content in Tags on Stone Site - Jingnan Si</description>
+    <description>Recent content in Tags on Jingnan Si&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Jul 2020 12:52:00 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2020 14:40:00 -0700</lastBuildDate>
     
 	<atom:link href="https://blog.angsto-tech.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>life</title>
+      <link>https://blog.angsto-tech.com/tags/life/</link>
+      <pubDate>Tue, 04 Aug 2020 14:40:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/tags/life/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>programming</title>
@@ -89,15 +98,6 @@
       <pubDate>Tue, 05 Nov 2019 19:54:00 -0800</pubDate>
       
       <guid>https://blog.angsto-tech.com/tags/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>life</title>
-      <link>https://blog.angsto-tech.com/tags/life/</link>
-      <pubDate>Mon, 04 Sep 2017 22:07:00 -0700</pubDate>
-      
-      <guid>https://blog.angsto-tech.com/tags/life/</guid>
       <description></description>
     </item>
     

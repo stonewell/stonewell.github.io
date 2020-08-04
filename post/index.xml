@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Stone Site - Jingnan Si</title>
+    <title>Posts on Jingnan Si&#39;s Blog</title>
     <link>https://blog.angsto-tech.com/post/</link>
-    <description>Recent content in Posts on Stone Site - Jingnan Si</description>
+    <description>Recent content in Posts on Jingnan Si&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Jul 2020 12:52:00 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2020 14:40:00 -0700</lastBuildDate>
     
 	<atom:link href="https://blog.angsto-tech.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[ZT] 中年男人的掩耳盗铃</title>
+      <link>https://blog.angsto-tech.com/post/zt-zhongniannanren-yanerdaoling/</link>
+      <pubDate>Tue, 04 Aug 2020 14:40:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/zt-zhongniannanren-yanerdaoling/</guid>
+      <description>中年男人的掩耳盗铃</description>
+    </item>
     
     <item>
       <title>(续)Function static变量引发的血案</title>
