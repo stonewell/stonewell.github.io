@@ -36,7 +36,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.73.0" />
+<meta name="generator" content="Hugo 0.79.0" />
 
 
 <link rel="canonical" href="https://blog.angsto-tech.com/post/not-all-new-version-is-good-downgrade-for-stable/">
@@ -265,7 +265,7 @@
 发现了专门用于kernel core dump的方法<a href="https://access.redhat.com/documentation/en-us/red%5Fhat%5Fenterprise%5Flinux/7/html/kernel%5Fadministration%5Fguide/kernel%5Fcrash%5Fdump%5Fguide">Redhat Kernel Crash Guide</a>, 在这里要赞一下Redhat的文档，很多admin方面的问题都能找到。<br />
 折腾了半天结果发现是network stack panic了，libvirt的网络引发的。解决方案很简单，降级Kernel就好，估计libvirt的network部分还没有和最新的kernel 5.7做适配。<br />
 kernel降级到Debian stable的4.19, 问题终于解决了。<br />
-另外一个问题又出现了，突然发现Mac VM无法引导了，或者说引导到一定程度就没反应了。也是折腾了半天才怀疑是qemu版本的问题，比较Mac的vm是比较特殊的。<br />
+另外一个问题又出现了，突然发现Mac VM无法引导了，或者说引导到一定程度就没反应了。也是折腾了半天才怀疑是qemu版本的问题，毕竟Mac的vm是比较特殊的。<br />
 检查了一下是最新的qemu 5.0，那应该不是版本的bug问题，难道是太新了？花了一点时间编译了qemu4.2.1版本，竟然引导成功了。<br />
 接下来把Mac的引导系统更新为OpenCore，一切终于都正常了。<br />
 这次的教训是</p>

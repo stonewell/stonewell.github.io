@@ -6,11 +6,7 @@
     <description>Recent content in osx on Jingnan Si&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Sep 2015 17:38:00 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.angsto-tech.com/tags/osx/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 22 Sep 2015 17:38:00 -0700</lastBuildDate><atom:link href="https://blog.angsto-tech.com/tags/osx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Virus Bulletin : Dylib hijacking on OS X</title>
       <link>https://blog.angsto-tech.com/post/osx-injection-hello-world/</link>

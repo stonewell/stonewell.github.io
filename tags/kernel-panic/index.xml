@@ -6,11 +6,7 @@
     <description>Recent content in kernel-panic on Jingnan Si&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Jul 2020 13:11:00 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.angsto-tech.com/tags/kernel-panic/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 18 Jul 2020 13:11:00 -0700</lastBuildDate><atom:link href="https://blog.angsto-tech.com/tags/kernel-panic/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>最新版本未必好，记两个需要降级的问题</title>
       <link>https://blog.angsto-tech.com/post/not-all-new-version-is-good-downgrade-for-stable/</link>

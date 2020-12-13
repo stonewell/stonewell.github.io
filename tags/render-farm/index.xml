@@ -6,11 +6,7 @@
     <description>Recent content in render-farm on Jingnan Si&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Feb 2016 22:04:00 -0800</lastBuildDate>
-    
-	<atom:link href="https://blog.angsto-tech.com/tags/render-farm/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 04 Feb 2016 22:04:00 -0800</lastBuildDate><atom:link href="https://blog.angsto-tech.com/tags/render-farm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Build your own render farm</title>
       <link>https://blog.angsto-tech.com/post/build-your-own-render-farm/</link>

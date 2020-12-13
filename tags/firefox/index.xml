@@ -6,11 +6,7 @@
     <description>Recent content in firefox on Jingnan Si&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Jan 2015 17:47:00 -0800</lastBuildDate>
-    
-	<atom:link href="https://blog.angsto-tech.com/tags/firefox/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 01 Jan 2015 17:47:00 -0800</lastBuildDate><atom:link href="https://blog.angsto-tech.com/tags/firefox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Useful resources when create thunderbird/firefox extension</title>
       <link>https://blog.angsto-tech.com/post/useful-resources-when-create-thunderbird-firefox-extension/</link>

@@ -3,27 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.angsto-tech.com/tags/computer/</loc>
+    <lastmod>2020-12-12T17:09:23-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.angsto-tech.com/</loc>
+    <lastmod>2020-12-12T17:09:23-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.angsto-tech.com/tags/kvm/</loc>
+    <lastmod>2020-12-12T17:09:23-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.angsto-tech.com/tags/nas/</loc>
+    <lastmod>2020-12-12T17:09:23-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.angsto-tech.com/post/</loc>
+    <lastmod>2020-12-12T17:09:23-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.angsto-tech.com/tags/</loc>
+    <lastmod>2020-12-12T17:09:23-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.angsto-tech.com/tags/virtualization/</loc>
+    <lastmod>2020-12-12T17:09:23-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.angsto-tech.com/post/workathome_equipments_one_storage_server_system/</loc>
+    <lastmod>2020-12-12T17:09:23-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.angsto-tech.com/post/zt-zhongniannanren-yanerdaoling/</loc>
     <lastmod>2020-08-04T14:40:28-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.angsto-tech.com/</loc>
-    <lastmod>2020-08-04T14:40:28-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.angsto-tech.com/tags/life/</loc>
-    <lastmod>2020-08-04T14:40:28-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.angsto-tech.com/post/</loc>
-    <lastmod>2020-08-04T14:40:28-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.angsto-tech.com/tags/</loc>
     <lastmod>2020-08-04T14:40:28-07:00</lastmod>
   </url>
   
@@ -43,63 +68,53 @@
   </url>
   
   <url>
-    <loc>https://blog.angsto-tech.com/tags/computer/</loc>
-    <lastmod>2020-07-25T13:45:50-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.angsto-tech.com/tags/kernel-panic/</loc>
-    <lastmod>2020-07-25T13:45:50-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.angsto-tech.com/tags/kvm/</loc>
-    <lastmod>2020-07-25T13:45:50-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/tags/linux/</loc>
-    <lastmod>2020-07-27T13:00:32-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/tags/qemu/</loc>
-    <lastmod>2020-07-25T13:45:50-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/post/not-all-new-version-is-good-downgrade-for-stable/</loc>
-    <lastmod>2020-07-25T13:45:50-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/post/enable-dot-local-doman-suffix-on-linux/</loc>
-    <lastmod>2020-07-25T13:45:50-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/post/fix-mdadm-unable-to-activate-array-after-upgrade-kernel/</loc>
-    <lastmod>2020-07-25T13:45:50-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/tags/mdadm/</loc>
-    <lastmod>2020-07-25T13:45:50-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/tags/raid/</loc>
-    <lastmod>2020-07-25T13:45:50-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/tags/bash/</loc>
-    <lastmod>2020-07-25T13:45:50-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/post/how-to-compare-version-string-in-a-better-way-from-command-line/</loc>
-    <lastmod>2020-07-25T13:45:50-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
@@ -144,22 +159,22 @@
   
   <url>
     <loc>https://blog.angsto-tech.com/tags/security/</loc>
-    <lastmod>2020-07-25T13:45:49-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/post/some-interesting-blog-about-security-needs-to-be-checkout/</loc>
-    <lastmod>2020-07-25T13:45:49-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/post/build-your-own-render-farm/</loc>
-    <lastmod>2020-07-25T13:45:49-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:21-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/tags/render-farm/</loc>
-    <lastmod>2020-07-25T13:45:49-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:21-08:00</lastmod>
   </url>
   
   <url>
@@ -169,32 +184,32 @@
   
   <url>
     <loc>https://blog.angsto-tech.com/post/how-and-why-assign-local-domain-to-pi/</loc>
-    <lastmod>2020-07-25T13:45:49-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:21-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/tags/raspberry-pi/</loc>
-    <lastmod>2020-07-25T13:45:49-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:21-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/post/how-the-wifi-adapter-or-automatically-wifi-configuration-for-device-works/</loc>
-    <lastmod>2020-07-25T13:45:49-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/post/how-to-protect-your-cloud-storage-files-with-encfs/</loc>
-    <lastmod>2020-07-25T13:45:49-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:21-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/tags/osx/</loc>
-    <lastmod>2020-07-25T13:45:49-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:21-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/post/osx-injection-hello-world/</loc>
-    <lastmod>2020-07-25T13:45:49-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:21-08:00</lastmod>
   </url>
   
   <url>
@@ -204,17 +219,17 @@
   
   <url>
     <loc>https://blog.angsto-tech.com/tags/docker/</loc>
-    <lastmod>2020-07-25T13:45:49-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/post/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers-rancher-labs/</loc>
-    <lastmod>2020-07-25T13:45:49-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/tags/vm/</loc>
-    <lastmod>2020-07-25T13:45:49-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
@@ -239,7 +254,7 @@
   
   <url>
     <loc>https://blog.angsto-tech.com/post/client-certificate-authentication-with-apache/</loc>
-    <lastmod>2020-07-25T13:45:50-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
@@ -299,12 +314,12 @@
   
   <url>
     <loc>https://blog.angsto-tech.com/post/revisit-const-char-and-char-const/</loc>
-    <lastmod>2020-07-25T13:45:50-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/post/how-to-convert-openssh-key-to-gnupg/</loc>
-    <lastmod>2020-07-25T13:45:50-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
@@ -314,12 +329,12 @@
   
   <url>
     <loc>https://blog.angsto-tech.com/post/screen-reptyr-remote-work-helper/</loc>
-    <lastmod>2020-07-25T13:45:50-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.angsto-tech.com/post/ssh-bridge-from-cmdline/</loc>
-    <lastmod>2020-07-25T13:45:50-07:00</lastmod>
+    <lastmod>2020-12-12T17:09:22-08:00</lastmod>
   </url>
   
   <url>

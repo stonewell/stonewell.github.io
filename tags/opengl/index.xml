@@ -6,11 +6,7 @@
     <description>Recent content in opengl on Jingnan Si&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Apr 2017 17:34:00 -0700</lastBuildDate>
-    
-	<atom:link href="https://blog.angsto-tech.com/tags/opengl/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 18 Apr 2017 17:34:00 -0700</lastBuildDate><atom:link href="https://blog.angsto-tech.com/tags/opengl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Draw anti-alias circle at give point with specified radius using OpenGL Core profile</title>
       <link>https://blog.angsto-tech.com/post/draw-anti-alias-circle-at-give-point-with-specified-radius-using-opengl-core-profile/</link>
