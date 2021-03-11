@@ -12,26 +12,24 @@
     
 
     
-    <title>Introducing RancherVM: Package and Run Virtual Machines as Docker Containers | Rancher Labs</title>
+    <title>Stone&#39;s Blog (Jingnan Si)</title>
 
     
     
 
 
 
-  
-  
-  <meta name="author" content="[Jingnan Si]" />
-  <meta name="description" content="http://rancher.com/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers/">
 
   
+  <meta name="author" content="Jingnan Si" />
+  <meta name="description" content="Programming, Graphics Rendering and Life" />
+
   
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@gohugoio" />
-    <meta name="twitter:title" content="Introducing RancherVM: Package and Run Virtual Machines as Docker Containers | Rancher Labs" />
-    <meta name="twitter:description" content="http://rancher.com/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers/" />
-    <meta name="twitter:image" content="https://blog.angsto-tech.com/img/avatar.jpg" />
-  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@gohugoio" />
+  <meta name="twitter:title" content="Stone&#39;s Blog (Jingnan Si)" />
+  <meta name="twitter:description" content="Programming, Graphics Rendering and Life" />
+  <meta name="twitter:image" content="https://blog.angsto-tech.com/img/avatar.jpg" />
 
 
 
@@ -39,7 +37,7 @@
 <meta name="generator" content="Hugo 0.80.0" />
 
 
-<link rel="canonical" href="https://blog.angsto-tech.com/post/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers-rancher-labs/">
+<link rel="canonical" href="https://blog.angsto-tech.com/">
 <link rel="alternative" href="/index.xml" title="Jingnan Si&#39;s Blog" type="application/atom+xml">
 
 
@@ -138,7 +136,7 @@
     sizes="(max-width: 800px) 36px, 128px">
   </amp-img>
   
-    <h2 class="title"><a href="https://blog.angsto-tech.com" title="Jingnan Si&#39;s Blog">Jingnan Si&#39;s Blog</a></h2>
+    <h1 class="title"><a href="https://blog.angsto-tech.com" title="Jingnan Si&#39;s Blog">Jingnan Si&#39;s Blog</a></h1>
   
   <p class="subtitle">Programming, Graphics Rendering and Life</p>
   <button class="menu-toggle" type="button" on="tap:sidebar.open">
@@ -247,36 +245,44 @@
 </amp-sidebar>
 
     
-  <section class="main post-detail">
-    <header class="post-header">
-      <h1 class="post-title">Introducing RancherVM: Package and Run Virtual Machines as Docker Containers | Rancher Labs</h1>
-      <p class="entry-meta"><span class="entry-time">Aug 20, 2015</span> 1 min read</p>
-    </header>
+  <section class="main entry-list">
     
+    
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/ssh-bridge-from-cmdline/" title="命令行ssh桥接" class="entry-link">命令行ssh桥接</a></h3>
+  </header>
 
-    <article class="post-content"><p><a href="http://rancher.com/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers/">http://rancher.com/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers/</a></p>
+  <p class="entry-summary">通过一些ssh的客户端，可以很方便的做ssh forward，也就是通过一台主机上ssh连接到另一台主机，那么命令行可不可以呢？
+只要在~/.ssh/config中加入如下指令即可
+host serverB.example.com serverB ProxyCommand ssh -W %h:%p gateway serverB是最终的目的主机，gateway是中间转发的主机，gateway上需要配置无密码登录。
+或者暴力一点
+ssh -t usergateway@gateway ssh user1@serverb </p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">May 10, 2013</span> 1 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fssh-bridge-from-cmdline%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e5%91%bd%e4%bb%a4%e8%a1%8cssh%e6%a1%a5%e6%8e%a5&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fssh-bridge-from-cmdline%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
 </article>
-    <footer class="post-footer">
+
       
-      <ul class="post-tags">
+    
+    
+      <nav class="pagination">
         
-          <li class="post-tag"><a href="/tags/computer"><span class="tag">Computer</span></a></li>
+          <a class="pagination-btn" href="/page/2/">← Newer Posts</a>
         
-          <li class="post-tag"><a href="/tags/docker"><span class="tag">Docker</span></a></li>
         
-          <li class="post-tag"><a href="/tags/vm"><span class="tag">Vm</span></a></li>
-        
-      </ul>
-      
-      <div class="sharing">
-        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fintroducing-ranchervm-package-and-run-virtual-machines-as-docker-containers-rancher-labs%2f" title="Share on Facebook">
-          <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-        </a>
-        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Introducing%20RancherVM%3a%20Package%20and%20Run%20Virtual%20Machines%20as%20Docker%20Containers%20%7c%20Rancher%20Labs&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fintroducing-ranchervm-package-and-run-virtual-machines-as-docker-containers-rancher-labs%2f" title="Share on Twitter">
-          <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-        </a>
-      </div>
-    </footer>
+      </nav>
+    
   </section>
 
     <footer class="footer">

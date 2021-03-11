@@ -12,7 +12,7 @@
     
 
     
-    <title>Introducing RancherVM: Package and Run Virtual Machines as Docker Containers | Rancher Labs</title>
+    <title>闲聊在家办公的装备（二） – 存储之NAS VS. DAS</title>
 
     
     
@@ -22,14 +22,14 @@
   
   
   <meta name="author" content="[Jingnan Si]" />
-  <meta name="description" content="http://rancher.com/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers/">
+  <meta name="description" content="在家办公装备,NAS和DAS共享到底重要不">
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@gohugoio" />
-    <meta name="twitter:title" content="Introducing RancherVM: Package and Run Virtual Machines as Docker Containers | Rancher Labs" />
-    <meta name="twitter:description" content="http://rancher.com/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers/" />
+    <meta name="twitter:title" content="闲聊在家办公的装备（二） – 存储之NAS VS. DAS" />
+    <meta name="twitter:description" content="在家办公装备,NAS和DAS共享到底重要不" />
     <meta name="twitter:image" content="https://blog.angsto-tech.com/img/avatar.jpg" />
   
 
@@ -39,7 +39,7 @@
 <meta name="generator" content="Hugo 0.80.0" />
 
 
-<link rel="canonical" href="https://blog.angsto-tech.com/post/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers-rancher-labs/">
+<link rel="canonical" href="https://blog.angsto-tech.com/post/workathome_equipments_two_storage_nas_das/">
 <link rel="alternative" href="/index.xml" title="Jingnan Si&#39;s Blog" type="application/atom+xml">
 
 
@@ -249,12 +249,87 @@
     
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Introducing RancherVM: Package and Run Virtual Machines as Docker Containers | Rancher Labs</h1>
-      <p class="entry-meta"><span class="entry-time">Aug 20, 2015</span> 1 min read</p>
+      <h1 class="post-title">闲聊在家办公的装备（二） – 存储之NAS VS. DAS</h1>
+      <p class="entry-meta"><span class="entry-time">Mar 11, 2021</span> 1 min read</p>
     </header>
     
 
-    <article class="post-content"><p><a href="http://rancher.com/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers/">http://rancher.com/introducing-ranchervm-package-and-run-virtual-machines-as-docker-containers/</a></p>
+    <article class="post-content"><p>三个月前研究了一番存储和家庭服务器系统后，我并没有动手配置，为什么呢？<br />
+作为一个专业人士，任何事情都要反复询问自己是不是最适合的方案？毕竟钱不是大风刮来得：）<br />
+主要问题如下：<br /></p>
+<ul>
+<li>真的需要一台长期开机的家用服务器么？</li>
+</ul>
+<p>答案是否定的，以目前我的应用场景，现有的这台PC已经足够强大，也没有什么需要长期运行的应用。<br />
+一些简单应用使用Raspberry PI更方便，需要外网访问的放在VPS上。</p>
+<ul>
+<li>存储真的需要共享么？</li>
+</ul>
+<p>我没有视频剪辑需求，主要是一些VM的数据和备份，没有强烈的家庭数据共享和外网访问需求。<br />
+主要对数据的使用都是和PC一起的，开机使用，关机不用。</p>
+<p>那么有没有能直接连接PC并提供大容量存储的硬件设备呢？有：）而且相信大部分人都用过，那就是U盘啊！！！<br />
+当然在PC上连接大量U盘，不容易管理也容易损坏，有没有和NAS类似的解决方案呢？<br />
+DAS就是这样一个解决方案，Direct Attached Storage，从原理上来说U盘就是一类DAS。<br />
+进阶版DAS一遍是通过拥有外置接口的存储卡，连接到一系列存储硬盘上，网络上讨论的内容相对NAS和HomeServer相对要少一点。<br />
+来看一套[<a href="https://www.serverbuilds.net/16-bay-das">Server Builds 16 Bays DAS</a>的配置<br /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rosewill 15-bay 4U Chassis</td>
+<td>$179.99</td>
+</tr>
+<tr>
+<td>LSI 9201-16e SAS HBA</td>
+<td>$27.37</td>
+</tr>
+<tr>
+<td>EVGA 750 N1 750W PSU</td>
+<td>$39.99</td>
+</tr>
+<tr>
+<td>(3x) Startech 4x SATA power</td>
+<td>$5.49 x 3 = $16.47</td>
+</tr>
+<tr>
+<td>(4x) SFF-8088 to 4x SATA breakout</td>
+<td>$15.99 x 4 = $63.96</td>
+</tr>
+<tr>
+<td>2-pack PWM to Molex adapter</td>
+<td>$7.99</td>
+</tr>
+<tr>
+<td>24-pin PSU tester</td>
+<td>$7.89</td>
+</tr>
+<tr>
+<td>TOTAL</td>
+<td>$263.66</td>
+</tr>
+<tr>
+<td>Arctic F12 120mm 5-pack</td>
+<td>$24.99</td>
+</tr>
+<tr>
+<td>Arctic F80 80mm 5-pack</td>
+<td>$22.99</td>
+</tr>
+<tr>
+<td>TOTAL w/ fans</td>
+<td>$391.64</td>
+</tr>
+</tbody>
+</table>
+<p>您会发现这套系统是没有传统计算机的3大件的，主要原理是把HBA的卡安装到你的主机上<br />
+然后通过外部接线连接到DAS的硬盘上，并不需要DAS来处理任何数据，DAS主要是给硬盘供电。<br />
+目前也有类似的大型多盘位硬盘盒出售，和自己DIY来比，价格贵，性能不足。
+因此，这看上来是我比较理想的解决方案：）</p>
 </article>
     <footer class="post-footer">
       
@@ -262,17 +337,17 @@
         
           <li class="post-tag"><a href="/tags/computer"><span class="tag">Computer</span></a></li>
         
-          <li class="post-tag"><a href="/tags/docker"><span class="tag">Docker</span></a></li>
+          <li class="post-tag"><a href="/tags/nas"><span class="tag">Nas</span></a></li>
         
-          <li class="post-tag"><a href="/tags/vm"><span class="tag">Vm</span></a></li>
+          <li class="post-tag"><a href="/tags/das"><span class="tag">Das</span></a></li>
         
       </ul>
       
       <div class="sharing">
-        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fintroducing-ranchervm-package-and-run-virtual-machines-as-docker-containers-rancher-labs%2f" title="Share on Facebook">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fworkathome_equipments_two_storage_nas_das%2f" title="Share on Facebook">
           <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
         </a>
-        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Introducing%20RancherVM%3a%20Package%20and%20Run%20Virtual%20Machines%20as%20Docker%20Containers%20%7c%20Rancher%20Labs&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fintroducing-ranchervm-package-and-run-virtual-machines-as-docker-containers-rancher-labs%2f" title="Share on Twitter">
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e9%97%b2%e8%81%8a%e5%9c%a8%e5%ae%b6%e5%8a%9e%e5%85%ac%e7%9a%84%e8%a3%85%e5%a4%87%ef%bc%88%e4%ba%8c%ef%bc%89%20%e2%80%93%20%e5%ad%98%e5%82%a8%e4%b9%8bNAS%20VS.%20DAS&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fworkathome_equipments_two_storage_nas_das%2f" title="Share on Twitter">
           <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
         </a>
       </div>

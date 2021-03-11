@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>das on Jingnan Si&#39;s Blog</title>
+    <link>https://blog.angsto-tech.com/tags/das/</link>
+    <description>Recent content in das on Jingnan Si&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 11 Mar 2021 14:23:00 -0800</lastBuildDate><atom:link href="https://blog.angsto-tech.com/tags/das/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>闲聊在家办公的装备（二） – 存储之NAS VS. DAS</title>
+      <link>https://blog.angsto-tech.com/post/workathome_equipments_two_storage_nas_das/</link>
+      <pubDate>Thu, 11 Mar 2021 14:23:00 -0800</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/workathome_equipments_two_storage_nas_das/</guid>
+      <description>在家办公装备,NAS和DAS共享到底重要不</description>
+    </item>
+    
+  </channel>
+</rss>
