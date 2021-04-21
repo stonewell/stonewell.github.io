@@ -12,24 +12,26 @@
     
 
     
-    <title>Stone&#39;s Blog (Jingnan Si)</title>
+    <title>闲聊在家办公的装备（三） – 我的DAS来了</title>
 
     
     
 
 
 
+  
+  
+  <meta name="author" content="[Jingnan Si]" />
+  <meta name="description" content="在家办公装备,爱折腾的石头折腾的DAS系统">
 
   
-  <meta name="author" content="Jingnan Si" />
-  <meta name="description" content="Programming, Graphics Rendering and Life" />
-
   
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@gohugoio" />
-  <meta name="twitter:title" content="Stone&#39;s Blog (Jingnan Si)" />
-  <meta name="twitter:description" content="Programming, Graphics Rendering and Life" />
-  <meta name="twitter:image" content="https://blog.angsto-tech.com/img/avatar.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@gohugoio" />
+    <meta name="twitter:title" content="闲聊在家办公的装备（三） – 我的DAS来了" />
+    <meta name="twitter:description" content="在家办公装备,爱折腾的石头折腾的DAS系统" />
+    <meta name="twitter:image" content="https://blog.angsto-tech.com/img/avatar.jpg" />
+  
 
 
 
@@ -37,7 +39,7 @@
 <meta name="generator" content="Hugo 0.80.0" />
 
 
-<link rel="canonical" href="https://blog.angsto-tech.com/">
+<link rel="canonical" href="https://blog.angsto-tech.com/post/workathome_equipments_storage_three_my_das/">
 <link rel="alternative" href="/index.xml" title="Jingnan Si&#39;s Blog" type="application/atom+xml">
 
 
@@ -136,7 +138,7 @@
     sizes="(max-width: 800px) 36px, 128px">
   </amp-img>
   
-    <h1 class="title"><a href="https://blog.angsto-tech.com" title="Jingnan Si&#39;s Blog">Jingnan Si&#39;s Blog</a></h1>
+    <h2 class="title"><a href="https://blog.angsto-tech.com" title="Jingnan Si&#39;s Blog">Jingnan Si&#39;s Blog</a></h2>
   
   <p class="subtitle">Programming, Graphics Rendering and Life</p>
   <button class="menu-toggle" type="button" on="tap:sidebar.open">
@@ -245,69 +247,97 @@
 </amp-sidebar>
 
     
-  <section class="main entry-list">
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">闲聊在家办公的装备（三） – 我的DAS来了</h1>
+      <p class="entry-meta"><span class="entry-time">Apr 20, 2021</span> 1 min read</p>
+    </header>
     
-    
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/ssh-bridge-from-cmdline/" title="命令行ssh桥接" class="entry-link">命令行ssh桥接</a></h3>
-  </header>
 
-  <p class="entry-summary">通过一些ssh的客户端，可以很方便的做ssh forward，也就是通过一台主机上ssh连接到另一台主机，那么命令行可不可以呢？
-只要在~/.ssh/config中加入如下指令即可
-host serverB.example.com serverB ProxyCommand ssh -W %h:%p gateway serverB是最终的目的主机，gateway是中间转发的主机，gateway上需要配置无密码登录。
-或者暴力一点
-ssh -t usergateway@gateway ssh user1@serverb </p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">May 10, 2013</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fssh-bridge-from-cmdline%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e5%91%bd%e4%bb%a4%e8%a1%8cssh%e6%a1%a5%e6%8e%a5&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fssh-bridge-from-cmdline%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
+    <article class="post-content"><p>上次写完了以后，本来不打算实际操作的，但是作为一位资深折腾人士，手上又有4块硬盘，怎么能不好好折腾一把呢？<br />
+折腾过程真是踩了大坑，把好好的主板弄坏了，结果多花了100刀买了新主板，经验教训就是电脑关机主板其实是不断电的：（。<br />
+选取的还是上次研究过的DAS方案，但是本着少花钱多办事的原则，硬件做了一些替换<br /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LSI 9201-16e SAS HBA</td>
+<td>$45.69</td>
+</tr>
+<tr>
+<td>TT Smart 700W</td>
+<td>$64</td>
+</tr>
+<tr>
+<td>(2x) SFF-8088 to 4x SATA breakout</td>
+<td>$14.99 x 4 = $29.98</td>
+</tr>
+<tr>
+<td>Sans Digital HDDRack5</td>
+<td>$34.86</td>
+</tr>
+<tr>
+<td>TOTAL</td>
+<td>$174.53</td>
+</tr>
+</tbody>
+</table>
+<p>这里面最重要的配件就是这个<a href="https://smile.amazon.com/Sans-Digital-HDDRACK5-5-Bay-Organizing/dp/B001LF40KE/ref=sr%5F1%5F1?dchild=1&amp;keywords=sans+digital+hddrack5&amp;qid=1618976130&amp;sr=8-1">Sans Digital HDDRack5</a>,它是一个5块硬盘的硬盘笼，自带12寸静音风扇，最关键的是它带了电源启动器。<br />
+放在机架上和电脑PC旁边感觉还挺搭配的
+<img src="/ox-hugo/sans_digital_hddrack5.jpeg" alt=""></p>
+<p>另外一个重要的部件就是这个<a href="https://www.amazon.com/Sixteen-port-Half-length-Lsi-9201-16E-Port/dp/B00487AYQQ">LSI 9201-16e</a>,这个可是真正我目前公司博通的产品，虽然是有些年代了，但是工作起来相当完美。<br />
+这种HBA的卡以前都是用在高端服务器上的，现在eBay上大把拆机的二手。<br />
+<img src="/ox-hugo/lsi-920116e.jpeg" alt=""></p>
+<p>在PC上使用的时候要注意更新为最新P20 ITMode固件，更新方法网上很多。<br />
+注意比较新的主板刷固件的时候要选择UEFI的模式刷新，DOS模式下是更新不了的。<br />
+刷好固件后，连接硬盘和SFF的线缆就没问题了，如果使用linux 5.8 kernel以上版本，需要在kernel的启动参数上增加<br /></p>
+<pre><code class="language-nil" data-lang="nil">mpt3sas.max_queue_depth=10000
+</code></pre><p>至于存储管理方面，我最终放弃了zfs和btrfs这种先进的文件系统（主要是觉得学起来太麻烦），还是使用了我比较熟悉的LVM和bcache。<br /></p>
+<ul>
+<li>用一块256G的ssd给4块4T的硬盘做read cache提高性能</li>
+<li>在4块cached的硬盘上建立LVM的Volume Group</li>
+<li>创建两个lvm thin pool
+<ul>
+<li>pool_no_protect raid 0, 主要保存一些不需要备份的数据, VM</li>
+<li>pool_protect raid 5, 用于保存有安全需求的数据，照片什么的</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://www.tecmint.com/setup-thin-provisioning-volumes-in-lvm/">LVM thin pool</a>有不少好处，比如snapshot和virtual disk，这样微微的性能下降也是可以接受的了。<br />
+特别是用多少占多少的virtual disk功能在大量创建VM的时候非常有用，比较平时分配的VM物理硬盘大部分都是用不上的。</p>
 </article>
-
+    <footer class="post-footer">
       
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/screen-reptyr-remote-work-helper/" title="screen 和 reptyr 远程工作的利器" class="entry-link">screen 和 reptyr 远程工作的利器</a></h3>
-  </header>
-
-  <p class="entry-summary">在unix，maxosx或者linux下工作的时候，经常需要长时间运行一个程序，通常会把程序放到后台，然后通过日志来监控。
-如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。
-如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。
-可是如果一开始没有用screen运行，直接放置到后台怎么办呢。reptyr就派上用场了，以下是reptyr的说明
-reparent a orphan background process, means background a process in a terminal and bring it back to foreground to another terminal reptyr - A tool for &#34;re-ptying&#34; programs. ----------------------------------------- reptyr is a utility for taking an existing running program and attaching it to a new terminal. Started a long-running process over ssh, but have to leave and don&#39;t want to interrupt it? Just start a screen, use reptyr to grab it, and then kill the ssh session and head on home.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">May 10, 2013</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fscreen-reptyr-remote-work-helper%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=screen%20%e5%92%8c%20reptyr%20%e8%bf%9c%e7%a8%8b%e5%b7%a5%e4%bd%9c%e7%9a%84%e5%88%a9%e5%99%a8&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fscreen-reptyr-remote-work-helper%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
+      <ul class="post-tags">
+        
+          <li class="post-tag"><a href="/tags/computer"><span class="tag">Computer</span></a></li>
+        
+          <li class="post-tag"><a href="/tags/wfh"><span class="tag">WFH</span></a></li>
+        
+          <li class="post-tag"><a href="/tags/das"><span class="tag">Das</span></a></li>
+        
+          <li class="post-tag"><a href="/tags/nas"><span class="tag">Nas</span></a></li>
+        
+          <li class="post-tag"><a href="/tags/lsi"><span class="tag">LSI</span></a></li>
+        
+          <li class="post-tag"><a href="/tags/hba"><span class="tag">HBA</span></a></li>
+        
+      </ul>
       
-    
-    
-      <nav class="pagination">
-        
-          <a class="pagination-btn" href="/page/2/">← Newer Posts</a>
-        
-        
-      </nav>
-    
+      <div class="sharing">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fworkathome_equipments_storage_three_my_das%2f" title="Share on Facebook">
+          <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+        </a>
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e9%97%b2%e8%81%8a%e5%9c%a8%e5%ae%b6%e5%8a%9e%e5%85%ac%e7%9a%84%e8%a3%85%e5%a4%87%ef%bc%88%e4%b8%89%ef%bc%89%20%e2%80%93%20%e6%88%91%e7%9a%84DAS%e6%9d%a5%e4%ba%86&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fworkathome_equipments_storage_three_my_das%2f" title="Share on Twitter">
+          <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+        </a>
+      </div>
+    </footer>
   </section>
 
     <footer class="footer">
