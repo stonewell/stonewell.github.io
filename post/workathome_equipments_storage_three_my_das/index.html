@@ -36,7 +36,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.113.0">
 
 
 <link rel="canonical" href="https://blog.angsto-tech.com/post/workathome_equipments_storage_three_my_das/">
@@ -296,7 +296,7 @@
 <p>在PC上使用的时候要注意更新为最新P20 ITMode固件，更新方法网上很多。<br />
 注意比较新的主板刷固件的时候要选择UEFI的模式刷新，DOS模式下是更新不了的。<br />
 刷好固件后，连接硬盘和SFF的线缆就没问题了，如果使用linux 5.8 kernel以上版本，需要在kernel的启动参数上增加<br /></p>
-<pre><code class="language-nil" data-lang="nil">mpt3sas.max_queue_depth=10000
+<pre tabindex="0"><code class="language-nil" data-lang="nil">mpt3sas.max_queue_depth=10000
 </code></pre><p>至于存储管理方面，我最终放弃了zfs和btrfs这种先进的文件系统（主要是觉得学起来太麻烦），还是使用了我比较熟悉的LVM和bcache。<br /></p>
 <ul>
 <li>用一块256G的ssd给4块4T的硬盘做read cache提高性能</li>
@@ -341,7 +341,7 @@
   </section>
 
     <footer class="footer">
-  <p>Copyright © 2018-2021 Jingnan Si&#39;s Blog</p>
+  <p>Copyright © 2018-2023 Jingnan Si&#39;s Blog</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/huyb1991/hugo-lamp" title="Hugo LAMP" target="_blank">LAMP</a>.</p>
 </footer>
 

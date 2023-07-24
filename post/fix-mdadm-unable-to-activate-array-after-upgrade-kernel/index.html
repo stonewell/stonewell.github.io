@@ -36,7 +36,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.113.0">
 
 
 <link rel="canonical" href="https://blog.angsto-tech.com/post/fix-mdadm-unable-to-activate-array-after-upgrade-kernel/">
@@ -257,17 +257,17 @@
     <article class="post-content"><p>Doing linux upgrade sometimes is quite dangous, especially from very old kernel to latest, <br />
 for example, from 3.x to 5.x, or even from 4.x to 5.x.<br />
 the mdadm soft raid arary may not work correctly after upgrade, it may shows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&#34;Invalid Argument&#34; / &#34;does not have a valid v1.2 superblock&#34;
-</code></pre></div><p>first we should make sure the array is still correct, by running:<br /></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdadm --examine /dev/sd<span style="color:#f92672">[</span>abcd<span style="color:#f92672">]</span><span style="color:#ae81ff">1</span>
-</code></pre></div><p>make sure the disks in array are all valid.<br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>&#34;Invalid Argument&#34; / &#34;does not have a valid v1.2 superblock&#34;
+</span></span></code></pre></div><p>first we should make sure the array is still correct, by running:<br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mdadm --examine /dev/sd<span style="color:#f92672">[</span>abcd<span style="color:#f92672">]</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>make sure the disks in array are all valid.<br /></p>
 <p>sencod we could try if the array create in old kernel are using different layout, by running:<br /></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdadm --stop /dev/md0
-mdadm --assemble -U layout-alternate /dev/md0 /dev/sda1 /dev/sda2
-</code></pre></div><p><a href="https://wiki.ubuntu.com/Kernel/Raid0LayoutMigration">https://wiki.ubuntu.com/Kernel/Raid0LayoutMigration</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mdadm --stop /dev/md0
+</span></span><span style="display:flex;"><span>mdadm --assemble -U layout-alternate /dev/md0 /dev/sda1 /dev/sda2
+</span></span></code></pre></div><p><a href="https://wiki.ubuntu.com/Kernel/Raid0LayoutMigration">https://wiki.ubuntu.com/Kernel/Raid0LayoutMigration</a></p>
 <p>if sencond step is not working, last step we could try will be using &ldquo;&ndash;assume-clean&rdquo; to recreate the array:<br /></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mdadm -v --create /dev/md0 --readonly --bitmap<span style="color:#f92672">=</span>none --chunk<span style="color:#f92672">=</span>4M --level<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span> --raid-device<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span> --assume-clean --data-offset <span style="color:#ae81ff">99328</span> /dev/sdd2 /dev/sde2 /dev/sdg2 /dev/sdc2 /dev/sdb2 /dev/sdf2
-</code></pre></div><p>be sure to using correct raid level/chunk size/data-offset from the output of the first step.<br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mdadm -v --create /dev/md0 --readonly --bitmap<span style="color:#f92672">=</span>none --chunk<span style="color:#f92672">=</span>4M --level<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span> --raid-device<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span> --assume-clean --data-offset <span style="color:#ae81ff">99328</span> /dev/sdd2 /dev/sde2 /dev/sdg2 /dev/sdc2 /dev/sdb2 /dev/sdf2
+</span></span></code></pre></div><p>be sure to using correct raid level/chunk size/data-offset from the output of the first step.<br />
 <a href="https://www.spinics.net/lists/raid/msg50760.html">https://www.spinics.net/lists/raid/msg50760.html</a></p>
 </article>
     <footer class="post-footer">
@@ -296,7 +296,7 @@ mdadm --assemble -U layout-alternate /dev/md0 /dev/sda1 /dev/sda2
   </section>
 
     <footer class="footer">
-  <p>Copyright © 2018-2021 Jingnan Si&#39;s Blog</p>
+  <p>Copyright © 2018-2023 Jingnan Si&#39;s Blog</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/huyb1991/hugo-lamp" title="Hugo LAMP" target="_blank">LAMP</a>.</p>
 </footer>
 

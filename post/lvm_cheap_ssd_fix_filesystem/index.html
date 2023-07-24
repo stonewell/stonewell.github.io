@@ -12,7 +12,7 @@
     
 
     
-    <title>How (and Why) to Assign the .local Domain to Your Raspberry Pi</title>
+    <title>日常lvm和便宜硬件</title>
 
     
     
@@ -22,14 +22,14 @@
   
   
   <meta name="author" content="[Jingnan Si]" />
-  <meta name="description" content="Original URL:How (and Why) to Assign the .local Domain to Your Raspberry Pi">
+  <meta name="description" content="使用便宜ssd引发的问题以及修复过程">
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@gohugoio" />
-    <meta name="twitter:title" content="How (and Why) to Assign the .local Domain to Your Raspberry Pi" />
-    <meta name="twitter:description" content="Original URL:How (and Why) to Assign the .local Domain to Your Raspberry Pi" />
+    <meta name="twitter:title" content="日常lvm和便宜硬件" />
+    <meta name="twitter:description" content="使用便宜ssd引发的问题以及修复过程" />
     <meta name="twitter:image" content="https://blog.angsto-tech.com/img/avatar.jpg" />
   
 
@@ -39,7 +39,7 @@
 <meta name="generator" content="Hugo 0.113.0">
 
 
-<link rel="canonical" href="https://blog.angsto-tech.com/post/how-and-why-assign-local-domain-to-pi/">
+<link rel="canonical" href="https://blog.angsto-tech.com/post/lvm_cheap_ssd_fix_filesystem/">
 <link rel="alternative" href="/index.xml" title="Jingnan Si&#39;s Blog" type="application/atom+xml">
 
 
@@ -249,12 +249,40 @@
     
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">How (and Why) to Assign the .local Domain to Your Raspberry Pi</h1>
-      <p class="entry-meta"><span class="entry-time">Dec 11, 2015</span> 1 min read</p>
+      <h1 class="post-title">日常lvm和便宜硬件</h1>
+      <p class="entry-meta"><span class="entry-time">Jul 23, 2023</span> 1 min read</p>
     </header>
     
 
-    <article class="post-content"><p>Original URL:<a href="http://www.howtogeek.com/167190/how-and-why-to-assign-the-.local-domain-to-your-raspberry-pi/">How (and Why) to Assign the .local Domain to Your Raspberry Pi</a></p>
+    <article class="post-content"><p>周五下班打算再努力一会儿，打开台式机就去干别的了，回来一看竟然停在了bios界面不动了，心中一喜难道要换电脑了:) <br />
+不过本着研究的精神，还是要确认一下问题，近来没怎么折腾硬件，只是增加了一块M.2 ssd, SATA接口的。你能想象 <br />
+我主板上两条M.2竟然有一条是SATA的，还要占用sata接口么？<br />
+根据简单排除法，拔掉了存储卡，显卡，内存，竟然都没有效果，难道真要换全套了？在拔掉CPU之前，我还测试拔掉了SATA SSD <br />
+用来做CACHE的盘（注意不是那个M.2的），还是没有用。<br />
+下单前抱着试一下的心态拿掉了新装的那个便宜M.2 ssd, 我去竟然启动了，这下花钱的理由没有了:) <br />
+话说这新的主板真是不如早期的，什么报警闪灯都没有，靠我一顿瞎猜，当然我买的也不是高端主板。<br />
+既然硬件问题解决了，当然就有软件问题了，我的系统一直是基于lvm的。这块M.2也是完整的加入了vg,分配给了home logic volume <br />
+非常自然的，少了一块pv,lvm拒绝启动。这个简单，用启动盘启动，把pv移除就好，至少我是这么想的:) <br />
+千万不要用ubuntu作为修复启动盘，因为它的Live CD默认也用lvm,而且vg的名字竟然和我一样，用它启动竟然看不到我的vg<br />
+当然也提醒我们要起名字就要不走寻常路:) <br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vgreduce --remove-missing
+</span></span></code></pre></div><p>这个命令很好的修复了lvm不启动的问题，但是它问了我一句话，我看都没看就yes了，其实它问我说home也用了这个pv,要一起删除么？ <br />
+这下好了，系统启动了，home没有了，里面我专心工作的工具和我收集的。。。都没了。<br />
+这怎么可以呢？会影响我努力工作啊。。。（哈哈） <br />
+仔细研究了lvm后，lvm对所有操作都是有备份的，而且可以恢复。我的home lv没有太多数据只有100多G,应该还没有写到那块M.2上 <br />
+原理上只要回到安装M.2之前的状态应该就能找回来。<br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vgcfgrestore --restorefile
+</span></span></code></pre></div><p>赞啊，果然回来了，怎么不能mount? filesystem size和硬件不匹配，没关系 <br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>resizefs
+</span></span></code></pre></div><p>需要e2fsck先，What&rsquo;s your problem? 不能e2fsck,因为filesystem size不匹配。这不是死循环了么？ <br />
+没关系linux有各好处在与filesystem其实和文件没区别，所以dd就派上用场了，首先把home备份成文件 <br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/guest_vg_0/vol_home of<span style="color:#f92672">=</span>home.img bs<span style="color:#f92672">=</span>4M status<span style="color:#f92672">=</span>progress
+</span></span></code></pre></div><p>当然备份各200G就够，然后对这个文件进行e2fsck, resizefs, mount上文件，哈哈哈，全都回来了，最后 <br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rsync -av
+</span></span></code></pre></div><p>这次的教训就是LVM没有一点硬件保护，或者说在普通配置下没有。比如多个硬盘分成多个vg, 然后互相备份也许可行 <br />
+但是还是在raid基础上同时做好备份更保险 <br />
+因此以后的升级计划就是
+给数据盘设置raid5，home用raid1，在raid的基础上做lvm。同时也做好备份工作，话说这么多年我的数据也不过3T而已。</p>
 </article>
     <footer class="post-footer">
       
@@ -262,15 +290,19 @@
         
           <li class="post-tag"><a href="/tags/computer"><span class="tag">Computer</span></a></li>
         
-          <li class="post-tag"><a href="/tags/raspberry-pi"><span class="tag">Raspberry-Pi</span></a></li>
+          <li class="post-tag"><a href="/tags/wfh"><span class="tag">WFH</span></a></li>
+        
+          <li class="post-tag"><a href="/tags/das"><span class="tag">Das</span></a></li>
+        
+          <li class="post-tag"><a href="/tags/nas"><span class="tag">Nas</span></a></li>
         
       </ul>
       
       <div class="sharing">
-        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fhow-and-why-assign-local-domain-to-pi%2f" title="Share on Facebook">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2flvm_cheap_ssd_fix_filesystem%2f" title="Share on Facebook">
           <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
         </a>
-        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=How%20%28and%20Why%29%20to%20Assign%20the%20.local%20Domain%20to%20Your%20Raspberry%20Pi&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2fhow-and-why-assign-local-domain-to-pi%2f" title="Share on Twitter">
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e6%97%a5%e5%b8%b8lvm%e5%92%8c%e4%be%bf%e5%ae%9c%e7%a1%ac%e4%bb%b6&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2flvm_cheap_ssd_fix_filesystem%2f" title="Share on Twitter">
           <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
         </a>
       </div>

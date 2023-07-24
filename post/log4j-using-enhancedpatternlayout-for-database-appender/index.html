@@ -36,7 +36,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.113.0">
 
 
 <link rel="canonical" href="https://blog.angsto-tech.com/post/log4j-using-enhancedpatternlayout-for-database-appender/">
@@ -255,7 +255,7 @@
     
 
     <article class="post-content"><p>Only work when put sql in layout.ConversionPattern, if put in .sql it will never work.</p>
-<pre><code class="language-nil" data-lang="nil">log4j.logger.db.logging=DEBUG, dblog
+<pre tabindex="0"><code class="language-nil" data-lang="nil">log4j.logger.db.logging=DEBUG, dblog
 log4j.additivity.db.logging=false
 log4j.appender.dblog=org.apache.log4j.jdbc.JDBCAppender
 log4j.appender.dblog.URL=jdbc:postgresql://localhost:5432/logging_db
@@ -263,7 +263,7 @@ log4j.appender.dblog.driver=org.postgresql.Driver
 log4j.appender.dblog.layout=org.apache.log4j.EnhancedPatternLayout
 log4j.appender.dblog.user=user
 log4j.appender.dblog.password=password
-log4j.appender.dblog.layout.ConversionPattern=INSERT INTO db_log(server_ts, message) values(TIMESTAMP '%d{yyyy-MM-dd HH:mm:ss}', '%properties{message}')
+log4j.appender.dblog.layout.ConversionPattern=INSERT INTO db_log(server_ts, message) values(TIMESTAMP &#39;%d{yyyy-MM-dd HH:mm:ss}&#39;, &#39;%properties{message}&#39;)
 </code></pre></article>
     <footer class="post-footer">
       
@@ -285,7 +285,7 @@ log4j.appender.dblog.layout.ConversionPattern=INSERT INTO db_log(server_ts, mess
   </section>
 
     <footer class="footer">
-  <p>Copyright © 2018-2021 Jingnan Si&#39;s Blog</p>
+  <p>Copyright © 2018-2023 Jingnan Si&#39;s Blog</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/huyb1991/hugo-lamp" title="Hugo LAMP" target="_blank">LAMP</a>.</p>
 </footer>
 

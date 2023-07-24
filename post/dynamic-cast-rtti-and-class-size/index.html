@@ -38,7 +38,7 @@ class A { public: std::string m_Data; } although A class is not polymorphic, but
 
 
 
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.113.0">
 
 
 <link rel="canonical" href="https://blog.angsto-tech.com/post/dynamic-cast-rtti-and-class-size/">
@@ -257,14 +257,14 @@ class A { public: std::string m_Data; } although A class is not polymorphic, but
     
 
     <article class="post-content"><p>dynamic_cast requires RTTI flag when do compiling, the RTTI will increase object size. and RTTI only generate for polymorphic classes.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> {
-
-<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-
-std<span style="color:#f92672">::</span>string m_Data;
-
-}
-</code></pre></div><p>although A class is not polymorphic, but the m_Data is a instance of polymorphic class, the sizeof(A) will change when compile with/without RTTI.  programmer should be very carefully when link with third-party library, it is more difficult to find out the crash compare to pack problem. a web page talking about class layout (VS compiler), but could be reference for other platform. <a href="http://www.openrce.org/articles/full%5Fview/23">http://www.openrce.org/articles/full%5Fview/23</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>std<span style="color:#f92672">::</span>string m_Data;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>although A class is not polymorphic, but the m_Data is a instance of polymorphic class, the sizeof(A) will change when compile with/without RTTI.  programmer should be very carefully when link with third-party library, it is more difficult to find out the crash compare to pack problem. a web page talking about class layout (VS compiler), but could be reference for other platform. <a href="http://www.openrce.org/articles/full%5Fview/23">http://www.openrce.org/articles/full%5Fview/23</a></p>
 </article>
     <footer class="post-footer">
       
@@ -286,7 +286,7 @@ std<span style="color:#f92672">::</span>string m_Data;
   </section>
 
     <footer class="footer">
-  <p>Copyright © 2018-2021 Jingnan Si&#39;s Blog</p>
+  <p>Copyright © 2018-2023 Jingnan Si&#39;s Blog</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/huyb1991/hugo-lamp" title="Hugo LAMP" target="_blank">LAMP</a>.</p>
 </footer>
 

@@ -44,7 +44,7 @@ ssh -t usergateway@gateway ssh user1@serverb " />
 
 
 
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.113.0">
 
 
 <link rel="canonical" href="https://blog.angsto-tech.com/post/ssh-bridge-from-cmdline/">
@@ -264,11 +264,11 @@ ssh -t usergateway@gateway ssh user1@serverb " />
 
     <article class="post-content"><p>通过一些ssh的客户端，可以很方便的做ssh forward，也就是通过一台主机上ssh连接到另一台主机，那么命令行可不可以呢？<br />
 只要在~/.ssh/config中加入如下指令即可<br /></p>
-<pre><code class="language-nil" data-lang="nil">host serverB.example.com serverB
+<pre tabindex="0"><code class="language-nil" data-lang="nil">host serverB.example.com serverB
   ProxyCommand ssh -W %h:%p gateway
 </code></pre><p>serverB是最终的目的主机，gateway是中间转发的主机，gateway上需要配置无密码登录。<br />
 或者暴力一点<br /></p>
-<pre><code class="language-nil" data-lang="nil">ssh -t usergateway@gateway ssh user1@serverb
+<pre tabindex="0"><code class="language-nil" data-lang="nil">ssh -t usergateway@gateway ssh user1@serverb
 </code></pre></article>
     <footer class="post-footer">
       
@@ -290,7 +290,7 @@ ssh -t usergateway@gateway ssh user1@serverb " />
   </section>
 
     <footer class="footer">
-  <p>Copyright © 2018-2021 Jingnan Si&#39;s Blog</p>
+  <p>Copyright © 2018-2023 Jingnan Si&#39;s Blog</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/huyb1991/hugo-lamp" title="Hugo LAMP" target="_blank">LAMP</a>.</p>
 </footer>
 

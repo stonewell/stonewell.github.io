@@ -6,7 +6,16 @@
     <description>Recent content in computer on Jingnan Si&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Apr 2021 20:21:00 -0700</lastBuildDate><atom:link href="https://blog.angsto-tech.com/tags/computer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jul 2023 21:09:00 -0700</lastBuildDate><atom:link href="https://blog.angsto-tech.com/tags/computer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>日常lvm和便宜硬件</title>
+      <link>https://blog.angsto-tech.com/post/lvm_cheap_ssd_fix_filesystem/</link>
+      <pubDate>Sun, 23 Jul 2023 21:09:00 -0700</pubDate>
+      
+      <guid>https://blog.angsto-tech.com/post/lvm_cheap_ssd_fix_filesystem/</guid>
+      <description>使用便宜ssd引发的问题以及修复过程</description>
+    </item>
+    
     <item>
       <title>闲聊在家办公的装备（三） – 我的DAS来了</title>
       <link>https://blog.angsto-tech.com/post/workathome_equipments_storage_three_my_das/</link>
@@ -76,7 +85,7 @@
       <pubDate>Fri, 04 Mar 2016 22:05:00 -0800</pubDate>
       
       <guid>https://blog.angsto-tech.com/post/some-interesting-blog-about-security-needs-to-be-checkout/</guid>
-      <description> http://www.darkreading.com/ http://securityweekly.com/ http://www.technewsworld.com/perl/section/tech-security/ http://ddosattackprotection.org/blog/cyber-security-blogs/ https://heimdalsecurity.com/blog/best-internet-security-blogs/ http://www.rasmussen.edu/degrees/technology/blog/top-cyber-security-blogs/ http://www.veracode.com/blog/2012/02/top-20-security-blogs http://www.marblesecurity.com/2014/01/22/top-10-security-blogs/  </description>
+      <description> http://www.darkreading.com/ http://securityweekly.com/ http://www.technewsworld.com/perl/section/tech-security/ http://ddosattackprotection.org/blog/cyber-security-blogs/ https://heimdalsecurity.com/blog/best-internet-security-blogs/ http://www.rasmussen.edu/degrees/technology/blog/top-cyber-security-blogs/ http://www.veracode.com/blog/2012/02/top-20-security-blogs http://www.marblesecurity.com/2014/01/22/top-10-security-blogs/ </description>
     </item>
     
     <item>
@@ -156,7 +165,7 @@ http://electronics.stackexchange.com/questions/61704/how-does-ti-cc3000-wifi-sma
       <guid>https://blog.angsto-tech.com/post/revisit-const-char-and-char-const/</guid>
       <description>今天写代码的时候突然不能肯定const char * d; d++; 是不是对的了，就重温了一下经典的c++定义
 结论：
-         char * const p 定义一个指向字符的指针常数，即const指针   const char * p 定义一个指向字符常数的指针   char const*p 等同于const char* p    普通的指针d，进行d++肯定没问题了
+char * const p 定义一个指向字符的指针常数，即const指针 const char * p 定义一个指向字符常数的指针 char const*p 等同于const char* p 普通的指针d，进行d++肯定没问题了
 http://blog.163.com/pei%5Fhua100/blog/static/805697592009550281616/</description>
     </item>
     
@@ -183,7 +192,7 @@ http://www.sysmic.org/dotclear/index.php?post/2010/03/24/Convert-keys-betweens-G
 如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。
 如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。
 可是如果一开始没有用screen运行，直接放置到后台怎么办呢。reptyr就派上用场了，以下是reptyr的说明
-reparent a orphan background process, means background a process in a terminal and bring it back to foreground to another terminal reptyr - A tool for &amp;quot;re-ptying&amp;quot; programs. ----------------------------------------- reptyr is a utility for taking an existing running program and attaching it to a new terminal. Started a long-running process over ssh, but have to leave and don&#39;t want to interrupt it? Just start a screen, use reptyr to grab it, and then kill the ssh session and head on home.</description>
+reparent a orphan background process, means background a process in a terminal and bring it back to foreground to another terminal reptyr - A tool for &amp;#34;re-ptying&amp;#34; programs. ----------------------------------------- reptyr is a utility for taking an existing running program and attaching it to a new terminal. Started a long-running process over ssh, but have to leave and don&amp;#39;t want to interrupt it? Just start a screen, use reptyr to grab it, and then kill the ssh session and head on home.</description>
     </item>
     
     <item>

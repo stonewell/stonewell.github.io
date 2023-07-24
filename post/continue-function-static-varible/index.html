@@ -36,7 +36,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.113.0">
 
 
 <link rel="canonical" href="https://blog.angsto-tech.com/post/continue-function-static-varible/">
@@ -259,7 +259,7 @@
 周末花了不少时间研究并写了一个小小的例程来演示问题和多种解决方案，发布在了我的github，有兴趣的同学可以看一看。<br />
 <a href="https://github.com/stonewell/code-snippets/tree/master/function%5Fstatic%5Fvariable">https://github.com/stonewell/code-snippets/tree/master/function%5Fstatic%5Fvariable</a> <br />
 先来说明一下GNU的情况，这个问题在GNU中叫做 <strong>STB_GNU_UNIQUE</strong> 文档是这样描述的</p>
-<pre><code class="language-nil" data-lang="nil">-fno-gnu-unique
+<pre tabindex="0"><code class="language-nil" data-lang="nil">-fno-gnu-unique
 	On systems with recent GNU assembler and C library, the C++ compiler uses the
     STB_GNU_UNIQUE binding to make sure that definitions of template static data members and
     static local variables in inline functions are unique even in the presence of RTLD_LOCAL;
@@ -271,15 +271,15 @@
 </code></pre><p>也就是说GNU的libc特殊处理了这种情况，就是为了提供进程内真正的static变量，无论是不是 <strong>RTLD_LOCAL</strong> 还是有多份拷贝，<br />
 同时gcc也提供了解决方法， <em>-fno-gnu-unique</em> 编译选项就能关闭这个功能，同时使用readelf查看生成的代码也可以直观的看到。<br /></p>
 <p>默认使用 <strong>STB_GNU_UNIQUE</strong> 的时候</p>
-<pre><code class="language-nil" data-lang="nil">0000000000006f70  0000002a00000006 R_X86_64_GLOB_DAT      00000000000071c0 _ZZN21CMockableSingletonPtrI7FooImplS0_E20GetRefToSingletonPtrEvE13pSingletonPtr + 0
+<pre tabindex="0"><code class="language-nil" data-lang="nil">0000000000006f70  0000002a00000006 R_X86_64_GLOB_DAT      00000000000071c0 _ZZN21CMockableSingletonPtrI7FooImplS0_E20GetRefToSingletonPtrEvE13pSingletonPtr + 0
     42: 00000000000071c0     8 OBJECT  UNIQUE DEFAULT   25 _ZZN21CMockableSingletonPtrI7FooImplS0_E20GetRefToSingletonPtrEvE13pSingletonPtr
     97: 00000000000071c0     8 OBJECT  UNIQUE DEFAULT   25 _ZZN21CMockableSingletonPtrI7FooImplS0_E20GetRefToSingletonPtrEvE13pSingletonPtr
 </code></pre><p>使用 <em>-fno-gnu-unique</em> 的时候</p>
-<pre><code class="language-nil" data-lang="nil">0000000000006f70  0000002a00000006 R_X86_64_GLOB_DAT      00000000000071c0 _ZZN21CMockableSingletonPtrI7FooImplS0_E20GetRefToSingletonPtrEvE13pSingletonPtr + 0
+<pre tabindex="0"><code class="language-nil" data-lang="nil">0000000000006f70  0000002a00000006 R_X86_64_GLOB_DAT      00000000000071c0 _ZZN21CMockableSingletonPtrI7FooImplS0_E20GetRefToSingletonPtrEvE13pSingletonPtr + 0
     42: 00000000000071c0     8 OBJECT  WEAK   DEFAULT   25 _ZZN21CMockableSingletonPtrI7FooImplS0_E20GetRefToSingletonPtrEvE13pSingletonPtr
     97: 00000000000071c0     8 OBJECT  WEAK   DEFAULT   25 _ZZN21CMockableSingletonPtrI7FooImplS0_E20GetRefToSingletonPtrEvE13pSingletonPtr
 </code></pre><p>使用 <em>-version-script</em> 的时候</p>
-<pre><code class="language-nil" data-lang="nil">57: 00000000000040d0     8 OBJECT  LOCAL  DEFAULT   25 _ZZN21CMockableSingletonPtrI7FooImplS0_E20GetRefToSingletonPtrEvE13pSingletonPtr
+<pre tabindex="0"><code class="language-nil" data-lang="nil">57: 00000000000040d0     8 OBJECT  LOCAL  DEFAULT   25 _ZZN21CMockableSingletonPtrI7FooImplS0_E20GetRefToSingletonPtrEvE13pSingletonPtr
 </code></pre><p>在了解了GNU的处理方式后，再回头来看是谁释放了这个变量呢？从理论上来说GNU的处理应该不会出现这个问题，上一篇文章中举的例子实际上是个程序错误，
 也被朋友吐槽说代码bug了，所以这次开发的例程里展示的是没有错误的版本（我们的目标。。。。没有蛀牙）。<br />
 例程使用了多份拷贝的版本，prog主程序会</p>
@@ -290,87 +290,87 @@
 </ol>
 <p>lib目录里是默认编译，lib_2里是使用 <em>-version-script</em> , lib_3里是使用 <em>-fno-gnu-unique</em></p>
 <p>运行lib中的代码</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$&gt; prog/prog lib/libfoo_global.so lib/libfoo_global_2.so
-
-run first round, call CallBar3 which <span style="color:#66d9ef">do</span> not trigger Singleton construct
-lib handle:0x559d75defee0
-callbar func:CallBar3, 0x7f1c9ad5b421
-callbar3 called,first round
-
-run second round, call CallBar trigger singleton construct, but dlclose will destruct the singleton
-lib handle:0x559d75df0570
-callbar func:CallBar, 0x7f1c9ad533b5
-0x559d75df0c00, output construct +++++++++++++++++<span style="color:#f92672">==</span>
-0x559d75df0be0, foo impl costruct, output:0x559d75df0c00
-foo instance:0x559d75df0be0
-0x559d75df0be0, output:0x559d75df0c00, this is FooImpl::bar:second round
-0x559d75df0c00, this is output:second round, xxxxxxxxxxxx
-0x559d75df0be0, output:0x559d75df0c00, foo impl destruct
-0x559d75df0be0, output:0, foo impl destruct
-
-run third round, <span style="color:#66d9ef">if</span> static variable not init in first round, crash here
-lib handle:0x559d75df0570
-callbar func:CallBar, 0x7f1c9ad533b5
-foo instance:0x559d75df0be0
-0x559d75df0be0, output:0x559d75ddd010, this is FooImpl::bar:third round
-Segmentation fault
-</code></pre></div><p>运行lib_2中的代码</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$&gt; prog/prog lib_2/libfoo_global.so lib_2/libfoo_global_2.so
-run first round, call CallBar3 which <span style="color:#66d9ef">do</span> not trigger Singleton construct
-lib handle:0x55b21353bee0
-callbar func:CallBar3, 0x7f4d03a9a241
-callbar3 called,first round
-
-run second round, call CallBar trigger singleton construct, but dlclose will destruct the singleton
-lib handle:0x55b21353c550
-callbar func:CallBar, 0x7f4d03a9a1d5
-0x55b21353c060, output construct +++++++++++++++++<span style="color:#f92672">==</span>
-0x55b21353bec0, foo impl costruct, output:0x55b21353c060
-foo instance:0x55b21353bec0
-0x55b21353bec0, output:0x55b21353c060, this is FooImpl::bar:second round
-0x55b21353c060, this is output:second round, xxxxxxxxxxxx
-0x55b21353bec0, output:0x55b21353c060, foo impl destruct
-0x55b21353bec0, output:0, foo impl destruct
-
-run third round, <span style="color:#66d9ef">if</span> static variable not init in first round, crash here
-lib handle:0x55b21353c550
-callbar func:CallBar, 0x7f4d03a9a1d5
-0x55b21353c060, output construct +++++++++++++++++<span style="color:#f92672">==</span>
-0x55b21353bec0, foo impl costruct, output:0x55b21353c060
-foo instance:0x55b21353bec0
-0x55b21353bec0, output:0x55b21353c060, this is FooImpl::bar:third round
-0x55b21353c060, this is output:third round, xxxxxxxxxxxx
-0x55b21353bec0, output:0x55b21353c060, foo impl destruct
-0x55b21353bec0, output:0, foo impl destruct
-</code></pre></div><p>运行lib_3中的代码</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$&gt; prog/prog lib_2/libfoo_global.so lib_2/libfoo_global_2.so
-run first round, call CallBar3 which <span style="color:#66d9ef">do</span> not trigger Singleton construct
-lib handle:0x560dcfb76ee0
-callbar func:CallBar3, 0x7fbef0260421
-callbar3 called,first round
-
-run second round, call CallBar trigger singleton construct, but dlclose will destruct the singleton
-lib handle:0x560dcfb77550
-callbar func:CallBar, 0x7fbef02603b5
-0x560dcfb77060, output construct +++++++++++++++++<span style="color:#f92672">==</span>
-0x560dcfb76ec0, foo impl costruct, output:0x560dcfb77060
-foo instance:0x560dcfb76ec0
-0x560dcfb76ec0, output:0x560dcfb77060, this is FooImpl::bar:second round
-0x560dcfb77060, this is output:second round, xxxxxxxxxxxx
-0x560dcfb76ec0, output:0x560dcfb77060, foo impl destruct
-0x560dcfb76ec0, output:0, foo impl destruct
-
-run third round, <span style="color:#66d9ef">if</span> static variable not init in first round, crash here
-lib handle:0x560dcfb77550
-callbar func:CallBar, 0x7fbef02603b5
-0x560dcfb77060, output construct +++++++++++++++++<span style="color:#f92672">==</span>
-0x560dcfb76ec0, foo impl costruct, output:0x560dcfb77060
-foo instance:0x560dcfb76ec0
-0x560dcfb76ec0, output:0x560dcfb77060, this is FooImpl::bar:third round
-0x560dcfb77060, this is output:third round, xxxxxxxxxxxx
-0x560dcfb76ec0, output:0x560dcfb77060, foo impl destruct
-0x560dcfb76ec0, output:0, foo impl destruct
-</code></pre></div><p>lib_2和lib_3的结果都可以清楚看到，每次libfoo_global_2.so加载和卸载都会初始化和释放静态变量 <br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$&gt; prog/prog lib/libfoo_global.so lib/libfoo_global_2.so
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>run first round, call CallBar3 which <span style="color:#66d9ef">do</span> not trigger Singleton construct
+</span></span><span style="display:flex;"><span>lib handle:0x559d75defee0
+</span></span><span style="display:flex;"><span>callbar func:CallBar3, 0x7f1c9ad5b421
+</span></span><span style="display:flex;"><span>callbar3 called,first round
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>run second round, call CallBar trigger singleton construct, but dlclose will destruct the singleton
+</span></span><span style="display:flex;"><span>lib handle:0x559d75df0570
+</span></span><span style="display:flex;"><span>callbar func:CallBar, 0x7f1c9ad533b5
+</span></span><span style="display:flex;"><span>0x559d75df0c00, output construct +++++++++++++++++<span style="color:#f92672">==</span>
+</span></span><span style="display:flex;"><span>0x559d75df0be0, foo impl costruct, output:0x559d75df0c00
+</span></span><span style="display:flex;"><span>foo instance:0x559d75df0be0
+</span></span><span style="display:flex;"><span>0x559d75df0be0, output:0x559d75df0c00, this is FooImpl::bar:second round
+</span></span><span style="display:flex;"><span>0x559d75df0c00, this is output:second round, xxxxxxxxxxxx
+</span></span><span style="display:flex;"><span>0x559d75df0be0, output:0x559d75df0c00, foo impl destruct
+</span></span><span style="display:flex;"><span>0x559d75df0be0, output:0, foo impl destruct
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>run third round, <span style="color:#66d9ef">if</span> static variable not init in first round, crash here
+</span></span><span style="display:flex;"><span>lib handle:0x559d75df0570
+</span></span><span style="display:flex;"><span>callbar func:CallBar, 0x7f1c9ad533b5
+</span></span><span style="display:flex;"><span>foo instance:0x559d75df0be0
+</span></span><span style="display:flex;"><span>0x559d75df0be0, output:0x559d75ddd010, this is FooImpl::bar:third round
+</span></span><span style="display:flex;"><span>Segmentation fault
+</span></span></code></pre></div><p>运行lib_2中的代码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$&gt; prog/prog lib_2/libfoo_global.so lib_2/libfoo_global_2.so
+</span></span><span style="display:flex;"><span>run first round, call CallBar3 which <span style="color:#66d9ef">do</span> not trigger Singleton construct
+</span></span><span style="display:flex;"><span>lib handle:0x55b21353bee0
+</span></span><span style="display:flex;"><span>callbar func:CallBar3, 0x7f4d03a9a241
+</span></span><span style="display:flex;"><span>callbar3 called,first round
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>run second round, call CallBar trigger singleton construct, but dlclose will destruct the singleton
+</span></span><span style="display:flex;"><span>lib handle:0x55b21353c550
+</span></span><span style="display:flex;"><span>callbar func:CallBar, 0x7f4d03a9a1d5
+</span></span><span style="display:flex;"><span>0x55b21353c060, output construct +++++++++++++++++<span style="color:#f92672">==</span>
+</span></span><span style="display:flex;"><span>0x55b21353bec0, foo impl costruct, output:0x55b21353c060
+</span></span><span style="display:flex;"><span>foo instance:0x55b21353bec0
+</span></span><span style="display:flex;"><span>0x55b21353bec0, output:0x55b21353c060, this is FooImpl::bar:second round
+</span></span><span style="display:flex;"><span>0x55b21353c060, this is output:second round, xxxxxxxxxxxx
+</span></span><span style="display:flex;"><span>0x55b21353bec0, output:0x55b21353c060, foo impl destruct
+</span></span><span style="display:flex;"><span>0x55b21353bec0, output:0, foo impl destruct
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>run third round, <span style="color:#66d9ef">if</span> static variable not init in first round, crash here
+</span></span><span style="display:flex;"><span>lib handle:0x55b21353c550
+</span></span><span style="display:flex;"><span>callbar func:CallBar, 0x7f4d03a9a1d5
+</span></span><span style="display:flex;"><span>0x55b21353c060, output construct +++++++++++++++++<span style="color:#f92672">==</span>
+</span></span><span style="display:flex;"><span>0x55b21353bec0, foo impl costruct, output:0x55b21353c060
+</span></span><span style="display:flex;"><span>foo instance:0x55b21353bec0
+</span></span><span style="display:flex;"><span>0x55b21353bec0, output:0x55b21353c060, this is FooImpl::bar:third round
+</span></span><span style="display:flex;"><span>0x55b21353c060, this is output:third round, xxxxxxxxxxxx
+</span></span><span style="display:flex;"><span>0x55b21353bec0, output:0x55b21353c060, foo impl destruct
+</span></span><span style="display:flex;"><span>0x55b21353bec0, output:0, foo impl destruct
+</span></span></code></pre></div><p>运行lib_3中的代码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$&gt; prog/prog lib_2/libfoo_global.so lib_2/libfoo_global_2.so
+</span></span><span style="display:flex;"><span>run first round, call CallBar3 which <span style="color:#66d9ef">do</span> not trigger Singleton construct
+</span></span><span style="display:flex;"><span>lib handle:0x560dcfb76ee0
+</span></span><span style="display:flex;"><span>callbar func:CallBar3, 0x7fbef0260421
+</span></span><span style="display:flex;"><span>callbar3 called,first round
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>run second round, call CallBar trigger singleton construct, but dlclose will destruct the singleton
+</span></span><span style="display:flex;"><span>lib handle:0x560dcfb77550
+</span></span><span style="display:flex;"><span>callbar func:CallBar, 0x7fbef02603b5
+</span></span><span style="display:flex;"><span>0x560dcfb77060, output construct +++++++++++++++++<span style="color:#f92672">==</span>
+</span></span><span style="display:flex;"><span>0x560dcfb76ec0, foo impl costruct, output:0x560dcfb77060
+</span></span><span style="display:flex;"><span>foo instance:0x560dcfb76ec0
+</span></span><span style="display:flex;"><span>0x560dcfb76ec0, output:0x560dcfb77060, this is FooImpl::bar:second round
+</span></span><span style="display:flex;"><span>0x560dcfb77060, this is output:second round, xxxxxxxxxxxx
+</span></span><span style="display:flex;"><span>0x560dcfb76ec0, output:0x560dcfb77060, foo impl destruct
+</span></span><span style="display:flex;"><span>0x560dcfb76ec0, output:0, foo impl destruct
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>run third round, <span style="color:#66d9ef">if</span> static variable not init in first round, crash here
+</span></span><span style="display:flex;"><span>lib handle:0x560dcfb77550
+</span></span><span style="display:flex;"><span>callbar func:CallBar, 0x7fbef02603b5
+</span></span><span style="display:flex;"><span>0x560dcfb77060, output construct +++++++++++++++++<span style="color:#f92672">==</span>
+</span></span><span style="display:flex;"><span>0x560dcfb76ec0, foo impl costruct, output:0x560dcfb77060
+</span></span><span style="display:flex;"><span>foo instance:0x560dcfb76ec0
+</span></span><span style="display:flex;"><span>0x560dcfb76ec0, output:0x560dcfb77060, this is FooImpl::bar:third round
+</span></span><span style="display:flex;"><span>0x560dcfb77060, this is output:third round, xxxxxxxxxxxx
+</span></span><span style="display:flex;"><span>0x560dcfb76ec0, output:0x560dcfb77060, foo impl destruct
+</span></span><span style="display:flex;"><span>0x560dcfb76ec0, output:0, foo impl destruct
+</span></span></code></pre></div><p>lib_2和lib_3的结果都可以清楚看到，每次libfoo_global_2.so加载和卸载都会初始化和释放静态变量 <br />
 lib的结果显示，静态变量在第一次加载libfoo_global_2.so的时候被初始化，卸载时被释放了，<br />
 而第二次加载时候没有初始化，导致crash，代码中是没有强制释放这个静态变量的，那么为什么会释放呢？ <br />
 请注意run first round, 加载libfoo_global.so调用CallBar3函数的时候是没有触发和使用静态变量的，根据我的分析 <br />
@@ -378,32 +378,32 @@ GNU把libfoo_global.so标记为不可卸载，后续的libfoo_global_2.so就是�
 中初始化，也就随着libfoo_global_2.so的卸载而释放了，但是C运行时已经标记这个静态变量已经初始化了，导致下次使用crash。<br />
 也就是说第一次加载并释放libfoo_global_2.so后，无论加载libfoo_global.so还是libfoo_global_2.so都会crash。<br />
 那么如果在第一次加载 <strong>libfoo_global.so</strong> 的时候就触发变量初始化是不是就没有问题了呢？答案是肯定的</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$&gt; prog/prog lib/libfoo_global.so lib/libfoo_global_2.so
-run first round, call CallBar which <span style="color:#66d9ef">do</span> trigger Singleton construct
-lib handle:0x55752c808ee0
-callbar func:CallBar, 0x7f70e956f3b5
-0x55752c809570, output construct +++++++++++++++++<span style="color:#f92672">==</span>
-0x55752c809550, foo impl costruct, output:0x55752c809570
-foo instance:0x55752c809550
-0x55752c809550, output:0x55752c809570, this is FooImpl::bar:first round
-0x55752c809570, this is output:first round, xxxxxxxxxxxx
-
-run second round, call CallBar trigger singleton construct, but dlclose will destruct the singleton
-lib handle:0x55752c8095d0
-callbar func:CallBar, 0x7f70e95673b5
-foo instance:0x55752c809550
-0x55752c809550, output:0x55752c809570, this is FooImpl::bar:second round
-0x55752c809570, this is output:second round, xxxxxxxxxxxx
-
-run third round, <span style="color:#66d9ef">if</span> static variable not init in first round, crash here
-lib handle:0x55752c808ee0
-callbar func:CallBar, 0x7f70e956f3b5
-foo instance:0x55752c809550
-0x55752c809550, output:0x55752c809570, this is FooImpl::bar:third round
-0x55752c809570, this is output:third round, xxxxxxxxxxxx
-0x55752c809550, output:0x55752c809570, foo impl destruct
-0x55752c809550, output:0, foo impl destruct
-</code></pre></div><p>结论就是，如果想要使用 <strong>STB_GNU_UNIQUE</strong> 带来的好处，就要尽早初始化静态变量。<br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$&gt; prog/prog lib/libfoo_global.so lib/libfoo_global_2.so
+</span></span><span style="display:flex;"><span>run first round, call CallBar which <span style="color:#66d9ef">do</span> trigger Singleton construct
+</span></span><span style="display:flex;"><span>lib handle:0x55752c808ee0
+</span></span><span style="display:flex;"><span>callbar func:CallBar, 0x7f70e956f3b5
+</span></span><span style="display:flex;"><span>0x55752c809570, output construct +++++++++++++++++<span style="color:#f92672">==</span>
+</span></span><span style="display:flex;"><span>0x55752c809550, foo impl costruct, output:0x55752c809570
+</span></span><span style="display:flex;"><span>foo instance:0x55752c809550
+</span></span><span style="display:flex;"><span>0x55752c809550, output:0x55752c809570, this is FooImpl::bar:first round
+</span></span><span style="display:flex;"><span>0x55752c809570, this is output:first round, xxxxxxxxxxxx
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>run second round, call CallBar trigger singleton construct, but dlclose will destruct the singleton
+</span></span><span style="display:flex;"><span>lib handle:0x55752c8095d0
+</span></span><span style="display:flex;"><span>callbar func:CallBar, 0x7f70e95673b5
+</span></span><span style="display:flex;"><span>foo instance:0x55752c809550
+</span></span><span style="display:flex;"><span>0x55752c809550, output:0x55752c809570, this is FooImpl::bar:second round
+</span></span><span style="display:flex;"><span>0x55752c809570, this is output:second round, xxxxxxxxxxxx
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>run third round, <span style="color:#66d9ef">if</span> static variable not init in first round, crash here
+</span></span><span style="display:flex;"><span>lib handle:0x55752c808ee0
+</span></span><span style="display:flex;"><span>callbar func:CallBar, 0x7f70e956f3b5
+</span></span><span style="display:flex;"><span>foo instance:0x55752c809550
+</span></span><span style="display:flex;"><span>0x55752c809550, output:0x55752c809570, this is FooImpl::bar:third round
+</span></span><span style="display:flex;"><span>0x55752c809570, this is output:third round, xxxxxxxxxxxx
+</span></span><span style="display:flex;"><span>0x55752c809550, output:0x55752c809570, foo impl destruct
+</span></span><span style="display:flex;"><span>0x55752c809550, output:0, foo impl destruct
+</span></span></code></pre></div><p>结论就是，如果想要使用 <strong>STB_GNU_UNIQUE</strong> 带来的好处，就要尽早初始化静态变量。<br />
 在实际情况中libstdc++中就大量的使用了这个功能</p>
 </article>
     <footer class="post-footer">
@@ -426,7 +426,7 @@ foo instance:0x55752c809550
   </section>
 
     <footer class="footer">
-  <p>Copyright © 2018-2021 Jingnan Si&#39;s Blog</p>
+  <p>Copyright © 2018-2023 Jingnan Si&#39;s Blog</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/huyb1991/hugo-lamp" title="Hugo LAMP" target="_blank">LAMP</a>.</p>
 </footer>
 

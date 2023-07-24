@@ -26,7 +26,7 @@
 如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。
 如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。
 可是如果一开始没有用screen运行，直接放置到后台怎么办呢。reptyr就派上用场了，以下是reptyr的说明
-reparent a orphan background process, means background a process in a terminal and bring it back to foreground to another terminal reptyr - A tool for &amp;quot;re-ptying&amp;quot; programs. ----------------------------------------- reptyr is a utility for taking an existing running program and attaching it to a new terminal. Started a long-running process over ssh, but have to leave and don&#39;t want to interrupt it? Just start a screen, use reptyr to grab it, and then kill the ssh session and head on home.">
+reparent a orphan background process, means background a process in a terminal and bring it back to foreground to another terminal reptyr - A tool for &amp;#34;re-ptying&amp;#34; programs. ----------------------------------------- reptyr is a utility for taking an existing running program and attaching it to a new terminal. Started a long-running process over ssh, but have to leave and don&amp;#39;t want to interrupt it? Just start a screen, use reptyr to grab it, and then kill the ssh session and head on home.">
 
   
   
@@ -37,14 +37,14 @@ reparent a orphan background process, means background a process in a terminal a
 如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。
 如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。
 可是如果一开始没有用screen运行，直接放置到后台怎么办呢。reptyr就派上用场了，以下是reptyr的说明
-reparent a orphan background process, means background a process in a terminal and bring it back to foreground to another terminal reptyr - A tool for &amp;quot;re-ptying&amp;quot; programs. ----------------------------------------- reptyr is a utility for taking an existing running program and attaching it to a new terminal. Started a long-running process over ssh, but have to leave and don&#39;t want to interrupt it? Just start a screen, use reptyr to grab it, and then kill the ssh session and head on home." />
+reparent a orphan background process, means background a process in a terminal and bring it back to foreground to another terminal reptyr - A tool for &amp;#34;re-ptying&amp;#34; programs. ----------------------------------------- reptyr is a utility for taking an existing running program and attaching it to a new terminal. Started a long-running process over ssh, but have to leave and don&amp;#39;t want to interrupt it? Just start a screen, use reptyr to grab it, and then kill the ssh session and head on home." />
     <meta name="twitter:image" content="https://blog.angsto-tech.com/img/avatar.jpg" />
   
 
 
 
 
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.113.0">
 
 
 <link rel="canonical" href="https://blog.angsto-tech.com/post/screen-reptyr-remote-work-helper/">
@@ -266,13 +266,13 @@ reparent a orphan background process, means background a process in a terminal a
 如果使用screen的话，可以让程序保持前台运行，又能通过detach放到后台。<br />
 如果在公司机器上用screen运行一个程序，然后detach，回家后通过ssh连接公司机器，用screen restore就可以继续观察程序运行了。<br />
 可是如果一开始没有用screen运行，直接放置到后台怎么办呢。reptyr就派上用场了，以下是reptyr的说明</p>
-<pre><code class="language-nil" data-lang="nil">reparent a orphan background process, means background a process in a terminal and bring it back to foreground to another terminal
-reptyr - A tool for &quot;re-ptying&quot; programs.
+<pre tabindex="0"><code class="language-nil" data-lang="nil">reparent a orphan background process, means background a process in a terminal and bring it back to foreground to another terminal
+reptyr - A tool for &#34;re-ptying&#34; programs.
 -----------------------------------------
 
 reptyr is a utility for taking an existing running program and
 attaching it to a new terminal. Started a long-running process over
-ssh, but have to leave and don't want to interrupt it? Just start a
+ssh, but have to leave and don&#39;t want to interrupt it? Just start a
 screen, use reptyr to grab it, and then kill the ssh session and head
 on home.
 
@@ -281,12 +281,12 @@ USAGE
 
   reptyr PID
 
-&quot;reptyr PID&quot; will grab the process with id PID and attach it to your
+&#34;reptyr PID&#34; will grab the process with id PID and attach it to your
 current terminal.
 
 After attaching, the process will take input from and write output to
 the new terminal, including ^C and ^Z. (Unfortunately, if you
-background it, you will still have to run &quot;bg&quot; or &quot;fg&quot; in the old
+background it, you will still have to run &#34;bg&#34; or &#34;fg&#34; in the old
 terminal. This is likely impossible to fix in a reasonable way without
 patching your shell.)
 
@@ -315,7 +315,7 @@ A few blog posts by its author:
   </section>
 
     <footer class="footer">
-  <p>Copyright © 2018-2021 Jingnan Si&#39;s Blog</p>
+  <p>Copyright © 2018-2023 Jingnan Si&#39;s Blog</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/huyb1991/hugo-lamp" title="Hugo LAMP" target="_blank">LAMP</a>.</p>
 </footer>
 

@@ -36,7 +36,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.113.0">
 
 
 <link rel="canonical" href="https://blog.angsto-tech.com/post/function-static-variable-cause-crash/">
@@ -269,42 +269,42 @@
 </li>
 </ul>
 <p>工具模块中具体实现的代码大致如下</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">Settings <span style="color:#f92672">*</span> <span style="color:#a6e22e">GetSettings</span>() {
-    <span style="color:#66d9ef">static</span> Settings <span style="color:#f92672">*</span> sSettings <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Settings;
-    <span style="color:#66d9ef">return</span> sSettings;
-}
-
-...
-GetSettings()<span style="color:#f92672">-&gt;</span>SetReloaded(true);
-...
-</code></pre></div><p>代码看上去没有问题，并且在前后上下文也有注意加锁防止多线程冲突。、
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>Settings <span style="color:#f92672">*</span> <span style="color:#a6e22e">GetSettings</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> Settings <span style="color:#f92672">*</span> sSettings <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Settings;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> sSettings;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>GetSettings()<span style="color:#f92672">-&gt;</span>SetReloaded(true);
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>代码看上去没有问题，并且在前后上下文也有注意加锁防止多线程冲突。、
 在检查了内存指针后，唯一特殊的就是sSettings的内存地址不在模块的地址空间，而是处于进程的地址空间。<br />
 这好像有点意思啊，我印象中静态变量应该是在模块地址空间的，那么是不是编译器的生成了特殊的代码呢。<br />
 nm的结果显示sSettings的类型是 <strong>u</strong> ,并不是 <strong>b</strong> ，那么 <strong>u</strong> 和 <strong>b</strong> 都是代表什么意思呢</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#e6db74">&#34;b&#34;</span>
-
-    The symbol is in the uninitialized data section <span style="color:#f92672">(</span>known as BSS <span style="color:#f92672">)</span>.
-
-<span style="color:#e6db74">&#34;u&#34;</span>
-
-    The symbol is a unique global symbol. This is a GNU extension to the standard set of ELF symbol bindings.
-    For such a symbol the dynamic linker will make sure that in the entire process there is just one symbol
-    with this name and type in use.
-</code></pre></div><p>看上去 <strong>u</strong> 没啥问题啊，至少保证了无论模块怎么加载，卸载都会使用同一个地址访问静态变量。经过仔细的调试发现，为了防止内存泄露，<br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#e6db74">&#34;b&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    The symbol is in the uninitialized data section <span style="color:#f92672">(</span>known as BSS <span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;u&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    The symbol is a unique global symbol. This is a GNU extension to the standard set of ELF symbol bindings.
+</span></span><span style="display:flex;"><span>    For such a symbol the dynamic linker will make sure that in the entire process there is just one symbol
+</span></span><span style="display:flex;"><span>    with this name and type in use.
+</span></span></code></pre></div><p>看上去 <strong>u</strong> 没啥问题啊，至少保证了无论模块怎么加载，卸载都会使用同一个地址访问静态变量。经过仔细的调试发现，为了防止内存泄露，<br />
 模块的卸载代码有清理内存的操作，大概类似</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">...
-<span style="color:#66d9ef">delete</span> GetSettings();
-...
-</code></pre></div><p>而同时  <strong>u</strong>  保证了静态变量真的只会运行一次初始化代码，而不是每次加载模块的时候都会运行，这就造成了卸载再加载后访问crash。<br /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">delete</span> GetSettings();
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>而同时  <strong>u</strong>  保证了静态变量真的只会运行一次初始化代码，而不是每次加载模块的时候都会运行，这就造成了卸载再加载后访问crash。<br /></p>
 <p>原因找到了，那么解决方案是什么呢？</p>
 <ol>
 <li>删除清理代码，反正整个进程只有一份，退出时自动清理了，不会内存泄露。但是 <strong>u</strong> 是GNU的扩展，使用其他编译器或者跨平台的时候可能有问题。</li>
 <li>增加工具模块的导出表，不要导出sSettings，让它待在模块的bss区域，这样每次模块加载都会有自己的一份拷贝，每个模块都会自己初始化和释放。</li>
 </ol>
 <p>对于linux平台来说，link的时候加入</p>
-<pre><code class="language-nil" data-lang="nil">LDFLAGS += -Wl,--version-script=$(srcdir)/libfoo.map
+<pre tabindex="0"><code class="language-nil" data-lang="nil">LDFLAGS += -Wl,--version-script=$(srcdir)/libfoo.map
 </code></pre><p>LD文档里有详细介绍，简单举例一下，global里放要导出的符号， local *的意思就是其它都hide</p>
-<pre><code class="language-nil" data-lang="nil">LIBFOO_1.0 {
+<pre tabindex="0"><code class="language-nil" data-lang="nil">LIBFOO_1.0 {
   global:
     libfoo_init; libfoo_doit; libfoo_done;
 
@@ -334,7 +334,7 @@ nm的结果显示sSettings的类型是 <strong>u</strong> ,并不是 <strong>b</
   </section>
 
     <footer class="footer">
-  <p>Copyright © 2018-2021 Jingnan Si&#39;s Blog</p>
+  <p>Copyright © 2018-2023 Jingnan Si&#39;s Blog</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/huyb1991/hugo-lamp" title="Hugo LAMP" target="_blank">LAMP</a>.</p>
 </footer>
 

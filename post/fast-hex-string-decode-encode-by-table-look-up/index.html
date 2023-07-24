@@ -38,7 +38,7 @@ char m_table[&amp;#39;f&amp;#39; &#43; 1][&amp;#39;f&amp;#39; &#43; 1] = {0}; vo
 
 
 
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.113.0">
 
 
 <link rel="canonical" href="https://blog.angsto-tech.com/post/fast-hex-string-decode-encode-by-table-look-up/">
@@ -257,89 +257,89 @@ char m_table[&amp;#39;f&amp;#39; &#43; 1][&amp;#39;f&amp;#39; &#43; 1] = {0}; vo
     
 
     <article class="post-content"><p>Decode a hex string by using look up table</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">char</span> m_table[<span style="color:#e6db74">&#39;f&#39;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>][<span style="color:#e6db74">&#39;f&#39;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>};
-
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initDecodeTable</span>() {
-    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> hexValue <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0123456789abcdefABCDEF&#34;</span>;
-
-    <span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> strlen(hexValue);
-
-    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i <span style="color:#f92672">&lt;</span> len;i<span style="color:#f92672">++</span>) {
-	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j
-	    <span style="color:#66d9ef">int</span> v;
-	    <span style="color:#66d9ef">char</span> tmp[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> { tolower(hexValue[i]), tolower(hexValue[j]) };
-
-	    sscanf(tmp, <span style="color:#e6db74">&#34;%x&#34;</span>, <span style="color:#f92672">&amp;</span>v);
-
-	    m_table[hexValue[i]][hexValue[j]] <span style="color:#f92672">=</span> (v <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0xFF</span>);
-	}
-    }
-}
-
-<span style="color:#66d9ef">void</span> decodeHex(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> pIn, <span style="color:#66d9ef">int</span> inLen, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> pOut, <span style="color:#66d9ef">int</span> <span style="color:#f92672">&amp;</span> outLen) {
-    outLen <span style="color:#f92672">=</span> inLen <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
-
-    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> outLen;i<span style="color:#f92672">++</span>) {
-	pOut[i] <span style="color:#f92672">=</span> m_table[pIn[i <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>]][pIn[i <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]];
-    }
-
-    <span style="color:#66d9ef">if</span> (inLen <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
-	pOut[outLen<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> m_table[pIn[inLen <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]][<span style="color:#e6db74">&#39;0&#39;</span>];
-    }
-}
-</code></pre></div><p>To another soluiton encode/decode a hex using look up table, please refer to<br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">char</span> m_table[<span style="color:#e6db74">&#39;f&#39;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>][<span style="color:#e6db74">&#39;f&#39;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initDecodeTable</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> hexValue <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;0123456789abcdefABCDEF&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> <span style="color:#a6e22e">strlen</span>(hexValue);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i <span style="color:#f92672">&lt;</span> len;i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;j
+</span></span><span style="display:flex;"><span>	    <span style="color:#66d9ef">int</span> v;
+</span></span><span style="display:flex;"><span>	    <span style="color:#66d9ef">char</span> tmp[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> { <span style="color:#a6e22e">tolower</span>(hexValue[i]), <span style="color:#a6e22e">tolower</span>(hexValue[j]) };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	    <span style="color:#a6e22e">sscanf</span>(tmp, <span style="color:#e6db74">&#34;%x&#34;</span>, <span style="color:#f92672">&amp;</span>v);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	    m_table[hexValue[i]][hexValue[j]] <span style="color:#f92672">=</span> (v <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0xFF</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">decodeHex</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> pIn, <span style="color:#66d9ef">int</span> inLen, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> pOut, <span style="color:#66d9ef">int</span> <span style="color:#f92672">&amp;</span> outLen) {
+</span></span><span style="display:flex;"><span>    outLen <span style="color:#f92672">=</span> inLen <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> outLen;i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>	pOut[i] <span style="color:#f92672">=</span> m_table[pIn[i <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>]][pIn[i <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>]];
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (inLen <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>	pOut[outLen<span style="color:#f92672">++</span>] <span style="color:#f92672">=</span> m_table[pIn[inLen <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]][<span style="color:#e6db74">&#39;0&#39;</span>];
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>To another soluiton encode/decode a hex using look up table, please refer to<br />
 <a href="http://www.experts-exchange.com/Programming/Languages/.NET/Visual%5FCPP/A%5F1290-Fast-Hexadecimal-Encode-and-Decode.html">http://www.experts-exchange.com/Programming/Languages/.NET/Visual%5FCPP/A%5F1290-Fast-Hexadecimal-Encode-and-Decode.html</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">BYTE HexLookup[<span style="color:#ae81ff">513</span>]<span style="color:#f92672">=</span> {
-      <span style="color:#e6db74">&#34;000102030405060708090a0b0c0d0e0f&#34;</span>
-      <span style="color:#e6db74">&#34;101112131415161718191a1b1c1d1e1f&#34;</span>
-      <span style="color:#e6db74">&#34;202122232425262728292a2b2c2d2e2f&#34;</span>
-      <span style="color:#e6db74">&#34;303132333435363738393a3b3c3d3e3f&#34;</span>
-      <span style="color:#e6db74">&#34;404142434445464748494a4b4c4d4e4f&#34;</span>
-      <span style="color:#e6db74">&#34;505152535455565758595a5b5c5d5e5f&#34;</span>
-      <span style="color:#e6db74">&#34;606162636465666768696a6b6c6d6e6f&#34;</span>
-      <span style="color:#e6db74">&#34;707172737475767778797a7b7c7d7e7f&#34;</span>
-      <span style="color:#e6db74">&#34;808182838485868788898a8b8c8d8e8f&#34;</span>
-      <span style="color:#e6db74">&#34;909192939495969798999a9b9c9d9e9f&#34;</span>
-      <span style="color:#e6db74">&#34;a0a1a2a3a4a5a6a7a8a9aaabacadaeaf&#34;</span>
-      <span style="color:#e6db74">&#34;b0b1b2b3b4b5b6b7b8b9babbbcbdbebf&#34;</span>
-      <span style="color:#e6db74">&#34;c0c1c2c3c4c5c6c7c8c9cacbcccdcecf&#34;</span>
-      <span style="color:#e6db74">&#34;d0d1d2d3d4d5d6d7d8d9dadbdcdddedf&#34;</span>
-      <span style="color:#e6db74">&#34;e0e1e2e3e4e5e6e7e8e9eaebecedeeef&#34;</span>
-      <span style="color:#e6db74">&#34;f0f1f2f3f4f5f6f7f8f9fafbfcfdfeff&#34;</span>
-};
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ToHex</span>( BYTE<span style="color:#f92672">*</span> pSrc, <span style="color:#66d9ef">int</span> nSrcLen, CString<span style="color:#f92672">&amp;</span> sDest )
-{
-      WORD<span style="color:#f92672">*</span> pwHex<span style="color:#f92672">=</span>  (WORD<span style="color:#f92672">*</span>)HexLookup;
-      WORD<span style="color:#f92672">*</span> pwDest<span style="color:#f92672">=</span> (WORD<span style="color:#f92672">*</span>)sDest.GetBuffer((nSrcLen<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
-
-      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;</span>nSrcLen; j<span style="color:#f92672">++</span> ) {
-	      <span style="color:#f92672">*</span>pwDest<span style="color:#f92672">=</span> pwHex[<span style="color:#f92672">*</span>pSrc];
-	      pwDest<span style="color:#f92672">++</span>; pSrc<span style="color:#f92672">++</span>;
-      }
-      <span style="color:#f92672">*</span>((BYTE<span style="color:#f92672">*</span>)pwDest)<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;  <span style="color:#75715e">// terminate the string
-</span><span style="color:#75715e"></span>      sDest.ReleaseBuffer((nSrcLen<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
-}
-
-BYTE DecLookup[] <span style="color:#f92672">=</span> {
-      <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>, <span style="color:#75715e">// gap before first hex digit
-</span><span style="color:#75715e"></span>      <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,
-      <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,
-      <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,       <span style="color:#75715e">// 0123456789
-</span><span style="color:#75715e"></span>      <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,             <span style="color:#75715e">// :;&lt;=&gt;?@ (gap)
-</span><span style="color:#75715e"></span>      <span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">11</span>,<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">13</span>,<span style="color:#ae81ff">14</span>,<span style="color:#ae81ff">15</span>,         <span style="color:#75715e">// ABCDEF
-</span><span style="color:#75715e"></span>      <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>, <span style="color:#75715e">// GHIJKLMNOPQRS (gap)
-</span><span style="color:#75715e"></span>      <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>, <span style="color:#75715e">// TUVWXYZ[/]^_` (gap)
-</span><span style="color:#75715e"></span>      <span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">11</span>,<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">13</span>,<span style="color:#ae81ff">14</span>,<span style="color:#ae81ff">15</span>          <span style="color:#75715e">// abcdef
-</span><span style="color:#75715e"></span>};
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">FromHex</span>( BYTE<span style="color:#f92672">*</span> pSrc, <span style="color:#66d9ef">int</span> nSrcLen, BYTE<span style="color:#f92672">*</span> pDest )
-{
-      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;</span>nSrcLen; j <span style="color:#f92672">+=</span> <span style="color:#ae81ff">2</span> ) {
-	      <span style="color:#66d9ef">int</span> d <span style="color:#f92672">=</span>  DecLookup[<span style="color:#f92672">*</span>pSrc<span style="color:#f92672">++</span> ] <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">4</span>;
-		  d <span style="color:#f92672">|=</span> DecLookup[<span style="color:#f92672">*</span>pSrc<span style="color:#f92672">++</span> ];
-	      <span style="color:#f92672">*</span>pDest<span style="color:#f92672">++</span> <span style="color:#f92672">=</span> (BYTE)d;
-      }
-}
-</code></pre></div></article>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>BYTE HexLookup[<span style="color:#ae81ff">513</span>]<span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;000102030405060708090a0b0c0d0e0f&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;101112131415161718191a1b1c1d1e1f&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;202122232425262728292a2b2c2d2e2f&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;303132333435363738393a3b3c3d3e3f&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;404142434445464748494a4b4c4d4e4f&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;505152535455565758595a5b5c5d5e5f&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;606162636465666768696a6b6c6d6e6f&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;707172737475767778797a7b7c7d7e7f&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;808182838485868788898a8b8c8d8e8f&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;909192939495969798999a9b9c9d9e9f&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;a0a1a2a3a4a5a6a7a8a9aaabacadaeaf&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;b0b1b2b3b4b5b6b7b8b9babbbcbdbebf&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;c0c1c2c3c4c5c6c7c8c9cacbcccdcecf&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;d0d1d2d3d4d5d6d7d8d9dadbdcdddedf&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;e0e1e2e3e4e5e6e7e8e9eaebecedeeef&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;f0f1f2f3f4f5f6f7f8f9fafbfcfdfeff&#34;</span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ToHex</span>( BYTE<span style="color:#f92672">*</span> pSrc, <span style="color:#66d9ef">int</span> nSrcLen, CString<span style="color:#f92672">&amp;</span> sDest )
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>      WORD<span style="color:#f92672">*</span> pwHex<span style="color:#f92672">=</span>  (WORD<span style="color:#f92672">*</span>)HexLookup;
+</span></span><span style="display:flex;"><span>      WORD<span style="color:#f92672">*</span> pwDest<span style="color:#f92672">=</span> (WORD<span style="color:#f92672">*</span>)sDest.<span style="color:#a6e22e">GetBuffer</span>((nSrcLen<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;</span>nSrcLen; j<span style="color:#f92672">++</span> ) {
+</span></span><span style="display:flex;"><span>	      <span style="color:#f92672">*</span>pwDest<span style="color:#f92672">=</span> pwHex[<span style="color:#f92672">*</span>pSrc];
+</span></span><span style="display:flex;"><span>	      pwDest<span style="color:#f92672">++</span>; pSrc<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">*</span>((BYTE<span style="color:#f92672">*</span>)pwDest)<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;  <span style="color:#75715e">// terminate the string
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      sDest.<span style="color:#a6e22e">ReleaseBuffer</span>((nSrcLen<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>BYTE DecLookup[] <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>, <span style="color:#75715e">// gap before first hex digit
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,       <span style="color:#75715e">// 0123456789
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,             <span style="color:#75715e">// :;&lt;=&gt;?@ (gap)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">11</span>,<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">13</span>,<span style="color:#ae81ff">14</span>,<span style="color:#ae81ff">15</span>,         <span style="color:#75715e">// ABCDEF
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>, <span style="color:#75715e">// GHIJKLMNOPQRS (gap)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>, <span style="color:#75715e">// TUVWXYZ[/]^_` (gap)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">11</span>,<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">13</span>,<span style="color:#ae81ff">14</span>,<span style="color:#ae81ff">15</span>          <span style="color:#75715e">// abcdef
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">FromHex</span>( BYTE<span style="color:#f92672">*</span> pSrc, <span style="color:#66d9ef">int</span> nSrcLen, BYTE<span style="color:#f92672">*</span> pDest )
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; j<span style="color:#f92672">&lt;</span>nSrcLen; j <span style="color:#f92672">+=</span> <span style="color:#ae81ff">2</span> ) {
+</span></span><span style="display:flex;"><span>	      <span style="color:#66d9ef">int</span> d <span style="color:#f92672">=</span>  DecLookup[<span style="color:#f92672">*</span>pSrc<span style="color:#f92672">++</span> ] <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>		  d <span style="color:#f92672">|=</span> DecLookup[<span style="color:#f92672">*</span>pSrc<span style="color:#f92672">++</span> ];
+</span></span><span style="display:flex;"><span>	      <span style="color:#f92672">*</span>pDest<span style="color:#f92672">++</span> <span style="color:#f92672">=</span> (BYTE)d;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></article>
     <footer class="post-footer">
       
       <ul class="post-tags">
@@ -360,7 +360,7 @@ BYTE DecLookup[] <span style="color:#f92672">=</span> {
   </section>
 
     <footer class="footer">
-  <p>Copyright © 2018-2021 Jingnan Si&#39;s Blog</p>
+  <p>Copyright © 2018-2023 Jingnan Si&#39;s Blog</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/huyb1991/hugo-lamp" title="Hugo LAMP" target="_blank">LAMP</a>.</p>
 </footer>
 

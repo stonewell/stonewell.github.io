@@ -52,7 +52,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.113.0">
 
 
 <link rel="canonical" href="https://blog.angsto-tech.com/post/">
@@ -284,6 +284,28 @@
         <article class="entry-single">
   
   <header class="entry-header">
+    <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/fast-hex-string-decode-encode-by-table-look-up/" title="Fast Hex String decode/encode by table look up" class="entry-link">Fast Hex String decode/encode by table look up</a></h3>
+  </header>
+
+  <p class="entry-summary">Decode a hex string by using look up table
+char m_table[&#39;f&#39; &#43; 1][&#39;f&#39; &#43; 1] = {0}; void initDecodeTable() { const char * hexValue = &#34;0123456789abcdefABCDEF&#34;; int len = strlen(hexValue); for(int i=0;i &lt; len;i&#43;&#43;) { for(int j=0;j int v; char tmp[2] = { tolower(hexValue[i]), tolower(hexValue[j]) }; sscanf(tmp, &#34;%x&#34;, &amp;v); m_table[hexValue[i]][hexValue[j]] = (v &amp; 0xFF); } } } void decodeHex(const char * pIn, int inLen, char * pOut, int &amp; outLen) { outLen = inLen / 2; for(int i=0; i &lt; outLen;i&#43;&#43;) { pOut[i] = m_table[pIn[i * 2]][pIn[i * 2 &#43; 1]]; } if (inLen % 2 !</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Dec 9, 2013</span> 2 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.angsto-tech.com%2fpost%2ffast-hex-string-decode-encode-by-table-look-up%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Fast%20Hex%20String%20decode%2fencode%20by%20table%20look%20up&amp;url=https%3a%2f%2fblog.angsto-tech.com%2fpost%2ffast-hex-string-decode-encode-by-table-look-up%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
     <h3 class="entry-title"><a href="https://blog.angsto-tech.com/post/ssh-bridge-from-cmdline/" title="命令行ssh桥接" class="entry-link">命令行ssh桥接</a></h3>
   </header>
 
@@ -343,7 +365,7 @@ reparent a orphan background process, means background a process in a terminal a
   </section>
 
     <footer class="footer">
-  <p>Copyright © 2018-2021 Jingnan Si&#39;s Blog</p>
+  <p>Copyright © 2018-2023 Jingnan Si&#39;s Blog</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/huyb1991/hugo-lamp" title="Hugo LAMP" target="_blank">LAMP</a>.</p>
 </footer>
 
